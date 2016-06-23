@@ -1,0 +1,275 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="my-view2">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+        padding: 16px;
+        margin: 0px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #757575;
+      }
+      .circle {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        background: #1D1D1D;
+        padding: 0;
+        margin: 0;
+        color: #555;
+        font-family: Arial;
+      }
+
+      .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+      }
+
+      .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: #FFF;
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .close.last {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .item {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding-top: 40px;
+        top: 20px;
+      }
+
+      .item__header {
+        position: relative;
+      }
+
+      .item__header-underlay {
+        background: #842844;
+        width: 160px;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -80px;
+        top: 0;
+        z-index: 1;
+      }
+
+      .item__header-underlay.last {
+        height: 240px;
+        width: 100%;
+        left: 0;
+        margin: 0;
+      }
+
+      .item img {
+        position: relative;
+        left: 50%;
+        margin-left: -80px;
+        width: 160px;
+        display: block;
+        z-index: 3;
+        cursor: pointer;
+      }
+
+      .item img.last {
+        left: 0;
+        margin: 0;
+        width: 240px;
+        cursor: default;
+      }
+
+      .item.last {
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+      }
+
+      .item__underlay {
+        background: #FFF;
+        width: 160px;
+        height: 160px;
+        position: relative;
+        left: 50%;
+        margin: -160px 0 0 -80px;
+      }
+
+      .item__underlay.last {
+        height: calc(100% - 240px);
+        width: 100%;
+        max-width: 600px;
+        left: auto;
+        top: auto;
+        margin: 0 auto;
+        z-index: 0;
+      }
+
+      .item__title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        height: 240px;
+        line-height: 240px;
+        color: #FFF;
+        font-size: 36px;
+        font-weight: 300;
+        z-index: 2;
+        margin: 0;
+      }
+
+      .item__title.last {
+        left: 272px;
+        opacity: 1;
+      }
+
+      .item__list {
+        opacity: 0;
+        list-style: none;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto 0 auto;
+        margin-top: -100px;
+        max-width: 600px;
+        position: relative;
+      }
+
+      .item__list li {
+        height: 48px;
+        border-bottom: 1px solid rgba(0,0,0,0.12);
+        line-height: 48px;
+        box-sizing: border-box;
+        padding: 0 16px;
+      }
+
+      .item__list.last {
+        opacity: 1;
+        top: 0;
+        margin-top: calc(-100vh + 280px);
+      }
+
+
+
+    </style>
+
+    <div class="card">
+      <div class="circle">2</div>
+      <h1>Committees</h1>
+      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
+      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+
+
+
+          <!-- Works around crbug.com/577211 -->
+      <button style="font-feature-settings: initial" class="close material-icons">&#58829;</button>
+
+      <div class="item">
+        <div class="item__header">
+          <img class="item__header-image" src="../images/banner.jpeg">
+          <div class="item__header-underlay"></div>
+          <h1 class="item__title">Item Title</h1>
+        </div>
+
+        <div class="item__underlay"></div>
+        <ul class="item__list">
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+          <li>List item 4</li>
+          <li>List item 5</li>
+          <li>List item 6</li>
+          <li>List item 7</li>
+          <li>List item 8</li>
+        </ul>
+      </div>
+
+      <script src="flip.js"></script>
+      <script src="demo.js"></script>
+
+
+
+    </div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'my-view2'
+
+    });
+
+  </script>
+
+</dom-module>

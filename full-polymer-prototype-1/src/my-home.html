@@ -1,0 +1,81 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="my-view1">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 0px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 1);
+        color: #757575;
+        height: 1500px;
+      }
+      .circle {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+
+      img {
+        width: 50%;
+        float: right;
+      }
+      img::after {
+        clear: both;
+      }
+
+    </style>
+
+
+    <div class="card">
+      <!-- <div class="circle">1</div> -->
+      <img src="../images/ribbon.jpg"alt="" />
+      <h1>What is TJMUN About?</h1>
+      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.
+      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+      <iframe src="https://free.timeanddate.com/countdown/i4r3vojs/n3701/cf12/cm0/cu4/ct0/cs0/ca0/cr0/ss0/cac4172a7/cpc4172a7/pcfff/tcfff/fs100/szw448/szh189/tatTime%20left%20to%20TJMUN/tac16243e/tptTime%20since%20TJMUN/tpc16243e/matBuilding%20America/mac16243e/mptBuilding%20America/mpc16243e/iso2016-12-03T16:30:00" allowstransparency="true" frameborder="0" width="235" height="94"></iframe>
+    </div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'my-view1'
+
+    });
+
+  </script>
+
+</dom-module>

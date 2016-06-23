@@ -1,0 +1,206 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="my-view3">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+      .card {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        margin: 0px;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #757575;
+        text-align: center;
+      }
+      .circle {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        background: #ddd;
+        line-height: 64px;
+        font-size: 30px;
+        color: #555;
+        text-align: center;
+      }
+
+      .info {
+          margin-top: 130px;
+          margin-bottom: 130px;
+      }
+
+      h1 {
+        font-size: 22px;
+        margin: 16px 0;
+        color: #212121;
+      }
+
+      .subheading {
+        font-weight: bold;
+        color: black;
+      }
+
+      .center-box {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .selector-committee {
+        margin-bottom: 60px;
+      }
+      .selector-committee, .info-form {
+        width: 100%;
+      }
+      .form-input {
+        display: relative;
+      }
+      input, .input {
+        height: 50px;
+        width: 98%;
+      }
+      .input {
+        width: 100%;
+      }
+      .input-box {
+        margin-bottom: 15px;
+      }
+      .committee-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 150px;
+        background-color: red;
+        margin-top: 2px;
+        text-align: center;
+
+      }
+      .committee-option:hover {
+        color: white;
+      }
+      .form-input {
+        width: 100%;
+      }
+      .center-text {
+        display: flex;
+        max-width: 80%;
+      }
+      .pink {
+        background-color: #F8BBD0;
+
+      }
+      .pink:hover {
+        background-color: #E91E63;
+      }
+      .orange {
+        background-color: #FFCC80;
+      }
+      .orange:hover {
+        background-color: #FF9800;
+      }
+      .green {
+        background-color: #B2DFDB;
+      }
+      .green:hover {
+        background-color: #26A69A;
+      }
+      .yellow {
+        background-color: #FFF9C4;
+      }
+      .yellow:hover {
+        /*background-color: #FFEB3B;*/
+        background-color: #FFC107;
+      }
+      .aqua {
+        background-color: #90CAF9;
+      }
+      .aqua:hover {
+        background-color: #2196F3;
+      }
+
+
+      @media screen and (min-width:641px) {
+        .center-box {
+          width: 70%;
+        }
+      }
+    </style>
+
+    <div class="card">
+      <!-- <div class="circle">3</div> -->
+      <h1>Registration</h1>
+
+      <div class="info">
+        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+        <label for="" class="subheading">Info and Stuff</label>
+        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+        <label for="" class="subheading">Info and Stuff</label>
+        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
+      </div>
+
+      <h3>Select Your Committee</h3>
+
+      <div class="center-box">
+        <div class="selector-committee">
+          <div class="committee-option pink form-input"><label class="center-text">UN Security Council</label></div>
+          <div class="committee-option yellow form-input"><label class="center-text">General Assembly</label></div>
+          <div class="committee-option aqua form-input"><label class="center-text">OAS Crisis Committee</label></div>
+          <div class="committee-option green form-input"><label class="center-text">HACIA Democracy Committee</label></div>
+          <div class="committee-option orange form-input"><label class="center-text">UN International Children's Emergency Fund</label></div>
+        </div>
+
+        <div class="info-form">
+          <div class="input-box form-input">
+            <label for="">Name</label>
+            <input type="text" name="name" value="" placeholder="Your Name">
+          </div>
+          <div class="input-box form-input">
+            <label for="">E-mail</label>
+            <input type="mail" name="email" value="" placeholder="Your Email">
+          </div>
+          <div class="input-box form-input" style="height: 50px">
+            <button class="input">Register</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'my-view3',
+
+      properties: {
+
+      },
+
+      register: function() {
+
+      }
+
+    });
+
+  </script>
+
+</dom-module>
