@@ -17,8 +17,17 @@ ul {
 /*
   Utils
 */
+.website-container {
+  width: 100%;
+  overflow: hidden;
+}
 .hide {
   visibility: hidden;
+}
+.clfix::after {
+  content: ' ';
+  display: block;
+  clear: both;
 }
 .email-link {
 
@@ -40,8 +49,19 @@ ul {
   width: 250px;
 }
 
+.green-box {
+  background-color: green;
+}
+
 .app-drawer {
-  display: none;
+  opacity: 1;
+  position: fixed;
+  width: 70%;
+  top: 0px;
+  height: 100%;
+  background-color: white;
+  transform: translateX(-100%);
+  z-index: 9;
 }
 
 
@@ -133,8 +153,74 @@ footer {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: auto 100vh;
+
   color: white;
-  height: 300px;
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 100%;
+  height: 40%;
+
+}
+
+footer ul {
+  overflow: hidden;
+}
+
+footer ul li {
+  float: left;
+
+  width: 100%;
+  min-height: 60px;
+  margin: 0 auto;
+}
+
+footer ul li a {
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+
+  font-weight: bold;
+
+}
+
+footer ul li a .icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 50px;
+  margin: 0 auto;
+}
+
+footer ul li a:hover {
+  background-color: rgba(0,0,0, 0.5);
+}
+
+#faceb-link .icon{
+  background-image: url("../img/FB-f-Logo__white_29.png");
+}
+#faceb-link:hover .icon{
+  color: #3B5998;
+  background-image: url("../img/FB-f-Logo__blue_29.png");
+}
+
+#tweet-link .icon{
+  background-image: url("../img/TwitterLogo_white.png");
+}
+#tweet-link:hover .icon{
+  color: #4099FF;
+  background-image: url("../img/TwitterLogo.png");
+}
+
+#insta-link .icon{
+  background-image: url("../img/glyph-logo_May2016.png");
+}
+#insta-link:hover .icon{
+  color: #ffc838;
+  background-image: url("../img/Instagram-v051916.png");
 }
 
 
@@ -154,6 +240,9 @@ footer {
   .main-container {
     width: 97%;
   }
+  footer {
+    padding: 10px 0px 10px 0px;
+  }
 }
 
 /*
@@ -168,6 +257,29 @@ footer {
   }
   .main-container {
     width: 87%;
+  }
+
+  footer {
+    background-size: cover;
+  }
+
+  footer .main-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 40%;
+    float: left;
+  }
+
+  footer ul {
+    float: left;
+    width: 59%;
+  }
+
+  footer ul li {
+    width: 30%;
   }
 }
 
