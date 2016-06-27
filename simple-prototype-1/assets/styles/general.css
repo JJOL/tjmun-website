@@ -51,6 +51,12 @@ ul {
 
 .green-box {
   background-color: green;
+  color: white;
+  padding: 5px 0px 10px 0px;
+}
+
+.green-box * {
+  border: 4px line white;
 }
 
 .app-drawer {
@@ -153,15 +159,17 @@ footer {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: auto 100vh;
-
+  height: 100vh;
   color: white;
 }
 
 .footer-logo {
+  margin-top: 10%;
+
   display: inline-block;
   width: 100%;
-  height: 40%;
-
+  height: 30%;
+  min-height: 200px;
 }
 
 footer ul {
@@ -174,6 +182,7 @@ footer ul li {
   width: 100%;
   min-height: 60px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 footer ul li a {
@@ -190,7 +199,7 @@ footer ul li a .icon {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100px;
+  height: 60px;
   width: 50px;
   margin: 0 auto;
 }
@@ -241,6 +250,7 @@ footer ul li a:hover {
     width: 97%;
   }
   footer {
+    height: auto;
     padding: 10px 0px 10px 0px;
   }
 }
@@ -269,6 +279,7 @@ footer ul li a:hover {
   }
 
   .footer-logo {
+    margin-top: 0;
     width: 40%;
     float: left;
   }
@@ -280,6 +291,9 @@ footer ul li a:hover {
 
   footer ul li {
     width: 30%;
+  }
+  footer ul li a {
+    padding: 20px 0px 20px 0px;
   }
 }
 
