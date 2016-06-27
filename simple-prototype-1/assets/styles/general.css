@@ -1,0 +1,187 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+/*
+  Utils
+*/
+.hide {
+  visibility: hidden;
+}
+.email-link {
+
+}
+.paper-out {
+  box-shadow: 0px -10px 15px #ccc;
+  margin-bottom: 40px;
+}
+/*.paper-out::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  display: block;
+  box-shadow: 0px 10px 15px #ccc;
+}*/
+
+.member-pic {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.app-drawer {
+  display: none;
+}
+
+
+/*
+Header
+*/
+.header {
+  position: relative;
+  background-image: url("../img/banner_d.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  height: 100vh;
+  min-height: 430px;
+}
+.large-box {
+  display: none;
+}
+.register-box {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+}
+.register-box:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.register-box a {
+  display: block;
+  padding: 30px 0px 30px 0px;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+}
+
+.logo {
+  background-image: url("../img/tjmun_logoc.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  width: 100%;
+  height: 70%;
+  min-height: 300px;
+
+  /* Hide Text */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.nav-bar {
+  background-color: rgba(0,0,0, 0.7);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.nav-bar ul li {
+  display: inline-block;
+  color: white;
+}
+
+.nav-bar ul li:hover {
+  background-color: rgba(255,255,255, 0.9);
+  color: black;
+}
+
+.horizonal-nav-a {
+  display: block;
+  padding: 30px 20px 30px 20px;
+}
+
+/*
+  Main Content
+*/
+
+.main-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*
+  Footer
+*/
+
+footer {
+  background: url("../img/banner_d.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: auto 100vh;
+  color: white;
+  height: 300px;
+}
+
+
+/*
+  Tablets
+*/
+@media screen and (min-width: 768px) {
+  .header {
+    height: 60vh;
+  }
+  .register-box {
+    display: none;
+  }
+  .large-box {
+    display: block;
+  }
+  .main-container {
+    width: 97%;
+  }
+}
+
+/*
+  Desktops
+*/
+@media screen and (min-width: 1224px) {
+  html {
+    /*background-color: blue;*/
+  }
+  .horizonal-nav-a {
+    padding: 30px 30px 30px 30px;
+  }
+  .main-container {
+    width: 87%;
+  }
+}
+
+/*
+  Large Desktops
+*/
+@media screen and (min-width: 1824px) {
+  html {
+    /*background-color: green;*/
+  }
+  .horizonal-nav-a {
+    padding: 30px 50px 30px 50px;
+  }
+  .main-container {
+    width: 70%;
+  }
+}
