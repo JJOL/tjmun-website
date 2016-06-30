@@ -141,6 +141,11 @@ Header
   padding: 30px 20px 30px 20px;
 }
 
+.nav-bar li.selected {
+  /*background-color: blue;*/
+}
+
+
 /*
   Main Content
 */
@@ -252,6 +257,10 @@ footer ul li a:hover {
   footer {
     height: auto;
     padding: 10px 0px 10px 0px;
+  }
+  .nav-bar ul li {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
   }
 }
 

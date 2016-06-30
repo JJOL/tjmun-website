@@ -6,11 +6,15 @@
 .tjmun-info {
   margin-top: 20px;
   min-height: 200px;
+  /*border: 1px solid #ccc;*/
 }
 
-.counter-box {
+.counter-box, .tjmun_name-box {
+  /*border: 1px solid #ccc;*/
 }
 .tjmun_name-box {
+  height: 100%;
+
 }
 
 #counter-main {
@@ -21,7 +25,7 @@
   position: absolute;
   top: 50%;
   margin-top: -55px;
-  margin-left: -53px;
+  margin-left: -100px;
   left: 50%;
   color: white;
   font-size: 3em;
@@ -43,23 +47,31 @@
 
 .center-time {
   margin: 0 auto;
+  padding: 10px 0px 10px 0px;
   text-align: center;
   height: 100%;
   display: flex;
   align-items: center;
+  border: 2px solid black;
 }
 
-#counter-rest .time-away {
-  margin-left: 30px;
+#counter-rest .time-label {
+  padding: 0px 15px 0px 15px;
+  border-left: 1px solid #ccc;
+}
+
+#counter-rest .time-label:first-child {
+  border-left: 0;
 }
 
 #slogan {
   font-size: 2em;
   text-align: center;
-
+  box-shadow: 0px 2px 5px #ccc;
 }
 
 #slogan-img {
+  margin-top: 5px;
   min-height: 300px;
 }
 
@@ -112,6 +124,7 @@
   html {
     /*background-color: blue;*/
   }
+  
   .counter-box {
     width: 59%;
     float: left;
