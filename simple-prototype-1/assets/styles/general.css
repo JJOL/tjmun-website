@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  font: bold 1em 'Open Sans', sans-serif;
 }
 
 a {
@@ -76,7 +77,7 @@ Header
 */
 .header {
   position: relative;
-  background-image: url("../img/banner_d.jpg");
+  background-image: url("../img/tj-clear-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -120,7 +121,7 @@ Header
   overflow: hidden;
 }
 .nav-bar {
-  background-color: rgba(0,0,0, 0.7);
+  background-color: rgba(63, 81, 	181, 0.7);
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -128,12 +129,20 @@ Header
 }
 .nav-bar ul li {
   display: inline-block;
-  color: white;
+  color: #c1ee43;
+  color: #d9ff12;
+  color: #f1ff12;
+
+}
+
+.nav-bar ul li.selected {
+  background-color: rgba(255,255,255, 1);
+  color: #555;
 }
 
 .nav-bar ul li:hover {
-  background-color: rgba(255,255,255, 0.9);
-  color: black;
+  background-color: rgba(255,255,255, 1);
+  color: #555;
 }
 
 .horizonal-nav-a {
@@ -141,9 +150,6 @@ Header
   padding: 30px 20px 30px 20px;
 }
 
-.nav-bar li.selected {
-  /*background-color: blue;*/
-}
 
 
 /*
@@ -211,6 +217,10 @@ footer ul li a .icon {
 
 footer ul li a:hover {
   background-color: rgba(0,0,0, 0.5);
+}
+
+footer .policy-footer {
+  text-align: center;
 }
 
 #faceb-link .icon{

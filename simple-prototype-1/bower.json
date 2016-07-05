@@ -1,4 +1,8 @@
 {
   "name": "simple-prototype-1",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "dependencies": {
+    "polymer": "^1.6.0",
+    "webcomponentsjs": "webcomponents.js#^0.7.22"
+  }
 }

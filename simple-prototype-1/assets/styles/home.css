@@ -36,9 +36,19 @@
   height: 100%;
   width: auto;
   will-change: transform;
+
+}
+
+#counter-img.animatable {
   transition: transform 1s;
   -webkit-transition: transform 1s;
 }
+
+#counter-img.rigid {
+  transition: none;
+  -webkit-transition: none;
+}
+
 #counter-rest {
   min-height: 100px;
   display: flex;
@@ -78,6 +88,7 @@
 .letter-box {
   margin-top: 100px;
   text-align: center;
+  color: #555;
 }
 
 .letter-box .paper-out {
@@ -124,7 +135,7 @@
   html {
     /*background-color: blue;*/
   }
-  
+
   .counter-box {
     width: 59%;
     float: left;
