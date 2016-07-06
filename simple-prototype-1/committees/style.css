@@ -48,7 +48,4 @@ h1 {
   Large Desktops
 */
 @media screen and (min-width: 1824px) {
-  .committee-set {
-    margin-right: 100px;
-  }
 }
