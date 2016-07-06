@@ -14,7 +14,6 @@
 }
 .tjmun_name-box {
   height: 100%;
-
 }
 
 #counter-main {
@@ -78,11 +77,16 @@
   font-size: 2em;
   text-align: center;
   box-shadow: 0px 2px 5px #ccc;
+  margin-bottom: 20px;
 }
 
 #slogan-img {
   margin-top: 5px;
   min-height: 300px;
+}
+
+.letter-box h1 {
+  font-size: 2.7em;
 }
 
 .letter-box {
@@ -106,17 +110,34 @@
   padding-bottom: 30px;*/
 }
 
+.letter-element {
+
+}
+
 .letter-box p {
   text-align: left;
-  width: 87%;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: 30px;
+}
+.letter-content {
+  margin: 0 auto;
+  width: 87%;
 }
 
 .letter-box .signature {
+  position: relative;
   margin-top: 30px;
   margin-bottom: 60px;
   /*background-color: black;*/
   height: 180px;
+}
+
+#signature {
+  position: absolute;
+  left: 0px;
+  width: auto;
+  height: 100%;
 }
 
 .letter-box .letter-pic {
@@ -135,7 +156,9 @@
   html {
     /*background-color: blue;*/
   }
-
+  .tjmun_name-box {
+    transform: translateX(-15%);
+  }
   .counter-box {
     width: 59%;
     float: left;
@@ -145,13 +168,22 @@
     width: 39%;
     float: right;
   }
+  .letter-content {
+    width: 77%;
+  }
 }
 
 /*
   Large Desktops
 */
-@media screen and (min-width: 1824px) {
+@media screen and (min-width: 1624px) {
   html {
     /*background-color: green;*/
+  }
+  .tjmun_name-box {
+    transform: translateX(-20%);
+  }
+  .letter-content {
+    width: 62%;
   }
 }
