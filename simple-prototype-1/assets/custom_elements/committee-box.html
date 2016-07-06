@@ -1,0 +1,125 @@
+<link rel="import" href="../libs/bower/polymer/polymer.html">
+
+
+<dom-module id="committee-box">
+    <template>
+        <style>
+            :host {
+              color: #555;
+              width: 100%;
+            }
+
+            #wrapper {
+              padding: 10px 0px 20px 0px;
+            }
+
+
+            .hidden {
+              display: none;
+            }
+            .topic-container ::content > .topicA,
+            .topic-container ::content > .topicB,
+            #chairs-display span {
+              font-weight: normal;
+              max-width: 70%;
+            }
+
+            #title {
+              text-align: center;
+            }
+
+            h2 {
+              display: inline;
+              margin: 0 auto;
+              text-align: center;
+              font-size: 1.7em;
+              border-bottom: 5px solid var(--committee-box-color, #ccc);
+              text-decoration: none;
+            }
+
+            li {
+              list-style: circle;
+            }
+
+            #information {
+              margin-top: 20px;
+            }
+
+            #information * {
+              margin-top: 10px;
+            }
+
+            h4 {
+              margin-left: 5%;
+              font-size: 1.4em;
+            }
+
+            #chairList li,
+            .topic-container ::content > .topicA,
+            .topic-container ::content > .topicB {
+
+              margin-left: 10%;
+            }
+
+            /* Utilities */
+        </style>
+
+        <div id="wrapper">
+
+            <div id="title">
+                <h2>{{ name }}</h2>
+            </div>
+            <div id="information">
+              <div id="chairs-display">
+                <h4>Chairs:</h4>
+                <ul id="chairList">
+                  <!-- <li><span>{{ chaira }}</span></li>
+                  <li><span>{{ chairb }}</span></li>
+                  <li><span>{{ chairc }}</span></li> -->
+                  <template is="dom-repeat" items="{{ chairs }}">
+                    <li><span>{{item}}</span></li>
+                  </template>
+                </ul>
+              </div>
+              <div id="topics">
+                <div class="topic-container">
+                  <h4>Topic A:</h4>
+                  <content select=".topicA"></content>
+                </div>
+                <div id="topicB" class="topic-container" hidden$="{{ hasTopicB }}">
+                  <h4>Topic B:</h4>
+                  <content class="topic-content" select=".topicB"></content>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+          is: 'committee-box',
+          properties: {
+            name: String,
+            chaira: String,
+            chairb: String,
+            chairc: String,
+            chairs: Array,
+            color: {
+              type: String,
+              default: 'blue'
+            },
+            hasTopicB: {
+              type: Boolean,
+              default: true
+            }
+          },
+          ready: function() {
+            this.customStyle['--committee-box-color'] = this.color;
+            if(Polymer.dom(this).children.length == 1)
+              this.$.topicB.classList.add('hidden');
+          }
+        });
+    </script>
+
+</dom-module>

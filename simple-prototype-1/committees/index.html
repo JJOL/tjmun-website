@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/libs/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="../assets/styles/general.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+
+    <script src="/assets/libs/bower/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+    <link rel="import" href="/assets/custom_elements/committee-box.html">
 
     <!-- ****** faviconit.com faviconos ****** -->
   	<link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
@@ -75,7 +79,7 @@
     <!-- Header and Nav -->
       <div class="header">
         <div class="hide">
-          ITJ QRO
+          ITJ MUN QRO
         </div>
         <!-- <div> -->
           <h1 class="logo">TJMUN QRO 2016</h1>
@@ -108,10 +112,196 @@
 
         <h1>TJMUN QRO 2016 Committees</h1>
 
-        <ul>
-          <li>One</li>
-          <li>Two</li>
-        </ul>
+        <main id="committees-container" class="clfix">
+
+          <!-- OAES COMMITTESS STARTS -->
+          <div class="committee-set">
+
+            <h2>OAES COMMITTEES</h2>
+            <ul>
+              <li class="committee-item">
+                <committee-box name="OAS Permanent Council"
+                               chairs='["Mariana Bulle","Sofi Nuñez"]'
+                               color='#1B5E20'>
+                    <div class="topicA">
+                      The role of OAS regarding the contradicting political powers in Venezuela and Brazil
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Inter-American Commission on Human Rights"
+                               chairs='["Mariana Franch","Andrea Mena"]'
+                               color="#2E7D32">
+                    <div class="topicA">
+                      Reform of current drug policies
+                    </div>
+                    <div class="topicB">
+                       Discrimination against Indigenous communities in Mexico and Central America.
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Summit of the Americas"
+                               chairs='["Paulina Marin","Paulina Chavez"]'
+                               color="#388E3C">
+                    <div class="topicA">
+                      Deteriorating economy and financial instability in Latin America affected by current crisis and recession
+                    </div>
+                    <div class="topicB">
+                       Prosperity with Equity: South-South and other stronger Cooperation ties in the Americas
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="OAS Crisis Committee"
+                               chairs='["Marión Juarez","Montserrat Gordillo"]'
+                               color="#43A047">
+                    <div class="topicA">
+                      OAS Special Mission to Mexico
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Inter-American Committee on Sustainable Development"
+                               chairs='["Paulina Gonzalez","Isabel Eguiarte"]'
+                               color="#4CAF50">
+                    <div class="topicA">
+                      Inclusive and quality education in Latin America
+                    </div>
+                    <div class="topicB">
+                       Ensure access to affordable, reliable, sustainable and modern energy for America
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Inter-American Committee on Sustainable Development"
+                               chairs='["Xime Urbiola","Maria Olarte"]'
+                               color="#66BB6A">
+                    <div class="topicA">
+                      The image of a trustworthy government
+                    </div>
+                    <div class="topicB">
+                       Budget distribution for 2017
+                    </div>
+                </committee-box>
+              </li>
+            </ul>
+          </div>
+          <!-- OAES COMMITTESS ENDS -->
+          <!-- UN COMMITTEES STATS -->
+          <div class="committee-set">
+
+            <h2>UN COMMITTEES</h2>
+            <ul>
+              <li class="committee-item">
+                <committee-box name="General Assembly"
+                               chairs='["Daria Pelayo","Guillermo Lomelin"]'
+                               color='#1A237E'>
+                    <div class="topicA">
+                      Transforming Refugee Camps into Sustainable Settlements in the Case of Protracted Displacement
+                    </div>
+                    <div class="topicB">
+                      Fighting Trade of Arms in Central and South America
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Security Council"
+                               chairs='["Ximena Denegre","Pamela Ortiz"]'
+                               color="#283593">
+                    <div class="topicA">
+                      Threats to international peace and increase of tension in Europe due to terrorist acts
+                    </div>
+                    <div class="topicB">
+                       Crisis: The armed conflict in the Central African Republic
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Group of 20"
+                               chairs='["Nicolás Lomelín","Ana Pau Delgado"]'
+                               color="#303F9F">
+                    <div class="topicA">
+                      Combating Insurgencies in the Middle East.
+                    </div>
+                    <div class="topicB">
+                       Distribution of Wealth (Income Inequality).
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="Economic and Social Council"
+                               chairs='["Nicole Llamas","Alejandro Verduzco"]'
+                               color="#3949AB">
+                    <div class="topicA">
+                      Re-establishment of Quality Education systems in post-conflict fragile countries
+                    </div>
+                    <div class="topicB">
+                      Trans-Pacific Partnership agreement and its consequences on economic growth in line with Sustainable Development Goals
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="COP 2030"
+                               chairs='["Fer Esquivel","Ana Badía","Emilio Woltman"]'
+                               color="#3F51B5">
+                    <div class="topicA">
+                      New regulations for climate change due to the state of emergency
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="UN Commission on Sustainable Development"
+                               chairs='["Yunuen Neria","Regina Rabell"]'
+                               color="#5C6BC0">
+                    <div class="topicA">
+                       Create a sustainable economic growth, employment and  “righteous” work for all.
+                    </div>
+                    <div class="topicB">
+                       Corruption in Environmental Governance
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="United Nations Children’s Fund 1"
+                               chairs='[]'
+                               color="#7986CB">
+                    <div class="topicA">
+                       Recruitment of Children into armed groups and gangs in Central Africa
+                    </div>
+                    <div class="topicB">
+                       “Water deficit and sanitation problem for children in Africa as well as India”
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="United Nations Children’s Fund 2"
+                               chairs='["Andrea Chávez","Rodrigo Morones"]'
+                               color="#9FA8DA">
+                    <div class="topicA">
+                       Recruitment of Children into armed groups and gangs in Central Africa
+                    </div>
+                    <div class="topicB">
+                       “Water deficit and sanitation problem for children in Africa as well as India”
+                    </div>
+                </committee-box>
+              </li>
+              <li class="committee-item">
+                <committee-box name="United Nations Children’s Fund 3"
+                               chairs='["Rodrigo Moreno"]'
+                               color="#C5CAE9">
+                    <div class="topicA">
+                       Recruitment of Children into armed groups and gangs in Central Africa
+                    </div>
+                    <div class="topicB">
+                        “Water deficit and sanitation problem for children in Africa as well as India”
+                    </div>
+                </committee-box>
+              </li>
+            </ul>
+          </div>
+          <!-- UN COMMITTEES ENDS -->
+        </main>
 
 
         <!-- Page Content Ends Here -->
