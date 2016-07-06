@@ -12,8 +12,11 @@ h1 {
   margin-bottom: 20px;
 }
 
-.committee-set {
+.committee-set:first-child {
   float: right;
+}
+.committee-set {
+  float: left;
 }
 
 .committee-set h2 {
@@ -38,7 +41,6 @@ h1 {
 @media screen and (min-width: 1224px) {
   .committee-set {
     width: 40%;
-    margin-right: 100px;
   }
 }
 
@@ -46,5 +48,7 @@ h1 {
   Large Desktops
 */
 @media screen and (min-width: 1824px) {
-
+  .committee-set {
+    margin-right: 100px;
+  }
 }
