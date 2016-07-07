@@ -13,10 +13,6 @@
               padding: 10px 0px 20px 0px;
             }
 
-
-            .hidden {
-              display: none;
-            }
             .topic-container ::content > .topicA,
             .topic-container ::content > .topicB,
             #chairs-display span {
@@ -73,9 +69,6 @@
               <div id="chairs-display">
                 <h4>Chairs:</h4>
                 <ul id="chairList">
-                  <!-- <li><span>{{ chaira }}</span></li>
-                  <li><span>{{ chairb }}</span></li>
-                  <li><span>{{ chairc }}</span></li> -->
                   <template is="dom-repeat" items="{{ chairs }}">
                     <li><span>{{item}}</span></li>
                   </template>
@@ -86,7 +79,7 @@
                   <h4>Topic A:</h4>
                   <content select=".topicA"></content>
                 </div>
-                <div id="topicB" class="topic-container" hidden$="{{ hasTopicB }}">
+                <div id="topicB" class="topic-container" hidden="{{ _computeHiddenTopicB() }}">
                   <h4>Topic B:</h4>
                   <content class="topic-content" select=".topicB"></content>
                 </div>
@@ -101,23 +94,17 @@
           is: 'committee-box',
           properties: {
             name: String,
-            chaira: String,
-            chairb: String,
-            chairc: String,
             chairs: Array,
             color: {
               type: String,
-              default: 'blue'
+              value: 'blue'
             },
-            hasTopicB: {
-              type: Boolean,
-              default: true
-            }
+          },
+          _computeHiddenTopicB: function() {
+            return (Polymer.dom(this).children.length == 1);
           },
           ready: function() {
             this.customStyle['--committee-box-color'] = this.color;
-            if(Polymer.dom(this).children.length == 1)
-              this.$.topicB.classList.add('hidden');
           }
         });
     </script>

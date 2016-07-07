@@ -12,9 +12,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-.committee-set:first-child {
-  float: right;
-}
 .committee-set {
   float: left;
 }
@@ -41,6 +38,9 @@ h1 {
 @media screen and (min-width: 1224px) {
   .committee-set {
     width: 40%;
+  }
+  .committee-set:first-child {
+    float: right;
   }
 }
 
