@@ -37,6 +37,11 @@ function compile(ops) {
       });
 
   });
+  if(doJade) {
+    gulp.src(['*.jade', '!template.jade'])
+      .pipe(jade())
+      .pipe(gulp.dest('public'));
+  }
 }
 
 function transfer() {
@@ -55,6 +60,7 @@ gulp.task('css', function() {
 
 gulp.task('build', function() {
   compile({all: true});
+
 });
 
 gulp.task('release', function() {
