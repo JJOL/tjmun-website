@@ -1,0 +1,189 @@
+.time-label {
+  text-align: center;
+  font-weight: bold;
+}
+
+.tjmun-info {
+  margin-top: 20px;
+  min-height: 200px;
+  /*border: 1px solid #ccc;*/
+}
+
+.counter-box, .tjmun_name-box {
+  /*border: 1px solid #ccc;*/
+}
+.tjmun_name-box {
+  height: 100%;
+}
+
+#counter-main {
+  min-height: 300px;
+  position: relative;
+}
+#counter-main .time-label {
+  position: absolute;
+  top: 50%;
+  margin-top: -55px;
+  margin-left: -100px;
+  left: 50%;
+  color: white;
+  font-size: 3em;
+}
+#counter-img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  will-change: transform;
+
+}
+
+#counter-img.animatable {
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+}
+
+#counter-img.rigid {
+  transition: none;
+  -webkit-transition: none;
+}
+
+#counter-rest {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.center-time {
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid black;
+}
+
+#counter-rest .time-label {
+  padding: 0px 15px 0px 15px;
+  border-left: 1px solid #ccc;
+}
+
+#counter-rest .time-label:first-child {
+  border-left: 0;
+}
+
+#slogan {
+  font-size: 2em;
+  text-align: center;
+  box-shadow: 0px 2px 5px #ccc;
+  margin-bottom: 20px;
+}
+
+#slogan-img {
+  margin-top: 5px;
+  min-height: 300px;
+}
+
+.letter-box h1 {
+  font-size: 2.7em;
+}
+
+.letter-box {
+  margin-top: 100px;
+  text-align: center;
+  color: #555;
+}
+
+.letter-box .paper-out {
+  padding-top: 10px;
+}
+
+.letter-title {
+  margin-bottom: 20px;
+}
+
+.letter-box h2 {
+
+/*
+  padding-top: 20px;
+  padding-bottom: 30px;*/
+}
+
+.letter-element {
+
+}
+
+.letter-box p {
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.letter-content {
+  margin: 0 auto;
+  width: 87%;
+}
+
+.letter-box .signature {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  /*background-color: black;*/
+  height: 180px;
+}
+
+#signature {
+  position: absolute;
+  left: 0px;
+  width: auto;
+  height: 100%;
+}
+
+.letter-box .letter-pic {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 768px) {
+}
+
+/*
+  Desktops
+*/
+@media screen and (min-width: 1224px) {
+  html {
+    /*background-color: blue;*/
+  }
+  .tjmun_name-box {
+    transform: translateX(-15%);
+  }
+  .counter-box {
+    width: 59%;
+    float: left;
+
+  }
+  .tjmun_name-box {
+    width: 39%;
+    float: right;
+  }
+  .letter-content {
+    width: 77%;
+  }
+}
+
+/*
+  Large Desktops
+*/
+@media screen and (min-width: 1624px) {
+  html {
+    /*background-color: green;*/
+  }
+  .tjmun_name-box {
+    transform: translateX(-20%);
+  }
+  .letter-content {
+    width: 62%;
+  }
+}

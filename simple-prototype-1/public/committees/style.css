@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+}
+.committee-item {
+  width: 100%;
+  /*background-color: blue;*/
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-bottom: 20px;
+  transition: box-shadow .3s;
+}
+
+.committee-item:hover {
+  box-shadow: 3px 0px 10px #ccc, -3px 0px 10px #ccc;
+}
+
+.committee-set {
+  float: left;
+}
+
+.committee-set h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 1.7em;
+  text-align: center;
+  text-decoration: underline;
+}
+
+
+/*
+  Tablets
+*/
+@media screen and (min-width: 768px) {
+
+}
+
+/*
+  Desktops
+*/
+@media screen and (min-width: 1224px) {
+  .committee-set {
+    width: 40%;
+  }
+  .committee-set:first-child {
+    float: right;
+  }
+}
+
+/*
+  Large Desktops
+*/
+@media screen and (min-width: 1824px) {
+}

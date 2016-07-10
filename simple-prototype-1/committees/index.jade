@@ -1,0 +1,134 @@
+extends ../template.jade
+
+block vars
+  - var title = "Committees | TJMUNQRO 2016"
+  - var description = "Browse and look at each of our Committees from both UN and OAS. This year we include terrorist attacks, development and drugs."
+
+block cHead
+  link(rel="stylesheet", href="style.css")
+  link(rel="import", href="/assets/custom_elements/committee-box.html")
+
+block content
+  h1 TJMUN QRO 2016 Committees
+  main#committees-container.clfix
+      // OAS COMMITTESS STARTS
+      .committee-set
+        h2 OAS COMMITTEES
+        |     
+        ul
+          li.committee-item
+            committee-box(name='OAS Permanent Council', chairs='["Mariana Bulle","Sofi Nuñez"]', color='#1B5E20')
+              .topicA
+                | The role of OAS regarding the contradicting political powers in Venezuela and Brazil
+          |       
+          li.committee-item
+            committee-box(name='Inter-American Commission on Human Rights', chairs='["Mariana Franch","Andrea Mena"]', color='#2E7D32')
+              .topicA
+                | Reform of current drug policies
+              |           
+              .topicB
+                | Discrimination against Indigenous communities in Mexico and Central America.
+          |       
+          li.committee-item
+            committee-box(name='Summit of the Americas', chairs='["Paulina Marin","Paulina Chavez"]', color='#388E3C')
+              .topicA
+                | Deteriorating economy and financial instability in Latin America affected by current crisis and recession
+              |           
+              .topicB
+                | Prosperity with Equity: South-South and other stronger Cooperation ties in the Americas
+          |       
+          li.committee-item
+            committee-box(name='OAS Crisis Committee', chairs='["Marión Juarez","Montserrat Gordillo"]', color='#43A047')
+              .topicA
+                | OAS Special Mission to Mexico
+          |       
+          li.committee-item
+            committee-box(name='Inter-American Committee on Sustainable Development', chairs='["Paulina Gonzalez","Isabel Eguiarte"]', color='#4CAF50')
+              .topicA
+                | Inclusive and quality education in Latin America
+              |           
+              .topicB
+                | Ensure access to affordable, reliable, sustainable and modern energy for America
+          |       
+          li.committee-item
+            committee-box(name='Inter-American Committee on Sustainable Development', chairs='["Xime Urbiola","Maria Olarte"]', color='#66BB6A')
+              .topicA
+                | The image of a trustworthy government
+              |           
+              .topicB
+                | Budget distribution for 2017
+      // OAES COMMITTESS ENDS
+      // UN COMMITTEES STATS
+      .committee-set
+        h2 UN COMMITTEES
+        |     
+        ul
+          li.committee-item
+            committee-box(name='General Assembly', chairs='["Daria Pelayo","Guillermo Lomelin"]', color='#1A237E')
+              .topicA
+                | Transforming Refugee Camps into Sustainable Settlements in the Case of Protracted Displacement
+              |           
+              .topicB
+                | Fighting Trade of Arms in Central and South America
+          |       
+          li.committee-item
+            committee-box(name='Security Council', chairs='["Ximena Denegre","Pamela Ortiz"]', color='#283593')
+              .topicA
+                | Threats to international peace and increase of tension in Europe due to terrorist acts
+              |           
+              .topicB
+                | Crisis: The armed conflict in the Central African Republic
+          |       
+          li.committee-item
+            committee-box(name='Group of 20', chairs='["Nicolás Lomelín","Ana Pau Delgado"]', color='#303F9F')
+              .topicA
+                | Combating Insurgencies in the Middle East.
+              |           
+              .topicB
+                | Distribution of Wealth (Income Inequality).
+          |       
+          li.committee-item
+            committee-box(name='Economic and Social Council', chairs='["Nicole Llamas","Alejandro Verduzco"]', color='#3949AB')
+              .topicA
+                | Re-establishment of Quality Education systems in post-conflict fragile countries
+              |           
+              .topicB
+                | Trans-Pacific Partnership agreement and its consequences on economic growth in line with Sustainable Development Goals
+          |       
+          li.committee-item
+            committee-box(name='COP 2030', chairs='["Fer Esquivel","Ana Badía","Emilio Woltman"]', color='#3F51B5')
+              .topicA
+                | New regulations for climate change due to the state of emergency
+          |       
+          li.committee-item
+            committee-box(name='UN Commission on Sustainable Development', chairs='["Yunuen Neria","Regina Rabell"]', color='#5C6BC0')
+              .topicA
+                | Create a sustainable economic growth, employment and  &ldquo;righteous&rdquo; work for all.
+              |           
+              .topicB
+                | Corruption in Environmental Governance
+          |       
+          li.committee-item
+            committee-box(name='United Nations Children’s Fund 1', chairs='[]', color='#7986CB')
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | &ldquo;Water deficit and sanitation problem for children in Africa as well as India&rdquo;
+          |       
+          li.committee-item
+            committee-box(name='United Nations Children’s Fund 2', chairs='["Andrea Chávez","Rodrigo Morones"]', color='#9FA8DA')
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | &ldquo;Water deficit and sanitation problem for children in Africa as well as India&rdquo;
+          |       
+          li.committee-item
+            committee-box(name='United Nations Children’s Fund 3', chairs='["Rodrigo Moreno"]', color='#C5CAE9')
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | &ldquo;Water deficit and sanitation problem for children in Africa as well as India&rdquo;
+      // UN COMMITTEES ENDS
