@@ -89,19 +89,19 @@ html
         // Main Menu
       nav.large-box.nav-bar
         ul
-          li.selected
+          li(class="#{(page=='home') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/') Home
-          li
+          li(class="#{(page=='about') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/about/') About
-          li
+          li(class="#{(page=='committees') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/committees/') Committees
-          li
+          li(class="#{(page=='timeline') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/timeline/') Timeline
-          li
+          li(class="#{(page=='place') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/place/') Querétaro
-          li
+          li(class="#{(page=='sponsors') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/sponsors/') Sponsors
-          li
+          li(class="#{(page=='contact') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/contact/') Contact
       // Main Page Content
       

@@ -28,7 +28,6 @@ function processTemplate(file, ops) {
       .pipe(jade({pretty: true}))
       //TODO Inject uglify and minify
       .pipe(gulp.dest(end));
-      //.pipe(gulp.dest(file));
     gutil.log('--Finished Jade');
   }
   if(ops.rest || ops.all) {
@@ -59,12 +58,6 @@ function compile(ops) {
       });
       gutil.log('Finished Compiling Templates!');
   });
-  /*if(doJade) {
-    gutil.log('Transfering Jade root files to public!');
-    gulp.src(['*.jade', '!template.jade'])
-      .pipe(jade())
-      .pipe(gulp.dest('public'));
-  }*/
 }
 
 function transfer() {
@@ -99,13 +92,15 @@ gulp.task('browserSync', function() {
     });
     gulp.watch('public/**/*.*', browserSync.reload);
     //gulp.watch(['./**/*.css', './**/*.jade', '!public'], ['build'])
-    gulp.watch(['./**/*.css', './**/*.jade', '!public'], function(event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-      //event.path.split('/', )
-      console.log('Dirname: ' + __dirname);
-      var relativePath = event.path.substring(__dirname.length);
-      console.log('Relative: ' + relativePath);
-      //processTemplate(file, {all: true});
+    // Everything that is a jade file should be rebuilt
+    gulp.watch(['templates/**/*.jade'], ['jade']);
+    // Everything that is note a jade file should be passed
+    gulp.watch(['templates/**/*.*', '!templates/**/*.jade', '!templates/**/*.html'], function(event) {
+      // Get Name Of the Template Page
+      var rel = event.path.substring(__dirname.length+'/templates/'.length);
+      rel = rel.split('/')[0];
+      gutil.log(rel);
+      processTemplate(rel, {rest: true});
     });
 });
 
