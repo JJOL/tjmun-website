@@ -1,0 +1,149 @@
+block vars
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='chrome=1,IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/assets/libs/normalize.css', media='screen', title='no title', charset='utf-8')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Quicksand', rel='stylesheet')
+    // ****** faviconit.com faviconos ******
+    link(rel='shortcut icon', href='/assets/img/favicon/favicon.ico')
+    link(rel='icon', sizes='16x16 32x32 64x64', href='/assets/img/favicon/favicon.ico')
+    link(rel='icon', type='image/png', sizes='196x196', href='/assets/img/favicon/favicon-192.png')
+    link(rel='icon', type='image/png', sizes='160x160', href='/assets/img/favicon/favicon-160.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/assets/img/favicon/favicon-96.png')
+    link(rel='icon', type='image/png', sizes='64x64', href='/assets/img/favicon/favicon-64.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/assets/img/favicon/favicon-32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/assets/img/favicon/favicon-16.png')
+    link(rel='apple-touch-icon', href='/assets/img/favicon/favicon-57.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/assets/img/favicon/favicon-114.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/assets/img/favicon/favicon-72.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/assets/img/favicon/favicon-144.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/assets/img/favicon/favicon-60.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/assets/img/favicon/favicon-120.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/assets/img/favicon/favicon-76.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/assets/img/favicon/favicon-152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/assets/img/favicon/favicon-180.png')
+    meta(name='msapplication-TileColor', content='#FFFFFF')
+    meta(name='msapplication-TileImage', content='/assets/img/favicon/favicon-144.png')
+    meta(name='msapplication-config', content='/assets/img/favicon/browserconfig.xml')
+    // ****** faviconit.com faviconos ******
+    meta(name='description', content='Open invitation to anyone who is willling to assist TJMUNQRO 2016 and participate in a MUN and OAS Experience')
+    meta(name='keywords', content='TJMUNQRO,Invitation,Building,Bridges')
+    
+    // link(rel='author', href='https://plus.google.com/u/0/117813444048711322689/posts')
+    link(rel='canonical', href='https://www.tjmunqro.com')
+    meta(property='og:url', content='https://www.tjmunqro.com')
+    meta(property='og:image', content='https://www.tjmunqro.com/assets/img/social_banner.jpg')
+    meta(property='og:description', content=description)
+    meta(property='og:title', content=title)
+    meta(property='og:site_name', content='TJMUN QRO 2016')
+    meta(property='og:see_also', content='https://www.tjmunqro.com/theme/')
+    meta(name='twitter:card', content='summary')
+    meta(name='twitter:site', content='TJMUN_Queretaro')
+    meta(name='twitter:url', content='https://www.tjmunqro.com')
+    meta(name='twitter:title', content=title)
+    meta(name='twitter:description', content=description)
+    meta(name='twitter:image', content='https://www.tjmunqro.com/assets/img/social_banner.jpg')
+    meta(name='twitter:image:alt', content='TJMUNQRO 2016 Banner')
+    // IF GOOGLE+
+    meta(itemprop='name', content='TJMUN QRO 2016 | Building Bridges')
+    meta(itemprop='description', content=description)
+    meta(itemprop='image', content='https://www.tjmunqro.com/assets/img/social_banner.jpg')
+    meta(itemscope='event')
+    title #{title}
+    link(rel='stylesheet', href='/assets/styles/general.css', media='screen', title='no title', charset='utf-8')
+    block cHead
+  body
+    // Website
+    //
+      <div class="app-drawer">
+      <nav>
+      <ul>
+      <li><a class="horizonal-nav-a" href="/">Home</a></li>
+      <li><a class="horizonal-nav-a" href="/about.html">About</a></li>
+      <li><a class="horizonal-nav-a" href="/committees.html">Committees</a></li>
+      <li><a class="horizonal-nav-a" href="/timeline.html">Timeline</a></li>
+      <li><a class="horizonal-nav-a" href="/place.html">Querétaro</a></li>
+      <li><a class="horizonal-nav-a" href="/sponsors.html">Sponsors</a></li>
+      <li><a class="horizonal-nav-a" href="/contact.html">Contact</a></li>
+      </ul>
+      </nav>
+      </div>
+    .website-container
+      // Header and Nav
+      .header
+        .hide
+          | Instituto Thomas Jefferson Querétaro
+        // <div>
+        h1.logo TJMUN QRO 2016
+        // <img src="/assets/img/tjmun_logoc.png" alt="" />
+        // </div>
+        //
+          <div class="register-box">
+          <a href="#">Register</a>
+          </div>
+        // Main Menu
+      nav.large-box.nav-bar
+        ul
+          li.selected
+            a.horizonal-nav-a(href='/') Home
+          li
+            a.horizonal-nav-a(href='/about/') About
+          li
+            a.horizonal-nav-a(href='/committees/') Committees
+          li
+            a.horizonal-nav-a(href='/timeline/') Timeline
+          li
+            a.horizonal-nav-a(href='/place/') Querétaro
+          li
+            a.horizonal-nav-a(href='/sponsors/') Sponsors
+          li
+            a.horizonal-nav-a(href='/contact/') Contact
+      // Main Page Content
+      
+      
+      .main-container
+        block content
+      
+      
+      
+        
+      .block.centralize-text
+        #help-container.main-container
+          h4
+            | Any 
+            span Doubts?
+          ul.help-options
+            li#top-right
+              a.centralize-text(href='/theme/') Learn more about "Building Bridges"
+            li#top-left
+              a(href='/committees/') What are the topics for this event
+            li#bottom-right
+              a(href='/place/') I want to know more about the place"
+            li#bottom-left
+              a(href='/registration/') I'm fine. I'd like to register
+          h5 Still with Questions?
+          a(href='/contact/') Contact us Please
+      footer.clfix
+        .main-container
+          .logo.footer-logo
+            | TJQRO MUN 2016
+          ul.clfix
+            li
+              a#faceb-link(href='https://www.facebook.com/tjface.queretaro?fref=ts')
+                span Facebook
+                .icon
+            li
+              a#tweet-link(href='https://twitter.com/TJMUN_Queretaro')
+                span Twitter
+                .icon
+            li
+              a#insta-link(href='https://www.instagram.com/tjmunqro/')
+                span Instagram
+                .icon
+        .policy-footer(style='text-align: right;')
+          span TJMUN QRO © 2016 - Private Policy
