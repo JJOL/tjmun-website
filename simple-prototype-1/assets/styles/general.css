@@ -143,11 +143,13 @@ Header
 .nav-bar ul li.selected {
   background-color: rgba(255,255,255, 1);
   color: #555;
+  text-shadow: 5px 0px 10px #ccc;
 }
 
 .nav-bar ul li:hover {
   background-color: rgba(255,255,255, 1);
   color: #555;
+  text-shadow: 5px 0px 10px #ccc;
 }
 
 .horizonal-nav-a {
@@ -371,6 +373,7 @@ footer .policy-footer {
   #help-container a:hover {
     font-weight: bold;
     background-color: rgba(255, 255, 255, 0.275);
+
   }
   #top-left {
     border-right: 1px solid #555;
