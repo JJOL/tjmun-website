@@ -104,6 +104,8 @@ gulp.task('browserSync', function() {
     });
 });
 
+gulp.task('run', ['build', 'browserSync']);
+
 gulp.task('clean', function() {
   gutil.log('Cleaning...');
   // Remove everything in Public/
