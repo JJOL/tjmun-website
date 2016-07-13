@@ -1,6 +1,10 @@
 h1 {
     text-align: center;
 }
+
+ul {
+  width: 100%;
+}
 .committee-item {
   width: 100%;
   border: 1px solid #ccc;
@@ -18,6 +22,7 @@ h1 {
 
 .committee-set {
   float: left;
+  width: 100%;
 }
 
 .committee-set h2 {
@@ -26,6 +31,17 @@ h1 {
   font-size: 1.7em;
   text-align: center;
   text-decoration: underline;
+}
+
+#pageTitle {
+  color: #1a5880;
+  border: 2px solid #1a5880;
+  border-radius: 0px 20px 0px 20px;
+  padding-left: 10%;
+  background-image: url("/assets/img/about-icon.jpg");
+  background-repeat: no-repeat;
+  background-size: 140px 140px;
+  background-position: left 20%;
 }
 
 

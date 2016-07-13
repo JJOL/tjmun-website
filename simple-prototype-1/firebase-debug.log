@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\JJOL\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.0.3
+[debug] Platform:     win32
+[debug] Node Version: v4.4.7
+[debug] Time:         Sun Jul 10 2016 22:25:08 GMT-0500 (Hora de verano central (México))
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: C:\Users\JJOL\Documents\TJMUN\tjmun-website\simple-prototype-1
+[info] Public Directory: public/
+[info] 
+[info] Server listening at: http://localhost:5000

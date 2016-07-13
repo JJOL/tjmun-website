@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     gutil = require('gulp-util'),
     fs = require('fs'),
     jade = require('gulp-jade'),
     browserSync = require('browser-sync');
 
-var pages = ["about", "committees", "contact", "place", "sponsors", "timeline",
+const pages = ["about", "committees", "contact", "place", "sponsors", "timeline",
               "theme"];
 /* processTemplate(path_name_of_template, options_of_file_types)
  * Take Everything inside the template folder,

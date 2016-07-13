@@ -1,5 +1,6 @@
 <link rel="import" href="../libs/bower/polymer/polymer.html">
-
+<link rel="import" href="../libs/bower/iron-icon/iron-icon.html">
+<link rel="import" href="../libs/bower/iron-icons/iron-icons.html">
 
 <dom-module id="committee-box">
     <template>
@@ -11,6 +12,36 @@
 
             #wrapper {
               padding: 10px 0px 20px 0px;
+              position: relative;
+              overflow: hidden;
+              height: 400px;
+              width: 100%;
+            }
+
+            .slide {
+              position: absolute;
+              transition: transform 1s;
+              height: 100%;
+              right: 0;
+              left: 0;
+              width: 100%;
+            }
+
+            #presentationLayer {
+              transform: translateX(-100%);
+            }
+
+            #presentationLayer.in {
+              transform: translateX(0);
+            }
+
+            #summaryLayer {
+              width: 100%;
+              transform: translateX(100%);
+              overflow-y: scroll;
+            }
+            #summaryLayer.in {
+              transform: translateX(0);
             }
 
             .topic-container ::content > .topicA,
@@ -57,35 +88,96 @@
               margin-left: 10%;
             }
 
+            #toggleButton {
+              width: 56px;
+              height: 56px;
+              background-color:  var(--committee-box-color, #ccc);
+              border-radius: 50%;
+              position: absolute;
+              bottom: 20px;
+              right: 20px;
+              transition: box-shadow 0.3s;
+            }
+
+            #toggleButton:hover {
+              box-shadow: 5px 5px 10px #ccc;
+              cursor: pointer;
+            }
+
+            #manyContent {
+              height: 1400px;
+              width: 100%;
+
+            }
+
             /* Utilities */
+
+            .fit {
+              position: absolute;
+              margin: auto;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              top: 0;
+              color: white;
+            }
         </style>
 
         <div id="wrapper">
-
+          <div id="presentationLayer" class="slide in">
+              <div id="title">
+                  <h2>{{ name }}</h2>
+              </div>
+              <div id="information">
+                <div id="chairs-display">
+                  <h4>Chairs:</h4>
+                  <ul id="chairList">
+                    <template is="dom-repeat" items="{{ chairs }}">
+                      <li><span>{{item}}</span></li>
+                    </template>
+                  </ul>
+                </div>
+                <div id="topics">
+                  <div class="topic-container">
+                    <h4>Topic A:</h4>
+                    <content select=".topicA"></content>
+                  </div>
+                  <div id="topicB" class="topic-container" hidden="{{ _computeHiddenTopicB() }}">
+                    <h4>Topic B:</h4>
+                    <content class="topic-content" select=".topicB"></content>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div id="summaryLayer" class="slide">
             <div id="title">
-                <h2>{{ name }}</h2>
+                <h2>{{ name }}<br>Summary</h2>
             </div>
-            <div id="information">
-              <div id="chairs-display">
-                <h4>Chairs:</h4>
-                <ul id="chairList">
-                  <template is="dom-repeat" items="{{ chairs }}">
-                    <li><span>{{item}}</span></li>
-                  </template>
-                </ul>
-              </div>
-              <div id="topics">
-                <div class="topic-container">
-                  <h4>Topic A:</h4>
-                  <content select=".topicA"></content>
-                </div>
-                <div id="topicB" class="topic-container" hidden="{{ _computeHiddenTopicB() }}">
-                  <h4>Topic B:</h4>
-                  <content class="topic-content" select=".topicB"></content>
-                </div>
-              </div>
+            <div id="manyContent">
             </div>
-
+            ThingOne
+            <br>
+            ThingOne
+            <br>
+            ThingOne
+            <br>
+            ThingOne
+            <br>
+            ThingOne
+            <br>
+              <content class="summary">
+              </content>
+          </div>
+          <div id="toggleButton" on-click="toggleView">
+            <iron-icon id="summaryBtn"
+                       class="fit"
+                       icon="icons:arrow-forward"
+                       hidden="{{_isInView(view, 0)}}"></iron-icon>
+           <iron-icon id="returnBtn"
+                      class="fit"
+                      icon="icons:arrow-back"
+                      hidden="{{_isInView(view, 1)}}"></iron-icon>
+          </div>
         </div>
     </template>
 
@@ -99,12 +191,50 @@
               type: String,
               value: 'blue'
             },
+            view: {
+              type: Number,
+              value: 1
+            },
+            canSlide: Boolean
+
           },
           _computeHiddenTopicB: function() {
-            return (Polymer.dom(this).children.length == 1);
+            // If Array of Elements does not contain an element with className of topicB, remove topicB cotainer
+            return (Polymer.dom(this).children
+                                        .map((item) => item.className )
+                                        .indexOf('topicB') === -1);
+          },
+          _isInView: function(current, expected) {
+            return current == expected;
           },
           ready: function() {
             this.customStyle['--committee-box-color'] = this.color;
+            this.canSlide = true;
+          },
+          toggleView: function() {
+            if(this.canSlide) {
+              this.canSlide = false;
+              this.view = (this.view == 0) ? 1 : 0;
+              this._shiftView();
+              this.$.toggleButton.classList.add('toLeft');
+              setTimeout(this._resetCanSlide.bind(this), 1000);
+            }
+          },
+          _resetCanSlide: function() {
+            this.canSlide = true;
+          },
+          _shiftView: function() {
+            this.$.summaryLayer.classList.add('in');
+            this.$.presentationLayer.classList.remove('in');
+            if (this.view == 0) {
+              // Push from the left
+              this.$.summaryLayer.classList.add('in');
+              this.$.presentationLayer.classList.remove('in');
+            } else {
+              // Push from the right
+              this.$.summaryLayer.classList.remove('in');
+              this.$.presentationLayer.classList.add('in');
+            }
           }
         });
     </script>
