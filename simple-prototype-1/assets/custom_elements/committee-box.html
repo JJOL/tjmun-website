@@ -200,9 +200,15 @@
           },
           _computeHiddenTopicB: function() {
             // If Array of Elements does not contain an element with className of topicB, remove topicB cotainer
-            return (Polymer.dom(this).children
-                                        .map((item) => item.className )
-                                        .indexOf('topicB') === -1);
+            var childs = Polymer.dom(this).children.
+              map(function(item) {
+                return item.className;
+              });
+            for (var i = 0; i < childs.length; i++) {
+              if (childs[i] === 'topicB')
+                return false;
+            }
+            return true;
           },
           _isInView: function(current, expected) {
             return current == expected;
