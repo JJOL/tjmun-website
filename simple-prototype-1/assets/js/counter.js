@@ -90,6 +90,7 @@
 
     // Rotate Image
     imgEl.style.transform = "rotateZ("+ degs +"deg)";
+    imgEl.style['-webkit-transform'] = "rotateZ("+ degs +"deg)";
 
     secs--;
     if(secs <= -1) {

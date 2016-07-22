@@ -2,7 +2,9 @@ const gulp = require('gulp'),
     gutil = require('gulp-util'),
     fs = require('fs'),
     jade = require('gulp-jade'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    autoprefixer = require('autoprefixer'),
+    postCss = require('gulp-postcss');
 
 const pages = ["about", "committees", "contact", "place", "sponsors", "timeline",
               "theme"];
@@ -12,6 +14,11 @@ const pages = ["about", "committees", "contact", "place", "sponsors", "timeline"
  * and output it into the public/template folder
  * If the template is 'home', put in public_root
 */
+
+const cssProcessors = [
+  autoprefixer({browsers: ['last 3 version']})
+];
+
 function processTemplate(file, ops) {
   gutil.log('Going To Process content in ' + file);
 
@@ -32,10 +39,14 @@ function processTemplate(file, ops) {
   }
   if(ops.rest || ops.all) {
     gutil.log('--Doing Rest...');
-    gulp.src([start+'/*.*', '!'+start+'/*.html', '!'+start+'/*.jade'])
+    gulp.src([start+'/*.*', '!'+start+'/*.css', '!'+start+'/*.jade'])
     //TODO Inject uglify and minify
       .pipe(gulp.dest(end));
+    gulp.src([start+'/*.css'])
+      .pipe(postCss(cssProcessors))
+      .pipe(gulp.dest(end));
     gutil.log('--Finished Rest');
+
   }
 }
 
@@ -62,7 +73,10 @@ function compile(ops) {
 
 function transfer() {
   gutil.log('Transfering Assets...');
-  gulp.src('assets/**/*.*')
+  gulp.src(['assets/**/*.*', '!assets/**/*.css'])
+    .pipe(gulp.dest('public/assets'));
+  gulp.src(['assets/**/*.css'])
+    .pipe(postCss(cssProcessors))
     .pipe(gulp.dest('public/assets'));
 }
 
