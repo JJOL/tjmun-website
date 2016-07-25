@@ -4,8 +4,23 @@ const gulp = require('gulp'),
     jade = require('gulp-jade'),
     browserSync = require('browser-sync');
 
+/*
+  - Jade Templates en templates/...
+  - Css En Templates/...
+  - Tenemos Css en assets/styles/...
+  - Process Css en css pipeline
+  - Assets/js-customelements
+*/
+
+
 const pages = ["about", "committees", "contact", "place", "sponsors", "timeline",
               "theme"];
+
+const routes = {
+  templates: [__dirname + '']
+  assets: [__dirname + ''],
+  release: ['']
+}
 /* processTemplate(path_name_of_template, options_of_file_types)
  * Take Everything inside the template folder,
  * process everything (jade, uglify, minify, etc),
@@ -102,6 +117,7 @@ gulp.task('browserSync', function() {
       gutil.log(rel);
       processTemplate(rel, {rest: true});
     });
+    gulp.watch(routes.assets)
 });
 
 gulp.task('run', ['build', 'browserSync']);
