@@ -39,7 +39,9 @@
 }
 
 #counter-img.animatable {
+  transition: -webkit-transform 1s;
   transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
   -webkit-transition: transform 1s;
 }
 
@@ -50,8 +52,12 @@
 
 #counter-rest {
   min-height: 100px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .center-time {
@@ -59,8 +65,12 @@
   padding: 10px 0px 10px 0px;
   text-align: center;
   height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 2px solid black;
 }
 
@@ -157,7 +167,9 @@
     /*background-color: blue;*/
   }
   .tjmun_name-box {
-    transform: translateX(-15%);
+    -webkit-transform: translateX(-15%);
+        -ms-transform: translateX(-15%);
+            transform: translateX(-15%);
   }
   .counter-box {
     width: 59%;
@@ -181,7 +193,9 @@
     /*background-color: green;*/
   }
   .tjmun_name-box {
-    transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+            transform: translateX(-20%);
   }
   .letter-content {
     width: 62%;

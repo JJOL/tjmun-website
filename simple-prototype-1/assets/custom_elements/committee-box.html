@@ -21,6 +21,7 @@
             .slide {
               position: absolute;
               transition: transform 1s;
+              transition: -webkit-transform 1s;
               height: 100%;
               right: 0;
               left: 0;
@@ -29,19 +30,23 @@
 
             #presentationLayer {
               transform: translateX(-100%);
+              -webkit-transform: translateX(-100%);
             }
 
             #presentationLayer.in {
               transform: translateX(0);
+              -webkit-transform: translateX(0);
             }
 
             #summaryLayer {
               width: 100%;
               transform: translateX(100%);
+              -webkit-transform: translateX(100%);
               overflow-y: scroll;
             }
             #summaryLayer.in {
               transform: translateX(0);
+              -webkit-transform: translateX(0);
             }
 
             .topic-container ::content > .topicA,
@@ -127,6 +132,7 @@
           <div id="presentationLayer" class="slide in">
               <div id="title">
                   <h2>{{ name }}</h2>
+                  <content select="h1"></content>
               </div>
               <div id="information">
                 <div id="chairs-display">

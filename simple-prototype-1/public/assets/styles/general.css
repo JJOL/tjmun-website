@@ -70,7 +70,9 @@ ul {
   top: 0px;
   height: 100%;
   background-color: white;
-  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   z-index: 9;
 }
 
@@ -399,8 +401,12 @@ footer .policy-footer {
   }
 
   footer .main-container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .footer-logo {
