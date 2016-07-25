@@ -6,6 +6,23 @@ block vars
   - var page = 'contact'
 
 block cHead
+  link(rel="stylesheet", href="style.css")
 
 block content
   h1#pageTitle Contact Us
+
+
+  p
+    | If you have any special doubts or anything for the style I would highly suggest to get in touch with us by sending us an e-mail to either of the following:
+
+  #contact-info-container
+    .contact-info.clfix
+      .field E-Mail:
+      .value tjmun@itjqro.edu.mx
+      .value afragoso@itjqro.edu.mx
+      
+  img(src="/assets/img/tjmun_welcoming-previous_year.jpg")
+    //.contact-info
+    //  .field Phone Number:
+    //  .value.phoneNumber (+52)4422265527
+      
