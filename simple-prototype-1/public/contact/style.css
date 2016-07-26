@@ -1,0 +1,27 @@
+p {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 512px;
+}
+
+#contact-info-container {
+  text-align: center;
+}
+
+.contact-info {
+  background-color: red;
+  padding: 10px;
+  display: inline-block;
+  max-width: 512px;
+  margin: 0 auto;
+}
+
+.field {
+  float: left;
+  height: 100%;
+  background-color: yellow;
+}
+.value {
+  float: right;
+  clear: right;
+}
