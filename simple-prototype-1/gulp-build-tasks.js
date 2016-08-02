@@ -153,15 +153,13 @@ gulp.task('watch-all', function() {
 function _getRelPath(cb) {
   //TODO CHANGE SYNTAXIS TO AN IMPERATIVE FUNCTION
   return function(event) {
-      var dest = __dirname+'/test/release';
-
       // Start From App Section ('Assets/Templates')
       var relativePath = event.path.slice(__dirname.length+1); // +1 To get rid of the last slash '/' as well
       return cb(relativePath);
   }
 }
 
-// Main Taks
+// Main Tasks
 
 gulp.task('run', ['all-compile', 'browserSync', 'watch-all']);
 
