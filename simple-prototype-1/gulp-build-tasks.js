@@ -1,5 +1,4 @@
 module.exports = function() {
-
 // Gulp File Starts Here ********************/
 
 // Dependencies
@@ -48,6 +47,8 @@ function doJade(path, dest) {
 
 function doCss(path, dest) {
   gutil.log('Starting to process CSS files');
+  gutil.log('SRC: "' + path + '"');
+  gutil.log('DEST: "' + dest + '"');
   gulp.src(path)
     .pipe(postCss(cssProcessors))
     .pipe(gulp.dest(dest));
@@ -125,7 +126,7 @@ gulp.task('watch-all', function() {
     doJade(src, dest);
   }));
 
-
+        
   // Everything in Css   -  Files are done separately
   gulp.watch(["templates/**/*.css", "assets/**/*.css"], _getRelPath((path) => {
     gutil.log("Path to css file: " + path);

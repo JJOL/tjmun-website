@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font: bold 1em 'Open Sans', sans-serif;
+
 }
 
 a {
@@ -50,6 +51,14 @@ ul {
 .member-pic {
   margin: 0 auto;
   width: 250px;
+}
+
+.member-pic-caption {
+  width: 250px;
+  position: absolute;
+  background-color: red;
+  border-radius: 25px;
+  height: 250px;
 }
 
 .green-box {
@@ -168,6 +177,7 @@ Header
 .main-container {
   width: 100%;
   margin: 0 auto;
+  color: #555;
 }
 
 #pageTitle {
@@ -181,6 +191,9 @@ Header
   background-position: left 20%;
 }
 
+.image-title {
+  font-size: .5em;
+}
 
 .block {
   /*background: #2cb5e8;
