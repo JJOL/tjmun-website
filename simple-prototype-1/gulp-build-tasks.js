@@ -32,6 +32,52 @@ const config = {
   uglyRelease: false
 }
 
+function warn() {
+  gutil.log("![WARNING]!  ->  Process("
+    + operation
+    + ") - Message: "
+    + message
+  );
+}
+
+function addExt(obj, ext) {
+  if(typeof obj == 'object') {
+    gutil.log("Is An Array");
+    return obj.map((val) => {return val + ext;});
+  }
+  gutil.log("Is A String");
+  return obj + ext;
+}
+
+// Test
+
+if(typeof addExt(['dsadasd', 'lol'], 'jade') == 'object')
+  gutil.log("Add Ext Returns Right Type")
+else {
+  gutil.log(typeof addExt(['dsadasd', 'lol'], 'jade'));
+  throw new Error("addExt doesnt work!")
+}
+
+function getSourceFromTemplate(path, type) {
+  var pathParts = path.split('\\');
+  if(pathParts.length > 1) {
+    gutil.log('File is a template file');
+    if(pathParts[0] == 'home') {
+      // Home page should be sent differently
+      return ["templates/home/*." + type];
+      return addExt(["templates/home/*."], type);
+    } else {
+      var templateName = pathParts[0];
+      // Anything else compile and send to release root
+      return addExt(["templates/**/" + templateName + "/*."], type);
+    }
+  } else {
+    // A base file so we should update every jade file
+    gutil.log('File is a base file');
+    return addExt(["templates/home/*.", "templates/**/*.", "!templates/*."], type);
+  }
+}
+
 const cssProcessors = [
   autoprefixer({browsers: ['last 3 version']})
 ];
@@ -39,9 +85,14 @@ const cssProcessors = [
 
 function doJade(path, dest) {
   gutil.log('Starting to process Jade files');
-  gulp.src(path)
-    .pipe(jade({pretty: !config.uglyRelease}))
-    .pipe(gulp.dest(dest));
+  try {
+    gulp.src(path)
+      .pipe(jade({pretty: !config.uglyRelease}))
+      .pipe(gulp.dest(dest));
+  } catch(e) {
+    warn("doJade", "Couldn't Process File '" + path + "' into " + dest);
+  }
+
   gutil.log('Jade Files Processed!');
 }
 
@@ -80,7 +131,14 @@ gulp.task('all-assets', function() {
   doAssets(src, dest);
 });
 
-gulp.task('all-compile', ['all-jade', 'all-css', 'all-assets']);
+gulp.task('all-template-files', function() {
+  gutil.log('Doing Template Files!');
+  var src= ["templates/**/*.*", "!templates/**/*.css", "!templates/**/*.jade"],
+      dest = "public";
+  doAssets(src, dest);
+});
+
+gulp.task('all-compile', ['all-jade', 'all-css', 'all-assets', 'all-template-files']);
 
 gulp.task('browserSync', function() {
     browserSync.init({
@@ -103,30 +161,30 @@ gulp.task('watch-all', function() {
 
     gutil.log('Detected Change in Jade Files!!!');
     path = path.substring("templates/".length, path.length);
-    var src,
+    var src = getSourceFromTemplate(path, "jade"),
         dest = "public";
 
-    var pathParts = path.split('\\');
-
-    if(pathParts.length > 1) {
-      gutil.log('File is a template file');
-      if(pathParts[0] == 'home') {
-        // Home page should be sent differently
-        src = ["templates/home/*.jade"];
-      } else {
-        var templateName = pathParts[0];
-        // Anything else compile and send to release root
-        src = ["templates/**/" + templateName + "/*.jade"];
-      }
-    } else {
-      // A base file so we should update every jade file
-      gutil.log('File is a base file');
-      src = ["templates/home/*.jade", "templates/**/*.jade", "!templates/*.jade"];
-    }
+    // var pathParts = path.split('\\');
+    //
+    // if(pathParts.length > 1) {
+    //   gutil.log('File is a template file');
+    //   if(pathParts[0] == 'home') {
+    //     // Home page should be sent differently
+    //     src = ["templates/home/*.jade"];
+    //   } else {
+    //     var templateName = pathParts[0];
+    //     // Anything else compile and send to release root
+    //     src = ["templates/**/" + templateName + "/*.jade"];
+    //   }
+    // } else {
+    //   // A base file so we should update every jade file
+    //   gutil.log('File is a base file');
+    //   src = ["templates/home/*.jade", "templates/**/*.jade", "!templates/*.jade"];
+    // }
     doJade(src, dest);
   }));
 
-        
+
   // Everything in Css   -  Files are done separately
   gulp.watch(["templates/**/*.css", "assets/**/*.css"], _getRelPath((path) => {
     gutil.log("Path to css file: " + path);
@@ -135,6 +193,13 @@ gulp.task('watch-all', function() {
     var src = pathParts[0] + "/**/*.css"
         dest = (pathParts[0] == 'assets') ? "public/assets" : "public";
     doCss(src, dest);
+  }));
+
+  gulp.watch(["templates/**/*.*", "!templates/**/*.css", "!templates/**/*.jade"], _getRelPath((path) => {
+    var src = getSourceFromTemplate(path, "*"),
+        dest = "public";
+    src.push('!templates/**/*.jade', '!templates/**/*.css');
+    doAssets(src, dest);
   }));
 
   // Everythin that is Assets   - Process separately

@@ -1,0 +1,21 @@
+.register-button {
+  border-radius: 15px;
+  border: 2px solid black;
+  background-color: red;
+}
+
+.register-button-enabled {
+  background-color: red;
+}
+.register-button-enabled:hover {
+  
+}
+
+.register-button-disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.red {
+  color: red;
+}
