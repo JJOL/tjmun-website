@@ -23,9 +23,10 @@
               transition: transform 1s;
               transition: -webkit-transform 1s;
               height: 100%;
-              right: 0;
-              left: 0;
+              right: 45px;
+              left: 15px;
               width: 100%;
+
             }
 
             #presentationLayer {
@@ -39,14 +40,25 @@
             }
 
             #summaryLayer {
-              width: 100%;
+              width: 97%;
+
               transform: translateX(100%);
               -webkit-transform: translateX(100%);
               overflow-y: scroll;
             }
+            #summaryLayer #title {
+              margin-bottom: 30px;
+            }
+            #summaryLayer ::content > .summary {
+              width: 85%;
+              margin: 0 auto;
+            }
+            #summaryLayer ::content > .summary h5 {
+              text-decoration: underline;
+            }
             #summaryLayer.in {
-              transform: translateX(0);
-              -webkit-transform: translateX(0);
+              transform: translateX(-10px);
+              -webkit-transform: translateX(-10px);
             }
 
             .topic-container ::content > .topicA,
@@ -86,6 +98,10 @@
               font-size: 1.4em;
             }
 
+            #summaryLayer ::content > .summary {
+              visibility: 0;
+            }
+
             #chairList li,
             .topic-container ::content > .topicA,
             .topic-container ::content > .topicB {
@@ -109,10 +125,20 @@
               cursor: pointer;
             }
 
-            #manyContent {
-              height: 1400px;
-              width: 100%;
+            #downloadButtonWrapper {
+              width: 56px;
+              height: 56px;
+              background-color:  var(--committee-box-color, #ccc);
+              border-radius: 50%;
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+              transition: box-shadow 0.3s;
+            }
 
+            #downloadButtonWrapper:hover {
+              box-shadow: 5px 5px 10px #ccc;
+              cursor: pointer;
             }
 
             /* Utilities */
@@ -159,20 +185,8 @@
             <div id="title">
                 <h2>{{ name }}<br>Summary</h2>
             </div>
-            <div id="manyContent">
-            </div>
-            ThingOne
-            <br>
-            ThingOne
-            <br>
-            ThingOne
-            <br>
-            ThingOne
-            <br>
-            ThingOne
-            <br>
-              <content class="summary">
-              </content>
+            <content select=".summary">
+            </content>
           </div>
           <div id="toggleButton" on-click="toggleView">
             <iron-icon id="summaryBtn"
@@ -184,6 +198,14 @@
                       icon="icons:arrow-back"
                       hidden="{{_isInView(view, 1)}}"></iron-icon>
           </div>
+          <a href="{{_sfilePath()}}" target="_blank">
+            <div id="downloadButtonWrapper" hidden="{{_isInView(view, 1)}}">
+
+              <iron-icon id="downloadBtn"
+                         class="fit"
+                         icon="icons:description"></iron-icon>
+            </div>
+          </a>
         </div>
     </template>
 
@@ -193,6 +215,7 @@
           properties: {
             name: String,
             chairs: Array,
+            fname: String,
             color: {
               type: String,
               value: 'blue'
@@ -218,6 +241,9 @@
           },
           _isInView: function(current, expected) {
             return current == expected;
+          },
+          _sfilePath: function() {
+            return "/assets/csummaries/" + this.fname + ".pdf";
           },
           ready: function() {
             this.customStyle['--committee-box-color'] = this.color;

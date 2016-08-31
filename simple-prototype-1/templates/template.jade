@@ -57,7 +57,7 @@ html
     title #{title}
     link(rel='stylesheet', href='/assets/styles/general.css', media='screen', title='no title', charset='utf-8')
     block cHead
-  body
+    body
     // Website
     //
       <div class="app-drawer">
@@ -74,6 +74,7 @@ html
       </nav>
       </div>
     .website-container
+      #toast
       // Header and Nav
       .header
         .hide
@@ -123,7 +124,7 @@ html
             li#top-left
               a(href='/committees/') What are the topics for this event
             li#bottom-right
-              a(href='/place/') I want to know more about the place"
+              a(href='/place/') I want to know more about the place
             li#bottom-left
               a(href='/registration/') I'm fine. I'd like to register
           h5 Still with Questions?
@@ -147,3 +148,8 @@ html
                 .icon
         .policy-footer(style='text-align: right;')
           span TJMUN QRO © 2016 - Private Policy
+          
+    script(src="/assets/js/webutils.js")
+          
+
+    

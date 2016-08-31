@@ -7,6 +7,9 @@
 .register-button-enabled {
   background-color: red;
 }
+.register-button-enabled:hover {
+  
+}
 
 .register-button-disabled {
   background-color: gray;

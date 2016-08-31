@@ -1,25 +1,114 @@
-// Utils
-function equalsInLowerCase(val, expect) {
-  return val.toLowerCase() == expect;
-}
+var APP = APP || {};
 
-function getValidator(e_role) {
-  return function() {
-    return equalsInLowerCase(this.role, e_role);
+(function(exports){
+  var Provider = exports.Provider = function(DB, onLoaded) {
+    this._dbRecord = {};
+    this._committees = [];
+    this._takenRecord = {};
+    DB.get(DB.to('countries'))
+    .then(function(snapshot) {
+      committees = Object.keys(snapshot);
+      onLoaded();
+    }, function(err) {
+      //TODO Handle Not Loaded Erro
+    });
   }
-}
+  Provider.prototype.checkCountryTaken = function(committee, country) {
+    if(has(this._takenRecord, committee) && has(this._takenRecord[committee], country)) {
+      //TODO Country Already Taken
+    }
+    if(has(this._dbRecord, committee) && has(this._dbRecord, country)) {
+      if(this._dbRecord[committee][country].isTaken) {
+        //TODO Country Already Taken
+      } else {
+        //TODO Country Not Taken! Return Success
+      }
+    } else {
+      //TODO Crash Report Country Not FOUND!
+    }
+  }
+  Provider.prototype.takeCountryOfDelegate = function(delegate) {
+    this._takenRecord[delegate.munCommittee][delegate.munCountry] = { taker: delegate.fullName };
+  }
+  Provider.prototype.un = function(delegate) {
+    this._takenRecord[delegate.munCommittee][delegate.munCountry] = null;
+  }
 
-function setObj(dest, src) {
-  Object.keys(src).forEach(function(key) {
-    dest[key] = src[key];
-  });
-}
+})(APP);
 
-function setArr(dest, src) {
-  _.each(src, function(item) {
-    dest.push(item);
-  });
-}
+
+
+
+var CommitteeProvider = (function() {
+
+  var committees = Object.keys(DB.get(DB.to('countries')));
+
+  function getCommittees() {
+    return committees;
+  }
+
+  function getCountries(committee) {
+    return DB.get(DB.to('countries').to(committee));
+  }
+
+  function takeCountry(committee, country) {
+
+  }
+
+  return {
+      getCommittees: getCommittees,
+      getCountries: getCountries
+  };
+})();
+
+var Book = (function(){
+
+  var registeredManager = null;
+
+  function registerDelegate(delegate) {
+    if(!registerManager)
+      return result(false, "There is not a Valid Manager Registered!");
+    var result = verifyDelegate(delegate);
+    if(!result.ok())
+      return result;
+
+    regDelegates.push(delegate);
+  }
+
+  function save() {
+    if(errors) {
+      reset();
+      return result(false, "An Error Occured!");
+    }
+    if(regDelegates.length < 1) {
+      reset();
+      return result(false, "You don't have any Delegate Registered!");
+    }
+
+    DB.put(DB.to('managers').to(manager.fullName), manager);
+    _.each(regDelegates, function(delegate) {
+      DB.put(DB.to('delegates').to(manager.fullName).to(delegate.name), delegate);
+      DB.put(DB.to('countries_taken').to(delegate.munCommittee).to(delegate.munCountry), {delegate: delegate.fullName, manager: manager.fullName});
+      DB.put(DB.to('countries').to(delegate.munCommittee).to(delegate.munCountry), false);
+    });
+
+  }
+  function reset() {
+    clearArr(regDelegates);
+    registeredManager = null;
+  }
+
+  return {
+    track: track,
+    untrack: untrack,
+    verifyManager: verifyManager
+    verifyDelegate: verifyDelegate
+    registerManager: registerManager
+    registerDelegate: registerDelegate
+    save: save,
+    reset: reset
+  };
+})();
 /* App
 - initDatabaseConnection
 - loadModels - and changes
@@ -243,6 +332,18 @@ function printDelegate(delegate) {
 
 function registerManager(manager, delegates) {
   RegisterService.register(getTeacherManager(manager, delegates), delegates);
+  Book.registerManager(getTeacherManager(manager, delegates));
+  _.each(delegates, function(delegate) {
+    var sdel = getSimpleDelegate(delegate);
+    Book.registerDelegate(sdel);
+  });
+
+  var result = Book.save();
+  if(result.ok()) {
+    alert("Operation Completed Successfully");
+  } else {
+    vmRApp.displayRegisterError(result.getError().msg);
+  }
 
 }
 function registerStudent(manager, delegates) {
@@ -262,7 +363,7 @@ var vmRApp = new Vue({
     countries: {}
     err: {
       exists: false,
-      msg: ''
+      list: []
     }
   },
   computed: {
@@ -274,6 +375,9 @@ var vmRApp = new Vue({
     },
     formIsDisplayed: function() {
       return this.isStudent || this.isTeacher;
+    },
+    countries: function(committee) {
+      getCountries();
     },
     canRegister: function() {
       // validate Manager
@@ -291,16 +395,31 @@ var vmRApp = new Vue({
     setArr(committees, comms);
   },
   methods: {
+    wipeErrorsBefore: function(func) {
+      this.clearErrors();
+      return func();
+    },
     addDelegate: function() {
-      this.Delegates.push(getSimpleDelegate(this.c_delegate));
-      this.clearCurrentDelegate();
+      this.wipeErrorsBefore();
+      var sdel = getSimpleDelegate(this.c_delegate);
+      var result = Book.verifyDelegate(sdel);
+      if(result.ok()) {
+        Book.track(sdel);
+        this.Delegates.push(getSimpleDelegate(this.c_delegate));
+        this.clearCurrentDelegate();
+      } else {
+        this.displayRegisterError(result.getError.msg);
+      }
+
     },
     removeDelegate: function(index) {
-      this.Delegates.splice(index, 1);
+      var sdel = this.Delegates.splice(index, 1)[0];
+      Book.untrack(getSimpleDelegate(sdel));
     },
     completeRegistrationAs: function(role) {
       if(!this.canRegister)
         return;
+      this.wipeErrorsBefore();
       var manager = getSimpleManager(Manager);
       if(equalsInLowerCase(role, "teacher")) {
           var delegates = _.map(Delegates, getSimpleDelegate);
@@ -318,15 +437,19 @@ var vmRApp = new Vue({
       setObj(this.Manager, newManager());
     },
     clearAllDelegates: function() {
-      this.Delegates.splice(0, this.Delegates.length);
+      clearArr(this.Delegates)
     },
     clearCurrentDelegate: function() {
       setObj(this.c_delegate, newDelegate());
     },
 
-    displayRegisterError: function(msg) {
+    displayRegisterError: function(errors) {
       this.err.exists = true;
-      this.err.msg = msg;
+      this.err.list.push({msg: msg});
+    },
+
+    clearErrors: function() {
+      clearArr(this.err.list);
     }
   }
 });
