@@ -198,8 +198,8 @@
                       icon="icons:arrow-back"
                       hidden="{{_isInView(view, 1)}}"></iron-icon>
           </div>
-          <a href="{{_sfilePath()}}" target="_blank">
-            <div id="downloadButtonWrapper" hidden="{{_isInView(view, 1)}}">
+          <a href="{{path}}" target="_blank" id="downloadSummaryLink" hidden="{{_canShowDownload(view, 0)}}">
+            <div id="downloadButtonWrapper">
 
               <iron-icon id="downloadBtn"
                          class="fit"
@@ -215,7 +215,10 @@
           properties: {
             name: String,
             chairs: Array,
-            fname: String,
+            fname: {
+              type: String,
+              value: 'NULL'
+            },
             color: {
               type: String,
               value: 'blue'
@@ -224,8 +227,8 @@
               type: Number,
               value: 1
             },
-            canSlide: Boolean
-
+            canSlide: Boolean,
+            path: String
           },
           _computeHiddenTopicB: function() {
             // If Array of Elements does not contain an element with className of topicB, remove topicB cotainer
@@ -242,12 +245,18 @@
           _isInView: function(current, expected) {
             return current == expected;
           },
-          _sfilePath: function() {
-            return "/assets/csummaries/" + this.fname + ".pdf";
+          _canShowDownload: function(current, expected) {
+            return !(this._isInView(current, expected) && this.fname != "NULL");
           },
           ready: function() {
             this.customStyle['--committee-box-color'] = this.color;
             this.canSlide = true;
+            if(this.fname=="NULL") {
+              // Remove Download Link
+              //alert(this.name + " has a null file!");
+            }
+            this.path = "/assets/csummaries/" + this.fname + ".pdf";
+
           },
           toggleView: function() {
             if(this.canSlide) {
