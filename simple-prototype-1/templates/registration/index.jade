@@ -30,7 +30,7 @@ block content
           input(type="string", v-model="Manager.countryName", placeholder="Country")
           select(v-model="CDelegate.munCommittee")
             option(v-for="comm in committees") {{ comm }}
-          select(v-model="CDelegate.munCountry")
+          select(v-model="CDelegate.munCountry") //- 3
             optgroup(label="Available")
               option(v-for="country in countries") {{ country }}
             optgroup(label="Taken")

@@ -3,13 +3,17 @@ p {
   text-align: center;
   max-width: 512px;
 }
-
+#contact-wrapper {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 #contact-info-container {
   text-align: center;
+  box-shadow: 5px 0px 15px black;
 }
 
 .contact-info {
-  background-color: red;
+
   padding: 10px;
   display: inline-block;
   max-width: 512px;
@@ -19,7 +23,7 @@ p {
 .field {
   float: left;
   height: 100%;
-  background-color: yellow;
+  
 }
 .value {
   float: right;
