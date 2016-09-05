@@ -7,7 +7,7 @@ var WEBSITE = WEBSITE || {};
   var activated = false;
   var toastBox = document.getElementById('toast');
 
-  var link = document.querySelectorAll('.mail-link');
+  var links = document.querySelectorAll('.mail-link');
   for(var i=0; i < links.length; i++) {
     links[i].addEventListener('click', onMailLinkClicked, false);
   }

@@ -54,6 +54,7 @@
     <title>Contact Us | TJMUNQRO 2016</title>
     <link rel="stylesheet" href="/assets/styles/general.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="import" href="/assets/libs/bower/google-map/google-map.html">
     <body></body>
     <!-- Website-->
     <!--
@@ -76,8 +77,9 @@
       <!-- Header and Nav-->
       <div class="header">
         <div class="hide">Instituto Thomas Jefferson Querétaro</div>
+        <div id="event-logos"><a id="tjmun-logo" href="/"><img src="/assets/img/tjmun-official-logo.png"></a><a id="itj-logo" href="http://itjqro.edu.mx/"><img src="/assets/img/itj-official-logo.png"></a></div>
         <!-- <div>-->
-        <h1 class="logo">TJMUN QRO 2016</h1>
+        <h1 class="logo">TJMUN QRO 2016</h1><a id="register-btn" href="/registration/">Register</a>
         <!-- <img src="/assets/img/tjmun_logoc.png" alt="" />-->
         <!-- </div>-->
         <!--
@@ -96,6 +98,7 @@
           <li><a href="/place/" class="horizonal-nav-a">Querétaro</a></li>
           <li><a href="/sponsors/" class="horizonal-nav-a">Sponsors</a></li>
           <li class="selected"><a href="/contact/" class="horizonal-nav-a">Contact</a></li>
+          <li><a href="/prescorp/" class="horizonal-nav-a">Prescorp</a></li>
         </ul>
       </nav>
       <!-- Main Page Content-->
@@ -104,17 +107,25 @@
         <h1 id="pageTitle">Contact Us</h1>
         <div id="contact-wrapper">
           <p>If you have any special doubts or anything for the style I would highly suggest to get in touch with us by sending us an e-mail to either of the following:</p>
-          <div id="contact-info-container">
-            <div class="contact-info clfix">
-              <div class="field">E-Mail:</div>
-              <div class="value">tjmun@itjqro.edu.mx</div>
-              <div class="value">afragoso@itjqro.edu.mx</div>
-            </div>
-          </div>
           <p>We hope after contacting us you'll be confident enough to join our Special MUN.</p>
           <p>Also, if you just have an open question or want to make a comment, you're free to do it below and we will get you back ASAP</p>
         </div>
-        <div class="comment-section"></div>
+        <div class="info-section">
+          <section>
+            <div class="info-label">E-Mail:</div>
+            <div class="info-content"><a href="mailto:tjmun@itjqro.edu.mx" class="mail-link">tjmun@itjqro.edu.mx</a><br><a href="mailto:afragoso@itjqro.edu.mx" class="mail-link">afragoso@itjqro.edu.mx</a></div>
+          </section>
+          <section>
+            <div class="info-label">Location:</div>
+            <div class="info-content">Queretaro, Queretaro. Rancho San Antonio, Instituto Thomas Jefferson Campus Queretaro</div>
+          </section>
+          <section>
+            <div class="info-label">Map:</div>
+            <div class="info-content">
+              <google-map latitude="20.5880556" longitude="-100.38805555555557" style="width: 300px; height: 300px;"></google-map>
+            </div>
+          </section>
+        </div>
         <!--img(src="/assets/img/tjmun_welcoming-previous_year.jpg")
         //.contact-info
         //  .field Phone Number:

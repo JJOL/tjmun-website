@@ -79,8 +79,18 @@ html
       .header
         .hide
           | Instituto Thomas Jefferson Querétaro
+        #event-logos
+          a#tjmun-logo(href="/")
+            img(src="/assets/img/tjmun-official-logo.png")
+          a#itj-logo(href="http://itjqro.edu.mx/")
+            img(src="/assets/img/itj-official-logo.png")
+          
         // <div>
         h1.logo TJMUN QRO 2016
+        
+        a#register-btn(href="/registration/")
+            | Register
+          
         // <img src="/assets/img/tjmun_logoc.png" alt="" />
         // </div>
         //
@@ -104,6 +114,8 @@ html
             a.horizonal-nav-a(href='/sponsors/') Sponsors
           li(class="#{(page=='contact') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/contact/') Contact
+          li(class="#{(page=='prescorp') ? 'selected' : ''}")
+            a.horizonal-nav-a(href='/prescorp/') Prescorp
       // Main Page Content
       
       

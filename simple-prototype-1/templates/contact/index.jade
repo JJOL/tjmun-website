@@ -7,6 +7,7 @@ block vars
 
 block cHead
   link(rel="stylesheet", href="style.css")
+  link(rel="import", href="/assets/libs/bower/google-map/google-map.html")
 
 block content
   h1#pageTitle Contact Us
@@ -15,12 +16,7 @@ block content
     p
       | If you have any special doubts or anything for the style I would highly suggest to get in touch with us by sending us an e-mail to either of the following:
 
-    #contact-info-container
-      .contact-info.clfix
-        .field E-Mail:
-        .value tjmun@itjqro.edu.mx
-        .value afragoso@itjqro.edu.mx
-        
+  
         
     p
       | We hope after contacting us you'll be confident enough to join our Special MUN.
@@ -31,7 +27,24 @@ block content
       | Also, if you just have an open question or want to make a comment, you're free to do it below and we will get you back ASAP
       
       
-  .comment-section
+  .info-section
+    section
+      .info-label
+        | E-Mail:
+      .info-content
+        a.mail-link(href="mailto:tjmun@itjqro.edu.mx") tjmun@itjqro.edu.mx
+        br
+        a.mail-link(href="mailto:afragoso@itjqro.edu.mx") afragoso@itjqro.edu.mx
+    section
+      .info-label
+        | Location:
+      .info-content
+        | Queretaro, Queretaro. Rancho San Antonio, Instituto Thomas Jefferson Campus Queretaro
+    section
+      .info-label
+        | Map:
+      .info-content
+        google-map(latitude="20.5880556", longitude="-100.38805555555557" style="width: 300px; height: 300px;")
      
   
   //img(src="/assets/img/tjmun_welcoming-previous_year.jpg")

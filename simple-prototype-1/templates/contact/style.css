@@ -20,12 +20,30 @@ p {
   margin: 0 auto;
 }
 
-.field {
-  float: left;
-  height: 100%;
-  
+.info-section {
+  margin: 0 auto;
+  display: inline-block;
 }
-.value {
-  float: right;
-  clear: right;
+section {
+  margin: 0 auto;
+}
+
+.info-label {
+  background: #0E2142;
+  color: white;
+  text-align: center;
+  padding: 15px 20px 15px 20px;
+  border-bottom: 1px solid white;
+}
+.info-content {
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+
+  .info-section div {
+    display: inline-block;
+    width: 30%;
+  }
+
 }

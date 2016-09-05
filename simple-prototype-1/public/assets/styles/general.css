@@ -95,10 +95,57 @@ Header
 
   height: 100vh;
   min-height: 430px;
+  text-align: center;
+}
+#event-logos {
+  height: 80px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+#tjmun-logo {
+  height: 80px;
+  width: 120px;
+  left: 3%;
+  position: absolute;
+}
+#itj-logo {
+  height: 80px;
+  width: 120px;
+  position: absolute;
+  right: 20%;
+
+  /*background-image: url('/assets/img/itj-official-logo.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;*/
+}
+
+#event-logos img {
+  height: 100%;
+  width: auto;
 }
 .large-box {
   /*display: none;*/
 }
+#register-btn {
+  /*color: #0E2142;*/
+  color: #346bcb;
+  margin: 0 auto;
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  /*border: 3px solid #cfa44e;*/
+  border: 3px solid #e39700;
+  border-radius: 5px;
+  transition: border-color .4s;
+}
+#register-btn:hover {
+  /*border-color: #b2742b;*/
+  border-color: #0E2142;
+  color: #785818;
+}
+
 .register-box {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
@@ -198,10 +245,6 @@ Header
   text-shadow: 5px 5px 3px #ccc;
 }
 
-
-.image-title {
-  font-size: .5em;
-}
 
 .block {
   /*background: #2cb5e8;
