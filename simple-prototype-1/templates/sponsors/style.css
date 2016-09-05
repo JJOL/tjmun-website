@@ -1,0 +1,94 @@
+/*
+  NOT ACTIVE
+  Show Logo Img
+  Show Readme
+*/
+
+.sponsor-boder-container {
+  border: 2px solid #0E2142;
+  display: inline-block;
+  width: 20%;
+  min-width: 222px;
+  height: 200px;
+}
+
+.sponsor-container {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsor-container .background {
+  background: #0E2142;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateY(80%);
+  transition: transform 1s 0.4s;
+
+}
+
+.sponsor-container img {
+  width: 100%;
+}
+
+.sponsor-container .readme {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  transition: opacity 0.4s 1s;
+  margin-bottom: 10px;
+}
+
+.sponsor-container .description {
+  position: absolute;
+  opacity: 0;
+  color: #ccc;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  transition: opacity 0.4s;
+}
+
+.page-visit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  text-align: center;
+  margin-bottom: 40px
+
+}
+
+/*
+  ACTIVE
+  Hide/Blur img
+  Show description
+  Link
+*/
+
+.sponsor-container:hover .background {
+  transform: translateY(0);
+  transition: transform 1s;
+}
+
+.sponsor-container:hover .readme{
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.sponsor-container:hover .description {
+  opacity: 1;
+  transition: opacity 0.4s 1s;
+}
