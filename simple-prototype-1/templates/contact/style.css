@@ -2,11 +2,13 @@ p {
   margin: 0 auto;
   text-align: center;
   max-width: 512px;
+  text-align: left;;
 }
 #contact-wrapper {
   margin-top: 40px;
   margin-bottom: 40px;
-
+  width: 70%;
+  margin: 0 auto;
 }
 #contact-info-container {
   text-align: center;
@@ -27,17 +29,25 @@ p {
 }
 .info-section {
   margin: 0 auto;
-  display: inline-block;;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 section {
+  width: 70%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 section > * {
-
+  flex-grow: 1;
 }
 
 .info-label {
+
   background: #0E2142;
   color: white;
   text-align: center;
@@ -46,11 +56,14 @@ section > * {
 }
 .info-content {
   padding: 20px;
+  flex-grow: 2;
+  width: 100%;
+  min-width: 200px;
 }
 
 google-map {
   height: 300px;
-  width: 400px;
+  width: 100%;
   background: red;
 }
 
@@ -63,6 +76,10 @@ google-map {
 
   .info-label, .info-content {
     width: 30%;
+  }
+
+  section {
+    align-items: flex-start;
   }
 
 

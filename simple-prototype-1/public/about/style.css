@@ -51,14 +51,13 @@ h2 {
           transform: rotateZ(-45deg);
 }
 
-#mission, #mission p{
-  text-align: left;
-  margin-left: 0;
+
+#mission  {
+  float: left;
 }
 
 p {
   margin: 0 auto;
-  ;
 }
 
 .content {

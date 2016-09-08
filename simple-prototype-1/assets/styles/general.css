@@ -243,6 +243,9 @@ Header
   text-shadow: 5px 5px 3px #ccc;
 }
 
+.no-padding {
+  padding: 0;
+}
 
 .block {
   /*background: #2cb5e8;

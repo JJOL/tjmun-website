@@ -1,0 +1,17 @@
+.thing {
+  width: 400px;
+  border: 5px solid black;
+  float: left;
+  display: inline-block;
+}
+
+
+#info-section li {
+
+}
+
+#info-section h4 {
+  color: #0E2142;
+  font-weight: bold;
+  text-align: center;
+}
