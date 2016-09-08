@@ -7,9 +7,19 @@ block vars
   
 block cHead
   // link(rel="stylesheet", href="style.css")
-  link(rel="import", href="/assets/custom_elements/committee-box.html")
+  link(rel="import", href="/assets/custom_elements/info-box.html")
   
 block content
   h1#pageTitle Delegate Info
   
-  committee-box(name="Delegate Info")
+  info-box(name="Dress Code")
+    .info-box-group
+      h4 Women
+      ul
+        li This and That
+        li LOL
+    .info-box-group
+      h4 Men
+      ul
+        li T-Shirt
+        li YOLO

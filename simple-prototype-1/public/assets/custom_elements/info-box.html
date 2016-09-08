@@ -1,0 +1,71 @@
+<link rel="import" href="/css/master.css" media="screen" title="no title">
+
+
+<dom-module id="info-box">
+
+  <template>
+    <style type="text/css">
+    </style>
+
+    <div id="wrapper">
+      <div id="presentationLayer" class="slide in">
+          <div id="title">
+              <h2>{{ name }}</h2>
+              <content select="h1"></content>
+          </div>
+          <div id="information">
+            <div id="chairs-display">
+              <h4>Chairs:</h4>
+              <ul id="chairList">
+                <template is="dom-repeat" items="{{ chairs }}">
+                  <li><span>{{item}}</span></li>
+                </template>
+              </ul>
+            </div>
+            <div id="topics">
+              <div class="topic-container">
+                <h4>Topic A:</h4>
+                <content select=".topicA"></content>
+              </div>
+              <div id="topicB" class="topic-container" hidden="{{ _computeHiddenTopicB() }}">
+                <h4>Topic B:</h4>
+                <content class="topic-content" select=".topicB"></content>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="summaryLayer" class="slide">
+        <div id="title">
+            <h2>{{ name }}<br>Summary</h2>
+        </div>
+        <content select=".summary">
+        </content>
+      </div>
+      <div id="toggleButton" on-click="toggleView">
+        <iron-icon id="summaryBtn"
+                   class="fit"
+                   icon="icons:arrow-forward"
+                   hidden="{{_isInView(view, 0)}}"></iron-icon>
+       <iron-icon id="returnBtn"
+                  class="fit"
+                  icon="icons:arrow-back"
+                  hidden="{{_isInView(view, 1)}}"></iron-icon>
+      </div>
+      <a href="{{path}}" target="_blank" id="downloadSummaryLink" hidden="{{_canShowDownload(view, 0)}}">
+        <div id="downloadButtonWrapper">
+
+          <iron-icon id="downloadBtn"
+                     class="fit"
+                     icon="icons:description"></iron-icon>
+        </div>
+      </a>
+    </div>
+  </template>
+
+
+  <script type="text/javascript">
+    Polymer({
+      is: 'info-box'
+    });
+  </script>
+</dom-module>

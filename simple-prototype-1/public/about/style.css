@@ -15,16 +15,18 @@
 #image-container img {
 
   border: 2px solid #1a5880;
-  border-radius: 25px 0px 25px 0px;
+  border-radius: 25px 0px 0px 0px;
 
 }
 
 .image-top-title {
-  position: absolute;
-  top: -10px;
-  right: 0;
-  left: 0;
   text-align: center;
+}
+
+.image-top-title {
+  position: static;
+  width: 100%;
+  border-bottom: 2px solid #0E2142;
 }
 
 h2 {
@@ -70,7 +72,23 @@ p {
   margin-bottom: 30px;
 }
 
+@media screen and (min-width: 768px) {
+  .image-top-title {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    left: 0;
+    border: none;
+  }
+  #image-container img {
+    border-radius: 25px 0px 25px 0px;
+  }
+
+
+}
+
 @media screen and (min-width: 1260px) {
+
   p {
       width: 40%;
   }
