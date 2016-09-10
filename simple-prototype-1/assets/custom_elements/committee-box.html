@@ -169,7 +169,7 @@
                     </template>
                   </ul>
                 </div>
-                <div id="topics">
+                <div id="topics" hidden="{{_computeHideTopics()}}">
                   <div class="topic-container">
                     <h4>Topic A:</h4>
                     <content select=".topicA"></content>
@@ -238,6 +238,17 @@
               });
             for (var i = 0; i < childs.length; i++) {
               if (childs[i] === 'topicB')
+                return false;
+            }
+            return true;
+          },
+          _computeHideTopics() {
+            var childs = Polymer.dom(this).children.
+              map(function(item) {
+                return item.className;
+              });
+            for (var i = 0; i < childs.length; i++) {
+              if (childs[i] === 'topicB' || childs[i] === 'topicA')
                 return false;
             }
             return true;

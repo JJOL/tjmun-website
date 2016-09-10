@@ -13,11 +13,22 @@ block content
   h1#pageTitle About Querétaro
   h3 Location
   .map
-    google-map(latitude="20.5880556", longitude="-100.38805555555557", apiKey="AIzaSyBOapotbW5snstEW87OkJQU9GVg2Y6Lo-4")
-    
+    google-map(latitude="20.5880556", longitude="-100.38805555555557", apiKey="AIzaSyAA2HzagxVnwI8SxfG_Z2FGHkN-kkBcdKM")
+    #gmap
   .gallery-container
-    img(src='/assets/img/queretaro/1.png', alt='')
-    img(src='/assets/img/queretaro/2.jpg', alt='')
-    img(src='/assets/img/queretaro/3.jpg', alt='')
-    img(src='/assets/img/queretaro/4.jpg', alt='')
-    img(src='/assets/img/queretaro/5.jpg', alt='')
+    .img-container
+      img(src='/assets/img/queretaro/1.png', alt='')
+      img(src='/assets/img/queretaro/2.jpg', alt='')
+    .quote Aaahh... Queretaro. Its streets, its food, its architecture, its colours and its people are what makes this city so special and different from other cities in Mexico and the world. A  magical city that seems to have frozen in time. A place where you can be at the top of a modern building, while observing in the background, a few blocks away, a 16th century cathedral. 
+    .img-container
+      img(src='/assets/img/queretaro/3.jpg', alt='')
+    .quote Queretaro is a small state in Central Mexico. It has a historic center with fountain-filled squares and stone streets. The city's wealth of Spanish colonial architecture includes churches such as the ochre San Francisco and the baroque Santa Rosa de Viterbo.
+    .img-container
+      img(src='/assets/img/queretaro/4.jpg', alt='')
+      img(src='/assets/img/queretaro/5.jpg', alt='')
+    .quote If you don't believe me, come to TJMUN 2016 and see it for yourself. 
+    a(href="http://www.meetmexico.com/queretaro/", target="_blank") Meet Queretaro
+
+  script(src="/assets/js/gmap.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&callback=initMap")
+    

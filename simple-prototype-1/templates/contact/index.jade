@@ -40,13 +40,22 @@ block content
         .info-label
           | Location:
         .info-content
-          | Queretaro, Queretaro. Rancho San Antonio, Instituto Thomas Jefferson Campus Queretaro
+          | Querétaro, Querétaro. Rancho San Antonio 1200, Instituto Thomas Jefferson, Campus Querétaro
       section.clfix
         .info-label
           | Map:
         .info-content
-          google-map(latitude="20.5880556", longitude="-100.38805555555557", apiKey="AIzaSyBOapotbW5snstEW87OkJQU9GVg2Y6Lo-4")
+          #gmap
      
+     
+  script.
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('gmap'), {
+        center: {lat: 20.5880556, lng: -100.38805555555557},
+        zoom: 8
+      });
+    }
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&callback=initMap")
   
   //img(src="/assets/img/tjmun_welcoming-previous_year.jpg")
     //.contact-info
