@@ -1,8 +1,8 @@
 p {
   margin: 0 auto;
   text-align: center;
-  max-width: 512px;
-  text-align: left;;
+  max-width: 490px;
+  text-align: justify;;
 }
 #contact-wrapper {
   margin-top: 40px;
@@ -75,17 +75,6 @@ section > * {
           flex-grow: 2;
   width: 100%;
   min-width: 200px;
-}
-
-google-map {
-  height: 300px;
-  width: 100%;
-  background: red;
-}
-#gmap {
-  height: 300px;
-  width: 100%;
-  background: red;
 }
 
 
