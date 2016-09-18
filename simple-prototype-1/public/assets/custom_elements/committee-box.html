@@ -141,6 +141,19 @@
               cursor: pointer;
             }
 
+            #gradesLayer {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 40px;
+              background-color: var(--grades-color);
+              display: flex;
+              justify-content: flex-start;;
+              align-items: center;
+              padding-left: 5%;
+            }
+
             /* Utilities */
 
             .fit {
@@ -155,6 +168,11 @@
         </style>
 
         <div id="wrapper">
+
+          <div id="gradesLayer" hidden="{{_isInView(view, 0)}}">
+            For: {{ _targetGrades(grades) }}
+          </div>
+
           <div id="presentationLayer" class="slide in">
               <div id="title">
                   <h2>{{ name }}</h2>
@@ -206,6 +224,7 @@
                          icon="icons:description"></iron-icon>
             </div>
           </a>
+
         </div>
     </template>
 
@@ -228,7 +247,11 @@
               value: 1
             },
             canSlide: Boolean,
-            path: String
+            grades: {
+              type: String,
+              value: 'mh'
+            }
+
           },
           _computeHiddenTopicB: function() {
             // If Array of Elements does not contain an element with className of topicB, remove topicB cotainer
@@ -259,8 +282,20 @@
           _canShowDownload: function(current, expected) {
             return !(this._isInView(current, expected) && this.fname != "NULL");
           },
+          _targetGrades: function(gradeStr) {
+            var gradeName;
+            if (gradeStr == "m") {
+              gradeName = "Middle";
+            } else if(gradeStr == "h") {
+              gradeName = "High";
+            } else if (gradeStr == "mh") {
+              gradeName = "Middle And High";
+            }
+            return gradeName;
+          },
           ready: function() {
             this.customStyle['--committee-box-color'] = this.color;
+            this.customStyle['--grades-color'] = this._getColorForGrades(this.grades);
             this.canSlide = true;
             if(this.fname=="NULL") {
               // Remove Download Link
@@ -277,6 +312,17 @@
               this.$.toggleButton.classList.add('toLeft');
               setTimeout(this._resetCanSlide.bind(this), 1000);
             }
+          },
+          _getColorForGrades: function(gradeStr){
+            var c = "";
+            if( gradeStr == "m") {
+              c = "#bd8570";
+            } else if(gradeStr == "h") {
+              c = "#f69867"
+            } else if (gradeStr == "mh") {
+              c = "salmon";
+            }
+            return c;
           },
           _resetCanSlide: function() {
             this.canSlide = true;

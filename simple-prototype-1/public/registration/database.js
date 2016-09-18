@@ -16,7 +16,7 @@ var DB = DB || (function(onConnected, onError){
     return;
   }
 
-  firebase.initialize(config);
+  firebase.initializeApp(config);
   database = firebase.database();
 
   testConnection();
