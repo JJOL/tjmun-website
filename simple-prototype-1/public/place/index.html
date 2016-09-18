@@ -105,18 +105,26 @@
       
       <div class="main-container">
         <h1 id="pageTitle">About Querétaro</h1>
-        <h3>Location</h3>
+        <h3>Where TJMUN QRO is taking place.</h3>
         <div class="map">
-          <google-map latitude="20.5880556" longitude="-100.38805555555557" apiKey="AIzaSyAA2HzagxVnwI8SxfG_Z2FGHkN-kkBcdKM"></google-map>
+          <!--google-map(latitude="20.5880556", longitude="-100.38805555555557", apiKey="AIzaSyAA2HzagxVnwI8SxfG_Z2FGHkN-kkBcdKM")-->
           <div id="gmap"></div>
         </div>
+        <hr>
         <div class="gallery-container">
-          <div class="img-container"><img src="/assets/img/queretaro/1.png" alt=""><img src="/assets/img/queretaro/2.jpg" alt=""></div>
+          <div class="img-container group"><img src="/assets/img/queretaro/1.png" alt="" class="first primary"><img src="/assets/img/queretaro/2.jpg" alt="" class="secondary"></div>
+          <hr>
           <div class="quote">Aaahh... Queretaro. Its streets, its food, its architecture, its colours and its people are what makes this city so special and different from other cities in Mexico and the world. A  magical city that seems to have frozen in time. A place where you can be at the top of a modern building, while observing in the background, a few blocks away, a 16th century cathedral. </div>
-          <div class="img-container"><img src="/assets/img/queretaro/3.jpg" alt=""></div>
+          <hr>
+          <div class="img-container"><img src="/assets/img/queretaro/3.jpg" alt="" class="single"></div>
+          <hr>
           <div class="quote">Queretaro is a small state in Central Mexico. It has a historic center with fountain-filled squares and stone streets. The city's wealth of Spanish colonial architecture includes churches such as the ochre San Francisco and the baroque Santa Rosa de Viterbo.</div>
-          <div class="img-container"><img src="/assets/img/queretaro/4.jpg" alt=""><img src="/assets/img/queretaro/5.jpg" alt=""></div>
-          <div class="quote">If you don't believe me, come to TJMUN 2016 and see it for yourself. </div><a href="http://www.meetmexico.com/queretaro/" target="_blank">Meet Queretaro</a>
+          <hr>
+          <div class="img-container group"><img src="/assets/img/queretaro/4.jpg" alt="" class="first secondary"><img src="/assets/img/queretaro/5.jpg" alt="" class="primary"></div>
+          <hr>
+          <div class="quote">If you don't believe me, come to TJMUN 2016 and see it for yourself. </div>
+          <hr>
+          <div class="quote"><a id="visit-link" href="http://www.meetmexico.com/queretaro/" target="_blank">Meet Queretaro</a></div>
         </div>
         <script src="/assets/js/gmap.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&amp;callback=initMap"></script>
@@ -125,10 +133,10 @@
         <div id="help-container" class="main-container">
           <h4>Any <span>Questions?</span></h4>
           <ul class="help-options">
-            <li id="top-right"><a href="/theme/" class="centralize-text">Learn more about "Building Bridges"</a></li>
-            <li id="top-left"><a href="/committees/">What are the topics for this event</a></li>
-            <li id="bottom-right"><a href="/place/">I want to know more about the place</a></li>
-            <li id="bottom-left"><a href="/registration/">I'm fine. I'd like to register</a></li>
+            <li id="top-right"><a href="/committees/" class="centralize-text">What are the topics for this event</a></li>
+            <li id="top-left"><a href="/place/">I want to know more about the place</a></li>
+            <li id="bottom-right"><a href="/registration/">I'm fine. I'd like to register</a></li>
+            <li id="bottom-left"><a href="#">Learn more about Presscorp</a></li>
           </ul>
           <h5>Still with Questions?</h5><a href="/contact/">Contact us Please</a>
         </div>

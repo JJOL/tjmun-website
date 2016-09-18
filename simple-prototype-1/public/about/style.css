@@ -58,6 +58,7 @@ h2 {
 
 p {
   margin: 0 auto;
+  text-align: justify;
 }
 
 .content {
@@ -86,8 +87,11 @@ p {
 
 }
 
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: 1124px) {
 
+  .content {
+    width: 100%;
+  }
   p {
       width: 40%;
   }

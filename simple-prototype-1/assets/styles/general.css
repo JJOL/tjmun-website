@@ -5,6 +5,16 @@
 
 }
 
+@font-face {
+    font-family: opensansbold;
+    src: url("/assets/styles/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: opensans;
+    src: url("/assets/styles/fonts/OpenSans-Regular.ttf");
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -232,6 +242,15 @@ Header
   background-repeat: no-repeat;
   background-size: 140px 140px;
   background-position: left 20%;
+}
+
+#gmap {
+  height: 300px;
+  width: 100%;
+  background: url('/assets/img/loading-placeholder.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .mail-link {
