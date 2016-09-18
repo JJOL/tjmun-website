@@ -152,6 +152,16 @@
               justify-content: flex-start;;
               align-items: center;
               padding-left: 5%;
+              color: white;
+            }
+
+            #top {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 16px;
+              background-color: var(--committee-box-color, #ccc);
             }
 
             /* Utilities */
@@ -224,7 +234,8 @@
                          icon="icons:description"></iron-icon>
             </div>
           </a>
-
+          <div id="top">
+          </div>
         </div>
     </template>
 
@@ -317,11 +328,12 @@
           _getColorForGrades: function(gradeStr){
             var c = "";
             if( gradeStr == "m") {
-              c = "#bd8570";
+              c = "#965A38 ";
             } else if(gradeStr == "h") {
-              c = "#f69867"
+              c = "#D9A441"
             } else if (gradeStr == "mh") {
-              c = "salmon";
+              // c = "#D9A441";
+              c = "#A8A8A8"
             }
             return c;
           },

@@ -51,6 +51,9 @@ h2 {
           transform: rotateZ(-45deg);
 }
 
+.group > * {
+  float: left;
+}
 
 #mission  {
   float: left;
@@ -61,12 +64,27 @@ p {
   text-align: justify;
 }
 
+.gallery-item {
+  width: 32.9%;
+  display: inline-block;
+  float: left;
+  height: 220px;
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
 .content {
   text-align: center;
 }
 .content * {
   margin-top: 20px;
 }
+
 
 .main-container {
   margin-bottom: 30px;
@@ -93,6 +111,7 @@ p {
     width: 100%;
   }
   p {
-      width: 40%;
+      /*width: 40%;*/
+      width: 80%;
   }
 }

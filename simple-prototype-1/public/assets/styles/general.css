@@ -249,10 +249,7 @@ Header
 #gmap {
   height: 300px;
   width: 100%;
-  background: url('/assets/img/loading-placeholder.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-color: #ccc;
 }
 
 .mail-link {
@@ -470,6 +467,16 @@ footer .policy-footer {
   }
   #bottom-right {
     border-right: 1px solid #555;
+  }
+
+  .primary {
+    width: 59.9%;
+  }
+  .secondary {
+    width: 39.8%;
+  }
+  .single {
+    width: 100%;
   }
 }
 

@@ -48,13 +48,7 @@ block content
           #gmap
      
      
-  script.
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('gmap'), {
-        center: {lat: 20.5880556, lng: -100.38805555555557},
-        zoom: 8
-      });
-    }
+  script(src="/assets/js/gmap.js")
   script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&callback=initMap")
   
   //img(src="/assets/img/tjmun_welcoming-previous_year.jpg")

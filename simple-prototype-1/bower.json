@@ -11,6 +11,7 @@
     "underscore": "^1.8.3",
     "es6-promise-polyfill": "^1.1.1",
     "setimmediate": "^1.0.1",
-    "google-map": "GoogleWebComponents/google-map#^1.1.11"
+    "google-map": "GoogleWebComponents/google-map#^1.1.11",
+    "lightbox2": "^2.8.2"
   }
 }
