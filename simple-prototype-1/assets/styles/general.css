@@ -538,7 +538,7 @@ footer .policy-footer {
 /*
   Large Desktops
 */
-@media screen and (min-width: 1824px) {
+@media screen and (min-width: 1624px) {
   html {
     /*background-color: green;*/
   }

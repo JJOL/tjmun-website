@@ -135,6 +135,17 @@
         cursor: pointer;
       }
 
+      #title-mark {
+        position: absolute;
+        top: 20px;
+        background-color: var(--committee-box-color, #ccc);
+        opacity: 0.3;
+        z-index: -5;
+        height: 50px;
+        left: -15px;
+        right: 15px;
+      }
+
       /* Utilities */
 
       .fit {
@@ -150,6 +161,8 @@
 
     <div id="wrapper">
       <div id="presentationLayer" class="slide in">
+        <div id="title-mark">
+        </div>
           <div id="title">
               <content select="h1.firstTitle"></content>
           </div>

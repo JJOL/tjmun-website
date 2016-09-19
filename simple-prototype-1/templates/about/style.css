@@ -60,6 +60,7 @@ h2 {
 p {
   margin: 0 auto;
   text-align: justify;
+  width: 70%;
 }
 
 .gallery-item {
@@ -111,5 +112,16 @@ p {
   p {
       /*width: 40%;*/
       width: 80%;
+  }
+}
+
+@media screen and (min-width: 1624px) {
+
+  .content {
+    width: 100%;
+  }
+  p {
+      /*width: 40%;*/
+      /*width: 60%;*/
   }
 }

@@ -153,6 +153,7 @@
               align-items: center;
               padding-left: 5%;
               color: white;
+              opacity: 0.6;
             }
 
             #top {
@@ -162,6 +163,7 @@
               right: 0;
               height: 16px;
               background-color: var(--committee-box-color, #ccc);
+
             }
 
             /* Utilities */
@@ -330,10 +332,11 @@
             if( gradeStr == "m") {
               c = "#965A38 ";
             } else if(gradeStr == "h") {
-              c = "#D9A441"
-            } else if (gradeStr == "mh") {
-              // c = "#D9A441";
+              // c = "#D9A441"
               c = "#A8A8A8"
+            } else if (gradeStr == "mh") {
+               c = "#D9A441";
+              // c = "#A8A8A8"
             }
             return c;
           },

@@ -1,10 +1,23 @@
 .thing {
-  width: 400px;
+  width: 100%;
   border: 5px solid black;
   float: left;
   display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-bottom: 20px;
+  transition: box-shadow .3s;
+}
+.thing:hover {
+    box-shadow: 3px 0px 10px #ccc, -3px 0px 10px #ccc;
 }
 
+info-box h1 {
+  margin-left: -15px;
+}
 
 #info-section li {
 
@@ -14,4 +27,20 @@
   color: #0E2142;
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+
+  .thing {
+    width: 49.5%;
+  }
+
+}
+
+@media screen and (min-width: 1121px) {
+
+  .thing {
+    width: 24.8%;
+  }
+
 }
