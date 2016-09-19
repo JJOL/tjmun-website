@@ -1,8 +1,8 @@
 function initMap() {
 
   var schoolPos = {
-    lat: 20.5880556,
-    lng: -100.38805555555557
+    lat: 20.616223,
+    lng: -100.369817
   };
 
   map = new google.maps.Map(document.getElementById('gmap'), {
