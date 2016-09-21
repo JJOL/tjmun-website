@@ -11,7 +11,7 @@ block cHead
 block content
   article.letter-box
       // Welcoming Letter
-      .paper-out
+      .paper-out.clfix
         h1
           | Thomas Jefferson Model UN &amp; OAS 
           br
@@ -40,6 +40,7 @@ block content
                 .time-label.time-away
                   #label-mins 0
                   .unit-label Minutes
+            .date December 8th 2016
                 // Time Labels Ends
             // Rest Part
           // Ends Counter Box
@@ -52,7 +53,7 @@ block content
                 | For over 20 years, Instituto Thomas Jefferson has hosted several UN Models in Mexico City and is about to go for its eighth edition on its Queretaro campus. It has been a very ambitious journey from the first year until today, and it grows larger every year. Last year, we had the honor of hosting a pioneer model that included both simulations of the United Nations and the Organization of the American States. It was an aspiring step and a successful achievement; however, this year we are aiming even higher. With competitive and quality committees, as well as social spaces to meet new people from all over Mexico and other countries, this year’s secretariat promises to do its best to make TJMUN &amp; OAS 2016 the most enriching experience for delegates.
           // Ends Ribbon
         // Letter Content Starts
-        .letter-content
+        .letter-content.left.second
           p.letter-element
             | High school students get engaged in issues currently debated by world leaders, while developing leadership skills such as diplomacy, cooperation, debate, critical thinking, empathy and innovation. This increases the delegate's knowledge and broadens his/her point of view, not only during the debate but in the whole experience of the model on very important issues such as climate change, the fight against poverty, war and the urge of having sustainable economies around the world.
           p.letter-element
@@ -67,6 +68,10 @@ block content
             img#signature(src='/assets/img/carta-signature.png', alt="Humberto Salinas' Signature")
           .letter-pic.member-pic.letter-element
             img(src='/assets/img/president-photo.jpg', alt='')
+        .twitter-feed
+          a.twitter-feed.twitter-timeline(href="https://twitter.com/TJMUN_Queretaro", width="300", height="600") Tweets by TJMUN_Queretaro
+          
         // Letter Content Ends
       // Foto de Bienvenida
   script(type="text/javascript", src="/assets/js/counter.js")
+  script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")

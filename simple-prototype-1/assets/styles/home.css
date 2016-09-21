@@ -26,7 +26,7 @@
   margin-top: -55px;
   margin-left: -100px;
   left: 50%;
-  
+
   font-size: 3em;
 }
 #counter-img {
@@ -71,6 +71,10 @@
 
 #counter-rest .time-label:first-child {
   border-left: 0;
+}
+
+.date {
+  font-size: 1.6em;
 }
 
 #slogan {
@@ -131,7 +135,10 @@
   margin-bottom: 60px;
   /*background-color: black;*/
   height: 180px;
+  margin-left: 5%;
 }
+
+
 
 #signature {
   position: absolute;
@@ -145,6 +152,9 @@
   margin-bottom: 20px;
 }
 
+.twitter-feed {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
 }
@@ -169,7 +179,16 @@
     float: right;
   }
   .letter-content {
-    width: 77%;
+    width: 60%;
+  }
+  .twitter-feed {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin-right: 7.8%;
+  }
+  .left {
+    float: left;
   }
 }
 
@@ -183,7 +202,10 @@
   .tjmun_name-box {
     transform: translateX(-20%);
   }
-  .letter-content {
-    width: 62%;
+  .letter-content.second p {
+    width: 80%;
+  }
+  .twitter-feed {
+    margin-right: 12.5%;
   }
 }

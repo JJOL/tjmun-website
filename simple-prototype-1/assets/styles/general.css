@@ -25,6 +25,17 @@ img {
 ul {
   list-style: none;
 }
+
+noscript {
+  margin: 30px 0px 30px 0px;
+  font-size: 2em;
+  color: darkred;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+
 /*
   Utils
 */
@@ -123,7 +134,7 @@ Header
   height: 80px;
   width: 120px;
   position: absolute;
-  right: 20%;
+  right: 15%;
 
   /*background-image: url('/assets/img/itj-official-logo.jpg');
   background-repeat: no-repeat;
