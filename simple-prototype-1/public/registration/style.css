@@ -8,7 +8,7 @@
   background-color: red;
 }
 .register-button-enabled:hover {
-  
+
 }
 
 .register-button-disabled {
@@ -18,4 +18,47 @@
 
 .red {
   color: red;
+}
+
+
+/*
+    Form
+*/
+
+.form-head {
+    background-color: #ccc;
+    position: relative;
+    height: 60px;
+}
+
+.form-head .button-option {
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+#school-btn {
+  left: 0;
+  background-color: blue;
+}
+#school-btn:hover {
+  background-color: darkblue;
+}
+
+#independent-btn {
+  right: 0;
+  background-color: green;
+}
+#independent-btn:hover {
+  background-color: darkgreen;
+}
+
+.school-form-head {
+  background-color: blue;
+}
+
+.independent-form-head {
+  background-color: green;
 }

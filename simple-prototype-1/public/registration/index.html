@@ -104,73 +104,24 @@
       <div class="main-container">
         <noscript>You Must Enable Javascript to view this page if you don't want to miss information!</noscript>
         <h1 id="pageTitle">Registration</h1>
-        <div id="rform">
-          <div id="fullerror-display" v-if="errorPanel">{{errors[0].msg}}</div>
-          <div id="loading-display" v-if="loadingPanel">Wait until its loaded</div>
-          <div id="form-display" v-if="formPanel">
-            <div class="form-question">Are you a student or a teacher?</div>
-            <select v-model="role">
-              <option value="teacher">Teacher</option>
-              <option value="student">Student</option>
-            </select>
-            <div class="form">
-              <div v-if="isStudent" class="student-form">
-                <input type="text" v-model="CDelegate.fullName" placeholder="Full Name">
-                <input type="email" v-model="Manager.emailAddress" placeholder="E-Mail">
-                <input type="number" v-model="CDelegate.age" placeholder="Age">
-                <input type="string" v-model="Manager.schoolName" placeholder="School Name">
-                <input type="string" v-model="Manager.countryName" placeholder="Country">
-                <select v-model="CDelegate.munCommittee">
-                  <option v-for="comm in committees">{{ comm }}</option>
-                </select>
-                <select v-model="CDelegate.munCountry">//- 3
-                  <optgroup label="Available">
-                    <option v-for="country in countries">{{ country }}</option>
-                  </optgroup>
-                  <optgroup label="Taken">
-                    <option v-for="country in countries">{{ country }}</option>
-                  </optgroup>
-                </select>
-              </div>
-              <div v-if="isTeacher" class="teacher-form">
-                <input type="text" v-model="Manager.fullName" placeholder="Manager Name">
-                <input type="email" v-model="Manager.emailAddress" placeholder="E-Mail">
-                <input type="text" v-model="Manager.schoolName" placeholder="School">
-                <input type="text" v-model="Manager.countryName" placeholder="Country">
-                <input type="name" v-model="CDelegate.fullName" placeholder="Full Name">
-                <input type="number" v-model="CDelegate.age" placeholder="Age">
-                <select v-model="CDelegate.munCommittee">
-                  <option>OEAS</option>
-                  <option>UN</option>
-                </select>
-                <select v-model="CDelegate.munCountry">
-                  <option>Mexico</option>
-                  <option>USA</option>
-                  <option>China</option>
-                </select>
-                <ul>
-                  <li v-for="delegate in Delegates"><span>{{delegate.fullName}}</span><span>- Age: {{delegate.age}}</span><span>Committee: {{delegate.munCommittee}}</span><span>Country: {{delegate.munCountry}}</span>
-                    <button v-on:click="removeDelegate($index)">Remove</button>
-                  </li>
-                </ul>
-                <button v-on:click="addDelegate">Add Delegate</button>
-              </div>
+        <div id="register-form">
+          <div v-bind:class="{'school-form-head': schoolHead, 'independent-form-head': independentHead}" class="form-head">
+            <h4>Are you an independent or a school?</h4>
+            <div id="school-btn" v-on:click="openSchoolForm()" class="button-option">School</div>
+            <div id="independent-btn" v-on:click="openIndepententForm()" class="button-option">Independent</div>
+          </div>
+          <div id="google-form-container">
+            <div id="independent-register-form" v-show="isIndependentForm">
+              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdRbU3jwj_NV3LE6kh7_IuUUgAGX1Mi_rFBOuuRdRH8Jfqw8Q/viewform?embedded=true" style="width:100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
             </div>
-            <button v-on:click="completeRegistrationAs(role)" v-if="formIsDisplayed" v-bind:class="{'register-button-disabled': !canRegister}" class="register-button">Finish Registration</button>
-            <div id="errContainer"><span v-show="hasError">Errors in Last Action:</span>
-              <ul>
-                <li v-for="error in errors">- {{ error.msg }}</li>
-              </ul>
+            <div id="school-register-form" v-show="isSchoolForm">
+              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdRbU3jwj_NV3LE6kh7_IuUUgAGX1Mi_rFBOuuRdRH8Jfqw8Q/viewform?embedded=true" style="width:100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
             </div>
+            <div v-on:click="nextStep" class="big-button"></div>
           </div>
         </div>
-        <script src="https://www.gstatic.com/firebasejs/3.0.2/firebase.js"></script>
         <script src="/assets/libs/bower/vue/dist/vue.js"></script>
-        <script src="/assets/libs/bower/underscore/underscore-min.js"></script>
-        <script src="utils.js"></script>
-        <script src="app.js"></script>
-        <script src="vm-register.js"></script>
-        <script src="database.js"></script>
+        <script src="form-init.js"></script>
       </div>
       <div class="block centralize-text">
         <div id="help-container" class="main-container">
