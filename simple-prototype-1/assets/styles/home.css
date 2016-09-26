@@ -181,6 +181,9 @@
   .letter-content {
     width: 60%;
   }
+  .letter-content.second p {
+    width: 80%;
+  }
   .twitter-feed {
     width: 300px;
     height: 300px;
@@ -202,9 +205,7 @@
   .tjmun_name-box {
     transform: translateX(-20%);
   }
-  .letter-content.second p {
-    width: 80%;
-  }
+
   .twitter-feed {
     margin-right: 12.5%;
   }

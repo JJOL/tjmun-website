@@ -70,10 +70,18 @@ var vmApp = new Vue({
 
     },
     openDelegateForm: function() {
-      
+      this._hideAllForms();
+      this.$el.querySelector('#form-opt-1').style.display = 'block';
     },
     openAdvisorForm: function() {
-
+      this._hideAllForms();
+      this.$el.querySelector('#form-opt-2').style.display = 'block';
+    },
+    _hideAllForms: function() {
+      var forms = this.$el.querySelectorAll('.form-container');
+      for(var i=0; i < forms.length; i++) {
+        forms[i].style.display = 'none';
+      }
     }
   }
 });
