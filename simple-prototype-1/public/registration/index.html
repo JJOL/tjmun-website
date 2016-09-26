@@ -112,10 +112,12 @@
           </div>
           <div id="google-form-container">
             <div id="independent-register-form" v-show="isIndependentForm">
-              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdRbU3jwj_NV3LE6kh7_IuUUgAGX1Mi_rFBOuuRdRH8Jfqw8Q/viewform?embedded=true" style="width:100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdRbU3jwj_NV3LE6kh7_IuUUgAGX1Mi_rFBOuuRdRH8Jfqw8Q/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="height: 100%">Loading...</iframe>
             </div>
-            <div id="school-register-form" v-show="isSchoolForm">
-              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLSdRbU3jwj_NV3LE6kh7_IuUUgAGX1Mi_rFBOuuRdRH8Jfqw8Q/viewform?embedded=true" style="width:100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            <div id="school-register-form" v-show="isSchoolForm" style="height: 100%">
+              <iframe id="gform" src="https://docs.google.com/forms/d/e/1FAIpQLScC86M86wuaUkVBI14hRasHZA9I2PLFHi8FJTCs6x4cH8PubQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="height: 100%">Loading...</iframe>
+              <button v-on:click="openDelegateForm">Delegate Registration</button>
+              <button v-on:click="openAdvisorForm">Advisors Registration</button>
             </div>
             <div v-on:click="nextStep" class="big-button"></div>
           </div>

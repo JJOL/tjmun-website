@@ -6,12 +6,12 @@ function calculateFormSize() {
 
 
   var form_width = (window_width * 0.8) + 'px';  // Get the 80% of the window width
-  var form_height = '400px';
+  var form_height = '600px';
 
-  parent.style.width = form_width;
+  //parent.style.width = form_width;
   parent.style.height = form_height;
 
-  gform.style.width = form_width;
+  //gform.style.width = form_width;
   gform.style.height = form_height;
 }
 setTimeout(function() {
@@ -19,7 +19,7 @@ setTimeout(function() {
 }, 100);
 
 window.onresize = function(e) {
-  calculateFormSize();
+  //calculateFormSize();
 }
 
 
@@ -52,7 +52,7 @@ var vmApp = new Vue({
     openIndepententForm: function() {
       var prevType = this.typeOfUser,
           newType = independentUserName;
-      this.typeOfUser = schoolUserName;
+      this.typeOfUser = independentUserName;
       this.updateView(prevType, newType);
     },
     updateView: function(prevType, newType) {
@@ -67,6 +67,12 @@ var vmApp = new Vue({
       else if(newType == independentUserName) {
         this.independentHead = true;
       }
+
+    },
+    openDelegateForm: function() {
+      
+    },
+    openAdvisorForm: function() {
 
     }
   }

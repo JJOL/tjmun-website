@@ -25,8 +25,11 @@
     Form
 */
 
+iframe {
+  width: 100%;
+}
+
 .form-head {
-    background-color: #ccc;
     position: relative;
     height: 60px;
 }
@@ -37,28 +40,29 @@
   width: 50%;
   text-align: center;
   cursor: pointer;
+  color: white;
 }
 
 #school-btn {
   left: 0;
-  background-color: blue;
+  background-color: #0E2142;
 }
 #school-btn:hover {
-  background-color: darkblue;
+  background-color: blue;
 }
 
 #independent-btn {
   right: 0;
-  background-color: green;
+  background-color: #1B5E20;
 }
 #independent-btn:hover {
-  background-color: darkgreen;
+  background-color: green;
 }
 
 .school-form-head {
-  background-color: blue;
+  background-color: #0E2142;
 }
 
 .independent-form-head {
-  background-color: green;
+  background-color: #1B5E20;
 }
