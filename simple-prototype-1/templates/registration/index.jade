@@ -12,7 +12,7 @@ block content
   h1#pageTitle Registration
   #register-form
     .form-head(v-bind:class="{'school-form-head': schoolHead, 'independent-form-head': independentHead}")
-      h4 Are you an independent or a school?
+      h4 Do you want to register as school or an independent delegate?
       #school-btn.button-option(v-on:click="openSchoolForm()") School
       #independent-btn.button-option(v-on:click="openIndepententForm()") Independent
     #google-form-container
@@ -27,7 +27,6 @@ block content
           iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSeR7eg_0SC1dybk5N4sqWjdEFHVdBeEL9DRAJY_hnL4mQSKtw/viewform?embedded=true", frameborder="0", marginheight="0", marginwidth="0", style="height: 100%") Loading...
         #form-opt-2.form-container
           iframe(src="https://docs.google.com/forms/d/e/1FAIpQLSetMlFE5FP2RAaZq2pXPpIvfwpdeIl0JqG8o2oShC7bIHylBQ/viewform?embedded=true", frameborder="0", marginheight="0", marginwidth="0", style="height: 100%") Loading...
-        #delegate-btn.process-btn(v-on:click="openDelegateForm") Delegate Registration
         #advisor-btn.process-btn(v-on:click="openAdvisorForm") Advisors Registration
         //- Place Here School forms
   //- 

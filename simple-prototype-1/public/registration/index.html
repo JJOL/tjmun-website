@@ -106,7 +106,7 @@
         <h1 id="pageTitle">Registration</h1>
         <div id="register-form">
           <div v-bind:class="{'school-form-head': schoolHead, 'independent-form-head': independentHead}" class="form-head">
-            <h4>Are you an independent or a school?</h4>
+            <h4>Do you want to register as school or an independent delegate?</h4>
             <div id="school-btn" v-on:click="openSchoolForm()" class="button-option">School</div>
             <div id="independent-btn" v-on:click="openIndepententForm()" class="button-option">Independent</div>
           </div>
@@ -126,7 +126,6 @@
               <div id="form-opt-2" class="form-container">
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSetMlFE5FP2RAaZq2pXPpIvfwpdeIl0JqG8o2oShC7bIHylBQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" style="height: 100%">Loading...</iframe>
               </div>
-              <div id="delegate-btn" v-on:click="openDelegateForm" class="process-btn">Delegate Registration</div>
               <div id="advisor-btn" v-on:click="openAdvisorForm" class="process-btn">Advisors Registration</div>
             </div>
           </div>
@@ -139,9 +138,9 @@
           <h4>Any <span>Questions?</span></h4>
           <ul class="help-options">
             <li id="top-right"><a href="/committees/" class="centralize-text">What are the topics for this event</a></li>
-            <li id="top-left"><a href="/place/">I want to know more about the place</a></li>
+            <li id="top-left"><a href="/place/">I want to know more about Querétaro</a></li>
             <li id="bottom-right"><a href="/registration/">I'm fine. I'd like to register</a></li>
-            <li id="bottom-left"><a href="/delegateinfo/">What should I need to assist?</a></li>
+            <li id="bottom-left"><a href="/delegateinfo/">What do I need to assist?</a></li>
           </ul>
           <h5>Still with Questions?</h5><a href="/contact/">Contact us Please</a>
         </div>
