@@ -70,7 +70,7 @@ var vmApp = new Vue({
 
     },
     openDelegateForm: function() {
-      
+      this.$el.querySelector()
     },
     openAdvisorForm: function() {
 
