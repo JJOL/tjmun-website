@@ -28,10 +28,19 @@
 iframe {
   width: 100%;
 }
+.form-container {
+  height: 100%;
+}
+#form-opt-1, #form-opt-2 {
+  display: none;
+}
 
 .form-head {
     position: relative;
     height: 60px;
+    transition: background-color 0.5s;
+    text-align: center;
+    font-size: 1.3em;
 }
 
 .form-head .button-option {
@@ -41,6 +50,8 @@ iframe {
   text-align: center;
   cursor: pointer;
   color: white;
+  padding: 5px;
+  transition: background-color 0.3s;
 }
 
 #school-btn {
@@ -48,7 +59,8 @@ iframe {
   background-color: #0E2142;
 }
 #school-btn:hover {
-  background-color: blue;
+  background-color: #303F9F;
+;
 }
 
 #independent-btn {
@@ -60,9 +72,48 @@ iframe {
 }
 
 .school-form-head {
+  color: #ccc;
   background-color: #0E2142;
 }
 
 .independent-form-head {
+  color: white;
   background-color: #1B5E20;
+}
+
+#google-form-container {
+  position: relative;
+}
+
+.process-btn {
+  background-color: #785818;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  padding: 10px;
+  color: white;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.process-btn:hover {
+  cursor: pointer;
+}
+
+#advisor-btn {
+  right: 0;
+  background-color: #0E2142;
+}
+
+#advisor-btn:hover {
+  background-color: #303F9F;
+}
+
+#delegate-btn {
+  left: 0;
+  background-color: #1B5E20;
+}
+
+#delegate-btn:hover {
+  background-color: green;
 }
