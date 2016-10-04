@@ -36,6 +36,10 @@ info-box h1 {
   text-align: center;
 }
 
+.info-box-group {
+  width: 90%;
+}
+
 @media screen and (min-width: 768px) {
 
   .thing {
