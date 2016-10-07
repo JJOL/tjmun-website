@@ -88,7 +88,7 @@ iframe {
 .process-btn {
   background-color: #785818;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   width: 50%;
   padding: 10px;
   color: white;
@@ -101,12 +101,15 @@ iframe {
 }
 
 #advisor-btn {
-  right: 0;
-  background-color: #0E2142;
+  right: 25%;
+  background-color: #eee;
+  color: #346bcb;
+  border: 1px solid #a0a0a0;
 }
 
 #advisor-btn:hover {
   background-color: #303F9F;
+  color: #eee;
 }
 
 #delegate-btn {
