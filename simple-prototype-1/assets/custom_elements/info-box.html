@@ -178,7 +178,7 @@
         <content select=".secondInformation">
         </content>
       </div>
-      <div id="toggleButton" on-click="toggleView">
+      <div id="toggleButton" on-click="toggleView" hidden="{{_isSinglePage()}}">
         <iron-icon id="summaryBtn"
                    class="fit"
                    icon="icons:arrow-forward"
@@ -205,6 +205,13 @@
           value: 1
         },
         canSlide: Boolean,
+        singlepage: {
+          type: Boolean,
+          value: false
+        }
+      },
+      _isSinglePage: function() {
+        return true;
       },
       _isInView: function(current, expected) {
         return current == expected;
@@ -212,6 +219,7 @@
       ready: function() {
         this.customStyle['--committee-box-color'] = this.color;
         this.canSlide = true;
+
       },
       toggleView: function() {
         if(this.canSlide) {

@@ -18,6 +18,9 @@
 .thing h1 {
   font-size: 1.8em;
 }
+
+
+
 .thing:hover {
     box-shadow: 3px 0px 10px #ccc, -3px 0px 10px #ccc;
 }

@@ -3,7 +3,7 @@ var MUNProvider = function() {
 
   var _takenRecord = [];
   var _dbRecord = {};
-
+Delate all
 
   /* getCountries(committee, country)
    * Returns a promise with the list of countries in a committee,
