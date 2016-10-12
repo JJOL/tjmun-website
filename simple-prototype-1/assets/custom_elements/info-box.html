@@ -194,11 +194,11 @@
 
   <script type="text/javascript">
     Polymer({
-      is: 'info-box',
+      is: "info-box",
       properties: {
         color: {
           type: String,
-          value: 'blue'
+          value: "blue"
         },
         view: {
           type: Number,
@@ -217,7 +217,7 @@
         return current == expected;
       },
       ready: function() {
-        this.customStyle['--committee-box-color'] = this.color;
+        this.customStyle["--committee-box-color"] = this.color;
         this.canSlide = true;
 
       },
@@ -226,7 +226,7 @@
           this.canSlide = false;
           this.view = (this.view == 0) ? 1 : 0;
           this._shiftView();
-          this.$.toggleButton.classList.add('toLeft');
+          this.$.toggleButton.classList.add("toLeft");
           setTimeout(this._resetCanSlide.bind(this), 1000);
         }
       },
@@ -234,16 +234,16 @@
         this.canSlide = true;
       },
       _shiftView: function() {
-        this.$.secondLayer.classList.add('in');
-        this.$.presentationLayer.classList.remove('in');
+        this.$.secondLayer.classList.add("in");
+        this.$.presentationLayer.classList.remove("in");
         if (this.view == 0) {
           // Push from the left
-          this.$.secondLayer.classList.add('in');
-          this.$.presentationLayer.classList.remove('in');
+          this.$.secondLayer.classList.add("in");
+          this.$.presentationLayer.classList.remove("in");
         } else {
           // Push from the right
-          this.$.secondLayer.classList.remove('in');
-          this.$.presentationLayer.classList.add('in');
+          this.$.secondLayer.classList.remove("in");
+          this.$.presentationLayer.classList.add("in");
         }
       }
     });
