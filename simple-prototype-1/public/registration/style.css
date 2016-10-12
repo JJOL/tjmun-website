@@ -37,7 +37,7 @@ iframe {
 
 .form-head {
     position: relative;
-    height: 60px;
+    height: 100px;
     transition: background-color 0.5s;
     text-align: center;
     font-size: 1.3em;
@@ -119,4 +119,11 @@ iframe {
 
 #delegate-btn:hover {
   background-color: green;
+}
+
+
+@media screen and (min-width: 1124px) {
+  .form-head {
+      height: 60px;
+  }
 }
