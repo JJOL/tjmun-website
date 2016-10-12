@@ -37,7 +37,7 @@ iframe {
 
 .form-head {
     position: relative;
-    height: 100px;
+    height: 150px;
     transition: background-color 0.5s;
     text-align: center;
     font-size: 1.3em;
@@ -121,6 +121,11 @@ iframe {
   background-color: green;
 }
 
+@media screen and (min-width: 384px) {
+  .form-head {
+      height: 100px;
+  }
+}
 
 @media screen and (min-width: 1124px) {
   .form-head {
