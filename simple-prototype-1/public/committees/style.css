@@ -4,6 +4,9 @@ h1 {
 ul {
   width: 100%;
 }
+#committees-container {
+  position: relative;
+}
 .committee-item {
   width: 100%;
   border: 1px solid #ccc;
