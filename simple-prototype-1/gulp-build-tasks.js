@@ -108,6 +108,7 @@ function doCss(path, dest) {
 
 function doAssets(path, dest) {
   gutil.log('Starting to process Assets files');
+
   gulp.src(path)
     .pipe(gulp.dest(dest));
   gutil.log('Assets Files Processed!');
@@ -133,7 +134,7 @@ gulp.task('all-assets', function() {
 
 gulp.task('all-template-files', function() {
   gutil.log('Doing Template Files!');
-  var src= ["templates/**/*.*", "!templates/**/*.css", "!templates/**/*.jade"],
+  var src= ["templates/home/*.js", "templates/home/*.mf", "templates/**/*.*", "!templates/**/*.css", "!templates/**/*.jade"],
       dest = "public";
   doAssets(src, dest);
 });

@@ -390,27 +390,27 @@ footer .policy-footer {
 }
 
 #faceb-link .icon{
-  background-image: url("../img/FB-f-Logo__white_29.png");
+  background-image: url("../img/fb-l-white.png");
 }
 #faceb-link:hover .icon{
   color: #3B5998;
-  background-image: url("../img/FB-f-Logo__blue_29.png");
+  background-image: url("../img/fb-l.png");
 }
 
 #tweet-link .icon{
-  background-image: url("../img/TwitterLogo_white.png");
+  background-image: url("../img/tw-l-white.png");
 }
 #tweet-link:hover .icon{
   color: #4099FF;
-  background-image: url("../img/TwitterLogo.png");
+  background-image: url("../img/tw-l.png");
 }
 
 #insta-link .icon{
-  background-image: url("../img/glyph-logo_May2016.png");
+  background-image: url("../img/in-l-white.png");
 }
 #insta-link:hover .icon{
   color: #ffc838;
-  background-image: url("../img/Instagram-v051916.png");
+  background-image: url("../img/in-l.png");
 }
 
 #full-error-view {

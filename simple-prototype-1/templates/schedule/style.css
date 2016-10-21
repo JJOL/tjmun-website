@@ -1,0 +1,60 @@
+#schedule-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.day-container {
+  margin-bottom: 20px;
+}
+
+.day-container h2 {
+
+  background-color: green;
+  padding: 5px 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+
+}
+
+.event-container {
+  /*border-bottom: 1px solid #ccc;*/
+  padding: 25px;
+  position: relative;;
+
+}
+
+.event-container::after, .event-container::before {
+  content: '';
+  width: 47.8%;
+  height: 2px;
+  background-color: #ccc;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.event-container::after {
+  right: 0;
+}
+
+.event-container::before {
+  left: 0;
+}
+
+.time {
+  font-size: 0.8em;
+  color: #A0A0A0;
+}
+
+@media screen and (min-width: 576px) {
+  #schedule-container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1124px) {
+  #schedule-container {
+    width: 70%;
+  }
+}

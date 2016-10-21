@@ -1,0 +1,17 @@
+CACHE MANIFEST
+
+CACHE
+
+/assets/img/about-icon.jpg
+/assets/img/tjmun-official-logo.png
+/assets/img/itj-official-logo.png
+/committees/
+/delegateinfo/
+/contact/
+/assets/js/webutils.js
+/assets/styles/fonts/OpenSans-Bold.ttf
+/assets/img/tj-clear-banner.jpg
+
+
+/assets/libs/bower/webcomponentsjs/webcomponents.js
+/assets/custom_elements/committee-box.html
