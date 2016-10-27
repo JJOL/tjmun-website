@@ -38,6 +38,10 @@
   right: 0;
 }
 
+.event-container:last-child::before, .event-container:last-child::after {
+  display: none;
+}
+
 .event-container::before {
   left: 0;
 }

@@ -10,6 +10,13 @@ block cHead
   
 block content
   h1#pageTitle Registration
+  .steps(style="max-width: 320px; margin: 0 auto; margin-bottom: 20px")
+    h3(style="font-size: 1.3em; text-align: center") Registration Steps:
+    ol(style="text-align: justify")
+      li Choose whether you are registering as school or as independent delegate.
+      li Fill the form.
+      li If you chose school registration, register your advisors <strong style="text-decoration: underline">AFTER</strong> you have completed the school registration form by clicking the Advisors Registration button.
+      li Wait for instructions in the e-mail provided during the school registration. 
   #register-form
     .form-head(v-bind:class="{'school-form-head': schoolHead, 'independent-form-head': independentHead}")
       h4 Do you want to register as school or an independent delegate?

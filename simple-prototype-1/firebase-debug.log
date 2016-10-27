@@ -3,7 +3,7 @@
 [debug] CLI Version:  3.0.8
 [debug] Platform:     darwin
 [debug] Node Version: v4.2.3
-[debug] Time:         Fri Oct 21 2016 14:22:13 GMT-0500 (CDT)
+[debug] Time:         Wed Oct 26 2016 22:59:37 GMT-0500 (CDT)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
@@ -20,4 +20,4 @@
 [info] i  deploying database, hosting
 [info] ✔  database: rules ready to deploy.
 [info] i  hosting: preparing public/ directory for upload...
-[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/tjmun-home/uploads/-KUcgOivLjNOTCP6SaSi?fileCount=558&message= 
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/tjmun-home/uploads/-KV3HlprZBJLivlALMk5?fileCount=558&message= 
