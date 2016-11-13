@@ -191,6 +191,7 @@ gulp.task('watch-all', function() {
     gutil.log("Path to css file: " + path);
 
     var pathParts = path.split('\\');
+    pathParts = path.split('/');
     var src = pathParts[0] + "/**/*.css"
         dest = (pathParts[0] == 'assets') ? "public/assets" : "public";
     doCss(src, dest);

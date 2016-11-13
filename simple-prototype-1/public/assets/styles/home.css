@@ -1,3 +1,81 @@
+.attractive-page-asset-container  {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  background-image: url('/assets/img/background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  /*transition: transform 1s ease-in-out 1s;*/
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-animation-name: showItsTime;
+          animation-name: showItsTime;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+
+}
+
+.attractive-page-asset-container h1 {
+
+
+  color: #fcfcfc;
+  margin-left: 130px;
+  font-size: 2em;
+}
+
+#fake-toggle-button {
+  position: absolute;
+  opacity: 0;
+}
+
+@-webkit-keyframes showItsTime {
+  from {
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes showItsTime {
+  from {
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.attractive-page-asset-container * {
+  padding: 0;
+  margin: 0;
+}
+
+#fake-toggle-button:checked + #letter-container {
+  -webkit-transform: translateY(500px);
+      -ms-transform: translateY(500px);
+          transform: translateY(500px);
+}
+
+#letter-container {
+  background: white;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  transition: -webkit-transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
+}
+
+
 .time-label {
   text-align: center;
   font-weight: bold;
@@ -99,7 +177,7 @@
   min-height: 300px;
 }
 
-.letter-box h1 {
+.letter-box .paper-out h1 {
   font-size: 2.7em;
 }
 
@@ -107,6 +185,7 @@
   margin-top: 100px;
   text-align: center;
   color: #555;
+  /*background-color: #4682B4;*/
 }
 
 .letter-box .paper-out {
@@ -167,6 +246,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .attractive-page-asset-container h1 {
+    margin-left: 230px;
+    font-size: 2.7em;
+  }
 }
 
 /*

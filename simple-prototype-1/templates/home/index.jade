@@ -9,9 +9,14 @@ block cHead
   link(rel="stylesheet", href="assets/styles/home.css")
 
 block content
+
+  
   article.letter-box
       // Welcoming Letter
-      .paper-out.clfix
+      //- label.attractive-page-asset-container(for="fake-toggle-button")
+      //-   h1 IT'S TIME
+      //- input(type="checkbox", id="fake-toggle-button", name="fake-toggle-button")
+      #letter-container.paper-out.clfix
         h1
           | Thomas Jefferson Model UN &amp; OAS 
           br
@@ -66,8 +71,8 @@ block content
             | President TJMUN & OAS 2016
           .signature
             img#signature(src='/assets/img/carta-signature.png', alt="Humberto Salinas' Signature")
-          .letter-pic.member-pic.letter-element
-            img(src='/assets/img/president-photo.jpg', alt='')
+          //- .letter-pic.member-pic.letter-element
+          //-   img(src='/assets/img/president-photo.jpg', alt='')
         .twitter-feed
           a.twitter-feed.twitter-timeline(href="https://twitter.com/TJMUN_Queretaro", width="300", height="600") Tweets by TJMUN_Queretaro
           

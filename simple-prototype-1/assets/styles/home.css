@@ -1,3 +1,57 @@
+.attractive-page-asset-container  {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  background-image: url('/assets/img/background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  /*transition: transform 1s ease-in-out 1s;*/
+  transform: translateY(0px);
+  animation-name: showItsTime;
+  animation-delay: 1s;
+  animation-duration: 3s;
+
+}
+
+.attractive-page-asset-container h1 {
+
+
+  color: #fcfcfc;
+  margin-left: 130px;
+  font-size: 2em;
+}
+
+#fake-toggle-button {
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes showItsTime {
+  from {
+    transform: translateY(70px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.attractive-page-asset-container * {
+  padding: 0;
+  margin: 0;
+}
+
+#fake-toggle-button:checked + #letter-container {
+  transform: translateY(500px);
+}
+
+#letter-container {
+  background: white;
+  transform: translateY(0px);
+  transition: transform 1.5s ease-in-out;
+}
+
+
 .time-label {
   text-align: center;
   font-weight: bold;
@@ -89,7 +143,7 @@
   min-height: 300px;
 }
 
-.letter-box h1 {
+.letter-box .paper-out h1 {
   font-size: 2.7em;
 }
 
@@ -97,6 +151,7 @@
   margin-top: 100px;
   text-align: center;
   color: #555;
+  /*background-color: #4682B4;*/
 }
 
 .letter-box .paper-out {
@@ -157,6 +212,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .attractive-page-asset-container h1 {
+    margin-left: 230px;
+    font-size: 2.7em;
+  }
 }
 
 /*
