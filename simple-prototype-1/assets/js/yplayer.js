@@ -33,8 +33,9 @@ function onPlayerReady(event) {
   var playerEl = document.getElementById('player-box');
   var hOffset = ((letterRect.width - pWidth) / 2).toString() + 'px';
   var vOffset = ((behindHeight - pHeight) / 2).toString() + 'px';
-  playerEl.style.marginLeft = hOffset;
-  playerEl.style.marginTop = vOffset;
+  playerEl.style.left = hOffset;
+  console.log("VOffset: " + vOffset);
+  playerEl.style.top = '100px';
 
 }
 

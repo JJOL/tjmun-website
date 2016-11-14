@@ -76,10 +76,10 @@
 }
 
 #player-box {
-  margin-top: 50px;
-  float: left;
 
-
+  position: absolute;
+  left: 25%;
+  
 }
 
 .time-label {
