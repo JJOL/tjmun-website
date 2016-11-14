@@ -75,6 +75,12 @@
   transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
 }
 
+#player-box {
+  margin-top: 50px;
+  float: left;
+
+
+}
 
 .time-label {
   text-align: center;
@@ -182,6 +188,7 @@
 }
 
 .letter-box {
+  position: relative;
   margin-top: 100px;
   text-align: center;
   color: #555;

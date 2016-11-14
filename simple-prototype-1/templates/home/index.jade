@@ -13,9 +13,12 @@ block content
   
   article.letter-box
       // Welcoming Letter
-      //- label.attractive-page-asset-container(for="fake-toggle-button")
-      //-   h1 IT'S TIME
-      //- input(type="checkbox", id="fake-toggle-button", name="fake-toggle-button")
+      label.attractive-page-asset-container(for="fake-toggle-button")
+        a(href="https://www.youtube.com/watch?v=IhrvbtfCIeI")
+        h1 IT'S TIME
+        
+      #player-box
+      input(type="checkbox", id="fake-toggle-button", name="fake-toggle-button")
       #letter-container.paper-out.clfix
         h1
           | Thomas Jefferson Model UN &amp; OAS 
@@ -78,5 +81,9 @@ block content
           
         // Letter Content Ends
       // Foto de Bienvenida
+  script.
+    document.querySelector('.attractive-page-asset-container a')
+      .style.pointerEvents = 'none';
   script(type="text/javascript", src="/assets/js/counter.js")
+  script(type="text/javascript", src="/assets/js/yplayer.js")
   script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
