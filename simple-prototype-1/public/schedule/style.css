@@ -51,6 +51,14 @@
   color: #A0A0A0;
 }
 
+.side-info {
+  /*background-color: #871717;*/
+  border-radius: 5px;
+  padding: 3px;
+  /*float: right;*/
+  font-style: italic;
+}
+
 @media screen and (min-width: 576px) {
   #schedule-container {
     width: 90%;
