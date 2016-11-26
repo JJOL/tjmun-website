@@ -3,10 +3,13 @@
 [debug] CLI Version:  3.0.8
 [debug] Platform:     darwin
 [debug] Node Version: v4.2.3
-[debug] Time:         Sun Nov 13 2016 23:54:26 GMT-0600 (CST)
+[debug] Time:         Thu Nov 24 2016 22:24:56 GMT-0600 (CST)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token
+[debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/tjmun-home 
 [debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/tjmun-home/tokens 
@@ -17,3 +20,10 @@
 [info] i  deploying database, hosting
 [info] ✔  database: rules ready to deploy.
 [info] i  hosting: preparing public/ directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/tjmun-home/uploads/-KXOifQcRLFanqMtePPj?fileCount=568&message= 
+[debug] Error: write EPIPE
+    at Object.exports._errnoException (util.js:874:11)
+    at exports._exceptionWithHostPort (util.js:897:20)
+    at WriteWrap.afterWrite (net.js:763:14)
+[error] 
+[error] Error: Server Error. write EPIPE

@@ -12,6 +12,7 @@
     "setimmediate": "^1.0.1",
     "google-map": "GoogleWebComponents/google-map#^1.1.11",
     "lightbox2": "^2.8.2",
-    "polymer": "^1.7.0"
+    "polymer": "^1.7.0",
+    "paper-audio-player": "^1.1.1"
   }
 }

@@ -13,9 +13,9 @@ block content
   
   article.letter-box
       // Welcoming Letter
-      label.attractive-page-asset-container(for="fake-toggle-button")
+      label.attractive-page-asset-container(for="fake-toggle-button", style="min-height: 60px", onclick="tglbtn()")
         a(href="https://www.youtube.com/watch?v=IhrvbtfCIeI")
-        h1 IT'S TIME
+        h1#video-title IT'S TIME
         
       #player-box
       input(type="checkbox", id="fake-toggle-button", name="fake-toggle-button")
@@ -87,3 +87,19 @@ block content
   script(type="text/javascript", src="/assets/js/counter.js")
   script(type="text/javascript", src="/assets/js/yplayer.js")
   script(async, src="//platform.twitter.com/widgets.js", charset="utf-8")
+  script(src="/assets/js/machinetxteff.js")
+  script.
+    var UP = 0, DOWN = 1;
+    var state = UP;
+    var toggle = WEBSITE.applyMachineEffect(document.getElementById('video-title'), {
+      words: ["IT'S TIME", "TJMUN VIDEO"]
+    })
+    function tglbtn() {
+      if (state == UP) {
+        state = DOWN;
+        toggle(false);
+      } else {
+        state = UP;
+        toggle(true);
+      }
+    }

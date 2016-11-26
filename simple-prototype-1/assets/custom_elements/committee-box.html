@@ -294,8 +294,8 @@
             return current == expected;
           },
           _canShowDownload: function(current, expected) {
-            return true;
-            //return !(this._isInView(current, expected) && this.fname != "NULL");
+            //return true;
+            return !(this._isInView(current, expected) && this.fname != "NULL");
           },
           _targetGrades: function(gradeStr) {
             var gradeName;

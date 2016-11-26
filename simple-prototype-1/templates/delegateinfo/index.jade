@@ -9,6 +9,7 @@ block cHead
   link(rel="stylesheet", href="style.css")
   script(type="text/javascript", src="/assets/libs/bower/webcomponentsjs/webcomponents.js")
   link(rel="import", href="/assets/custom_elements/info-box.html")
+  link(rel="import", href="/assets/libs/bower/paper-audio-player/paper-audio-player.html")
   
 block content
   h1#pageTitle Delegate Info
@@ -74,6 +75,14 @@ block content
             
   #savedate
     img(src="/assets/img/save_the_date.jpg")
+  //- .podcasts-container
+  //-   .podcast-container-title
+  //-     | Committee Podcasts
+  //-   paper-audio-player(src="/assets/podcasts/Hermitude.mp3", title="Podcast #1", style="width: 80%")
+  //-   paper-audio-player(src="/assets/podcasts/Hermitude.mp3", title="Podcast #2", style="width: 80%")
+  //-   paper-audio-player(src="/assets/podcasts/Hermitude.mp3", title="Podcast #3", style="width: 80%")
+  //-   paper-audio-player(src="/assets/podcasts/Hermitude.mp3", title="Podcast #4", style="width: 80%")
+  //-   paper-audio-player(src="/assets/podcasts/Hermitude.mp3", title="Podcast #5", style="width: 80%")
   div(id="full-error-view")
     span 
       | I would advise you to not use the iPhone's/iPad's/iPod's browser to view this page.

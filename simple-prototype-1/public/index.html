@@ -107,8 +107,8 @@
         <noscript>You Must Enable Javascript to view this page if you don't want to miss information!</noscript>
         <article class="letter-box">
           <!-- Welcoming Letter-->
-          <label for="fake-toggle-button" class="attractive-page-asset-container"><a href="https://www.youtube.com/watch?v=IhrvbtfCIeI"></a>
-            <h1>IT'S TIME</h1>
+          <label for="fake-toggle-button" style="min-height: 60px" onclick="tglbtn()" class="attractive-page-asset-container"><a href="https://www.youtube.com/watch?v=IhrvbtfCIeI"></a>
+            <h1 id="video-title">IT'S TIME</h1>
           </label>
           <div id="player-box"></div>
           <input type="checkbox" id="fake-toggle-button" name="fake-toggle-button">
@@ -184,6 +184,23 @@
         <script type="text/javascript" src="/assets/js/counter.js"></script>
         <script type="text/javascript" src="/assets/js/yplayer.js"></script>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script src="/assets/js/machinetxteff.js"></script>
+        <script>
+          var UP = 0, DOWN = 1;
+          var state = UP;
+          var toggle = WEBSITE.applyMachineEffect(document.getElementById('video-title'), {
+            words: ["IT'S TIME", "TJMUN VIDEO"]
+          })
+          function tglbtn() {
+            if (state == UP) {
+              state = DOWN;
+              toggle(false);
+            } else {
+              state = UP;
+              toggle(true);
+            }
+          }
+        </script>
       </div>
       <div class="block centralize-text">
         <div id="help-container" class="main-container">
@@ -213,5 +230,16 @@
       </footer>
     </div>
     <script src="/assets/js/webutils.js"></script>
+    <script>
+      /*if(!window.localStorage.getItem('updates-1-0')) {
+        setTimeout(function() {
+          window.localStorage.setItem('updates-1-0', "done");
+          WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
+          WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
+          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
+        }, 3000);
+      }*/
+    </script>
   </head>
 </html>

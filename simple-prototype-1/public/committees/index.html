@@ -443,7 +443,7 @@
             <h2>Special Committees</h2> 
             <ul>
               <li class="committee-item">
-                <committee-box name="World Bank" chairs="[&quot;Ximena Urbiola&quot;,&quot;Gunther Hernandez&quot;]" color="#d6b800" fname="wb" grades="h">
+                <committee-box name="World Bank" chairs="[&quot;Ximena Urbiola&quot;,&quot;Gunther Hernandez&quot;]" color="#d6b800" fname="worldbank" grades="h">
                   <div class="topicA">World Bank's Position on "Brexit"</div>          
                   <div class="topicB">Gender Equality in the Global Markets</div>
                   <div class="summary">
@@ -465,7 +465,7 @@
                 </committee-box>
               </li>      
               <li class="committee-item">
-                <committee-box name="Press Corps" chairs="[&quot;Lotte Janse&quot;, &quot;Isaac Cárdenas&quot;, &quot;David Gómez (Final Editor)&quot;]" color="#d6b800" grades="h">
+                <committee-box name="Press Corps" chairs="[&quot;Lotte Janse&quot;, &quot;Isaac Cárdenas&quot;, &quot;David Gómez (Final Editor)&quot;]" color="#d6b800" grades="h" fname="presscorps">
                   <div class="topicA">Delegates will be representing a country and a specific newspaper while showing their unique writing style in articles and media.</div>
                   <div class="summary">
                     <p>
@@ -511,5 +511,16 @@
       </footer>
     </div>
     <script src="/assets/js/webutils.js"></script>
+    <script>
+      /*if(!window.localStorage.getItem('updates-1-0')) {
+        setTimeout(function() {
+          window.localStorage.setItem('updates-1-0', "done");
+          WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
+          WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
+          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
+        }, 3000);
+      }*/
+    </script>
   </head>
 </html>

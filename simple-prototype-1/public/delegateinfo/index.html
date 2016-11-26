@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="/assets/libs/bower/webcomponentsjs/webcomponents.js"></script>
     <link rel="import" href="/assets/custom_elements/info-box.html">
+    <link rel="import" href="/assets/libs/bower/paper-audio-player/paper-audio-player.html">
     <body></body>
     <!-- Website-->
     <!--
@@ -214,5 +215,16 @@
       </footer>
     </div>
     <script src="/assets/js/webutils.js"></script>
+    <script>
+      /*if(!window.localStorage.getItem('updates-1-0')) {
+        setTimeout(function() {
+          window.localStorage.setItem('updates-1-0', "done");
+          WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
+          WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
+          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
+        }, 3000);
+      }*/
+    </script>
   </head>
 </html>
