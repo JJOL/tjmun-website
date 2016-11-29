@@ -1,5 +1,6 @@
 
 var WEBSITE = WEBSITE || {};
+WEBSITE.toastShowDuration = 6000;
 
 (function(){
 
@@ -42,7 +43,7 @@ var WEBSITE = WEBSITE || {};
       toastBox.classList.remove('toast-show');
       activated = false;
       setTimeout(onEndTransition, 1000);
-    }, 5000);
+    }, WEBSITE.toastShowDuration);
   }
 
   WEBSITE.displayToastMessage = displayToastMessage;

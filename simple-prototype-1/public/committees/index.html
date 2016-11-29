@@ -320,7 +320,7 @@
                 </committee-box>
               </li>      
               <li class="committee-item">
-                <committee-box name="COP 2030" chairs="[&quot;Fer Esquivel&quot;,&quot;Ana Badía&quot;]" color="#3F51B5" fname="fccop2030">
+                <committee-box name="COP 2030" chairs="[&quot;Fer Esquivel&quot;,&quot;Ana Badía&quot;]" color="#3F51B5" fname="cop2030">
                   <div class="topicA">New regulations for climate change due to the state of emergency</div>
                   <div class="summary">               
                     <h5>
@@ -482,6 +482,20 @@
              
             I would advise you to not use the iPhone's/iPad's/iPod's browser to view this page.
             <button id="full-error-view-button">Click to Dismiss</button></span></div>
+        <script>
+          var VERSION = 1, SUBVERSION = 1;
+          var NOTIFICATIONS_UUID_COMMITTEES = "UPDATES-" + VERSION + "-" + SUBVERSION;
+          var DELIVERED = "DONE";
+          
+          function showGuide() {
+            
+            window.localStorage.setItem(NOTIFICATIONS_UUID_COMMITTEES, DELIVERED);
+            WEBSITE.displayToastMessage('Get the Background Papers by clicking on the download button on each committee summary tab!');
+            setTimeout(showGuide, 60000); // Show it again every 1 minute
+          }
+          
+          setTimeout(showGuide, 5000); // Show 5 secs after load page
+        </script>
       </div>
       <div class="block centralize-text">
         <div id="help-container" class="main-container">
@@ -512,15 +526,19 @@
     </div>
     <script src="/assets/js/webutils.js"></script>
     <script>
-      /*if(!window.localStorage.getItem('updates-1-0')) {
+      var VERSION = 1, SUBVERSION = 0;
+      var NOTIFICATIONS_UUID = "UPDATES-" + VERSION + "-" + SUBVERSION;
+      var DELIVERED = "DONE";
+      if(window.localStorage.getItem(NOTIFICATIONS_UUID) != DELIVERED) {
         setTimeout(function() {
-          window.localStorage.setItem('updates-1-0', "done");
+          window.localStorage.setItem(NOTIFICATIONS_UUID, DELIVERED);
           WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
           WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
-          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Committees\' Background Papers now available in the Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Learn more about the Press Corps Committee in the Press Corp Tab!');
           //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
         }, 3000);
-      }*/
+      }
     </script>
   </head>
 </html>

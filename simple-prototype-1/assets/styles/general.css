@@ -454,6 +454,20 @@ footer .policy-footer {
   z-index: 10000;
 }
 
+#toast::before {
+  position: absolute;
+  content: 'TJMUN Updates';
+  left: 20px;
+  top: -40px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #0E2142;
+  background: #EEDE51;
+  visibility: visible;
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
 #toast.toast-show {
   opacity: 1;
 }

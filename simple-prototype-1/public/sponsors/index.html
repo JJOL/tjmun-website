@@ -112,7 +112,7 @@
               <div class="sponsor-container"><img src="/assets/img/sponsors/internationalschools.jpg">
                 <div class="background"></div>
                 <div class="readme">Read More</div><a href="http://www.grupobimbo.com/es/index.html" target="_blank" class="description">Thank you International Schools Partnerships.
-                  <div class="page-visit">Click To Visist</div></a>
+                  <div class="page-visit">Click To Visit</div></a>
               </div>
             </div>
           </div>
@@ -120,49 +120,49 @@
             <div class="sponsor-container"><img src="/assets/img/sponsors/bimbo.jpeg">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="http://www.grupobimbo.com/es/index.html" target="_blank" class="description">Thank you Bimbo.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/Yokohama.jpg">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="http://www.yokohamallantas.com/" target="_blank" class="description">Thank you Yokohama.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/rbaOrgb.jpg">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="https://www.rbauction.com.mx/" target="_blank" class="description">Thank you Ritchie Bros Auctioneers.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/rifel.png">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="http://www.rifel.com.ve/" target="_blank" class="description">Thank you Rifel.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/achieve.png">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="https://www.achieve3000.com/" target="_blank" class="description">Thank you Achieve3000.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/alpura-img.jpg">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="http://www.alpura.com/" target="_blank" class="description">Thank you Alpura.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
           <div class="sponsor-boder-container">
             <div class="sponsor-container"><img src="/assets/img/sponsors/sejuve.png">
               <div class="background"></div>
               <div class="readme">Read More</div><a href="http://www.queretaro.gob.mx/sejuveqro/" target="_blank" class="description">Thank you Sejuve.
-                <div class="page-visit">Click To Visist</div></a>
+                <div class="page-visit">Click To Visit</div></a>
             </div>
           </div>
         </div>
@@ -196,15 +196,19 @@
     </div>
     <script src="/assets/js/webutils.js"></script>
     <script>
-      /*if(!window.localStorage.getItem('updates-1-0')) {
+      var VERSION = 1, SUBVERSION = 0;
+      var NOTIFICATIONS_UUID = "UPDATES-" + VERSION + "-" + SUBVERSION;
+      var DELIVERED = "DONE";
+      if(window.localStorage.getItem(NOTIFICATIONS_UUID) != DELIVERED) {
         setTimeout(function() {
-          window.localStorage.setItem('updates-1-0', "done");
+          window.localStorage.setItem(NOTIFICATIONS_UUID, DELIVERED);
           WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
           WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
-          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Committees\' Background Papers now available in the Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Learn more about the Press Corps Committee in the Press Corp Tab!');
           //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
         }, 3000);
-      }*/
+      }
     </script>
   </head>
 </html>

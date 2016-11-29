@@ -105,8 +105,7 @@
       <!-- Main Page Content-->
       <div class="main-container">
         <noscript>You Must Enable Javascript to view this page if you don't want to miss information!</noscript>
-        <div id="iframe-container">
-          <iframe src="https://tjpresscorp-munlight.weebly.com/" style="width: 100%; height: 100vh; min-height: 400px"></iframe>
+        <div id="iframe-container" style="padding: 40px">Visit Our Press Corps Page by clicking on the following link:<a href="https://tjpresscorp-munlight.weebly.com/" style="color: blue; margin-left: 30px; text-decoration: underline" target="_blank">Press Corps Website</a>
         </div>
         <script src="/assets/js/smoothscroll.js"></script>
         <script>
@@ -146,15 +145,19 @@
     </div>
     <script src="/assets/js/webutils.js"></script>
     <script>
-      /*if(!window.localStorage.getItem('updates-1-0')) {
+      var VERSION = 1, SUBVERSION = 0;
+      var NOTIFICATIONS_UUID = "UPDATES-" + VERSION + "-" + SUBVERSION;
+      var DELIVERED = "DONE";
+      if(window.localStorage.getItem(NOTIFICATIONS_UUID) != DELIVERED) {
         setTimeout(function() {
-          window.localStorage.setItem('updates-1-0', "done");
+          window.localStorage.setItem(NOTIFICATIONS_UUID, DELIVERED);
           WEBSITE.displayToastMessage('Be sure to check out the latest website updates:');
           WEBSITE.displayToastMessage('Welcoming Video in the Home Page. (You can find it behind the letter)');
-          WEBSITE.displayToastMessage('Committees\'Background papers now available in Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Committees\' Background Papers now available in the Committees Section as pdfs.');
+          WEBSITE.displayToastMessage('Learn more about the Press Corps Committee in the Press Corp Tab!');
           //WEBSITE.displayToastMessage('New Radio podcasts. Hear from the Committees chiefs to know about them.')
         }, 3000);
-      }*/
+      }
     </script>
   </head>
 </html>

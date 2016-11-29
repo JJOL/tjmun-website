@@ -205,7 +205,7 @@ block content
                   | On October 4, 2015, Ministers of the  (TPP) countries Australia, United States of America, Canada, Chile, Japan, Malaysia, Mexico, New Zealand, Peru,  among others; announced conclusion on their negotiations.  The result is a high-standard, ambitious, comprehensive, and balanced agreement that will promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; among other things. It also aims to reduce trade barriers which typically include import tariffs, but also environmental and labor regulations, known as “nontariff barriers to trade,” or NBTs. Besides, The TPP also threatens Internet freedoms and civil liberties, collective bargaining rights, public and environmental health, food safety, and  financial stability. It is important to mention that this agreement was negotiated in “secret”.
           |       
           li.committee-item
-            committee-box(name='COP 2030', chairs='["Fer Esquivel","Ana Badía"]', color='#3F51B5', fname="fccop2030")
+            committee-box(name='COP 2030', chairs='["Fer Esquivel","Ana Badía"]', color='#3F51B5', fname="cop2030")
               .topicA
                 | New regulations for climate change due to the state of emergency
               .summary                
@@ -337,3 +337,16 @@ block content
         | I would advise you to not use the iPhone's/iPad's/iPod's browser to view this page.
         button(id="full-error-view-button") Click to Dismiss
     //- script(src="/assets/js/iOSBrowserError.js")
+  script.
+    var VERSION = 1, SUBVERSION = 1;
+    var NOTIFICATIONS_UUID_COMMITTEES = "UPDATES-" + VERSION + "-" + SUBVERSION;
+    var DELIVERED = "DONE";
+    
+    function showGuide() {
+      
+      window.localStorage.setItem(NOTIFICATIONS_UUID_COMMITTEES, DELIVERED);
+      WEBSITE.displayToastMessage('Get the Background Papers by clicking on the download button on each committee summary tab!');
+      setTimeout(showGuide, 60000); // Show it again every 1 minute
+    }
+    
+    setTimeout(showGuide, 5000); // Show 5 secs after load page
