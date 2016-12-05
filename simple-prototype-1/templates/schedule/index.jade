@@ -10,7 +10,12 @@ block cHead
   
 block content
   h1#pageTitle Schedule
+  
+  //- &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
+  //- &markers=color:red%7Clabel:C%7C40.718217,-73.998284
   #schedule-container
+    a(href="https://www.google.com/maps/place/20.615575,-100.3899/", target="_blank", style="width: 100%")
+      img.static-map(src="http://maps.googleapis.com/maps/api/staticmap?center=20.615575,-100.3899&zoom=17&scale=false&size=600x300&maptype=roadmap&format=jpg&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C20.615513,-100.389311")
     #day-1-container.day-container
       h2 Day 1 - Thursday 8 
         span.side-info @ Hotel Grand Fiesta Americana
@@ -32,7 +37,7 @@ block content
         .icon-container
         
     #day-2-container.day-container
-      h2 Day 2 - Friday 
+      h2 Day 2 - Friday 9
         span.side-info @ School Premises
       .event-container
         h3 Introductory Session
@@ -58,7 +63,7 @@ block content
         .icon-container
         
     #day-3-container.day-container
-      h2 Day 3 - Saturday
+      h2 Day 3 - Saturday 10
         span.side-info @ School Premises
       .event-container
         h3 3rd Session

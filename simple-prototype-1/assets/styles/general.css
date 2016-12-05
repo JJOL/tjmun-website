@@ -321,6 +321,24 @@ Header
   font-weight: normal;
 }
 
+.pretty-button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 12.5px;
+  text-align: center;
+  color: #ccc;
+  background: #2b3236;
+  border-radius: 5px;
+  border: 2px solid #2b3236;
+  transition: .3s background-color;
+  transition: .3s color;
+}
+.pretty-button:hover {
+  color: #2b3236;
+  background: #ccc;
+  border: 2px solid #2b3236;
+}
+
 /*
   Footer
 */

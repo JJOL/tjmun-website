@@ -44,12 +44,29 @@ info-box h1 {
    /*overflow-y: scroll;*/
 
 }
+#mun-protocols-showcase
+  .pretty-button {
+    width: 49%;
+  }
+#mun-protocols-showcase
+  #b1 {
+    float: left;
+  }
+
+#mun-protocols-showcase
+  #b2 {
+    float: right;
+  }
 
 @media screen and (min-width: 768px) {
 
   .thing {
     width: 49.5%;
   }
+  #mun-protocols-showcase
+    .pretty-button {
+      width: 40%;
+    }
 
 }
 
@@ -58,5 +75,9 @@ info-box h1 {
   .thing {
     width: 24.8%;
   }
+  #mun-protocols-showcase
+    .pretty-button {
+      width: 30%;
+    }
 
 }
