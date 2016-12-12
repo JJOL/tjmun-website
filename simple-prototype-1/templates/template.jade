@@ -109,43 +109,48 @@ html
           li(class="#{(page=='committees') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/committees/') Committees
           li(class="#{(page=='delegateinfo') ? 'selected' : ''}")
-            a.horizonal-nav-a(href='/delegateinfo/') Delegate Info
-          li(class="#{(page=='schedule') ? 'selected' : ''}")
+          //-   a.horizonal-nav-a(href='/delegateinfo/') Delegate Info
+          //- li(class="#{(page=='schedule') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/schedule/') Schedule
           li(class="#{(page=='place') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/place/') Querétaro
           li(class="#{(page=='sponsors') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/sponsors/') Sponsors
-          li(class="#{(page=='contact') ? 'selected' : ''}")
-            a.horizonal-nav-a(href='/contact/') Contact
+          //- li(class="#{(page=='contact') ? 'selected' : ''}")
+          //-   a.horizonal-nav-a(href='/contact/') Contact
           li(class="#{(page=='presscorps') ? 'selected' : ''}")
             a.horizonal-nav-a(href='/presscorps/') Press Corps
       // Main Page Content
       
       .main-container
-        noscript
-          | You Must Enable Javascript to view this page if you don't want to miss information!
-        block content
+        #d(style="padding-top: 15px; padding-bottom: 15px; margin: 0 auto; text-align: center")
+          h1 Thank You For Joining Us This Weekend!!!
+          h4 TJMUN 2016 is officially closed but you may check Press Corps page for content from the event!!
+          a(href="https://tjpresscorp-munlight.weebly.com/", style="color: blue; margin-left: 30px; text-decoration: underline", target="_blank") Press Corps Website
+          h4 We wish you had an amazing experience and hope to see you next time!
+        //- noscript
+        //-   | You Must Enable Javascript to view this page if you don't want to miss information!
+        //- block content
       
       
       
         
-      .block.centralize-text
-        #help-container.main-container
-          h4
-            | Any 
-            span Questions?
-          ul.help-options
-            li#top-right
-              a.centralize-text(href='/committees/') What are the topics for this event?
-            li#top-left
-              a(href='/place/') I want to know more about Querétaro.
-            li#bottom-right
-              a(href='/registration/') I'm fine. I'd like to register.
-            li#bottom-left
-              a(href='/delegateinfo/') What do I need to assist?
-          h5 Still with Questions?
-          a(href='/contact/') Contact us Please.
+      //- .block.centralize-text
+      //-   #help-container.main-container
+      //-     h4
+      //-       | Any 
+      //-       span Questions?
+      //-     ul.help-options
+      //-       li#top-right
+      //-         a.centralize-text(href='/committees/') What are the topics for this event?
+      //-       li#top-left
+      //-         a(href='/place/') I want to know more about Querétaro.
+      //-       li#bottom-right
+      //-         a(href='/registration/') I'm fine. I'd like to register.
+      //-       li#bottom-left
+      //-         a(href='/delegateinfo/') What do I need to assist?
+      //-     h5 Still with Questions?
+      //-     a(href='/contact/') Contact us Please.
       footer.clfix
         .main-container
           .logo.footer-logo
