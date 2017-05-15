@@ -1,0 +1,144 @@
+h1 {
+    text-align: center;
+}
+ul {
+  width: 100%;
+}
+#committees-container {
+  position: relative;
+}
+.committee-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-bottom: 20px;
+  transition: box-shadow .3s;
+}
+
+.committee-item:hover {
+  box-shadow: 3px 0px 10px #ccc, -3px 0px 10px #ccc;
+}
+
+.committee-set {
+  float: left;
+  width: 100%;
+}
+
+h5 {
+  font-weight: bolder;
+  margin: 10px 5px 20px 5px;
+}
+.summary {
+  padding-bottom: 100px;
+  width: 100%;
+}
+
+.committee-set > h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 1.7em;
+  text-align: center;
+  text-decoration: underline;
+  color: black;
+}
+
+.committee-set > h2::after, .committee-set > h2::before {
+  content: '';
+  display: inline-block;
+  margin: 0 15px 0 15px;
+}
+
+.committee-set > h2::after {
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.committee-set > h2::before {
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.arrow-up {
+  width: 0px;
+  height: 0px;
+  /*border-top: 15px solid transparent;*/
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid black;
+}
+.arrow-down {
+  width: 0px;
+  height: 0px;
+  border-top: 20px solid black;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  /*border-bottom: 15px solid black;*/
+}
+.arrow-left {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-right: 15px solid black;
+  /*border-left: 15px solid transparent;*/
+  border-bottom: 15px solid transparent;
+}
+.arrow-right {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  /*border-right: 15px solid black;*/
+  border-left: 15px solid black;
+  border-bottom: 15px solid transparent;
+}
+
+#pageTitle {
+  color: #1a5880;
+  border: 2px solid #1a5880;
+  border-radius: 0px 20px 0px 20px;
+  padding-left: 10%;
+  background-image: url("/assets/img/about-icon.jpg");
+  background-repeat: no-repeat;
+  background-size: 140px 140px;
+  background-position: left 20%;
+}
+
+.pretty-button {
+  width: 100%;
+}
+
+/*
+  Tablets
+*/
+@media screen and (min-width: 768px) {
+
+}
+
+/*
+  Desktops
+*/
+@media screen and (min-width: 1224px) {
+  .committee-set {
+    width: 40%;
+  }
+  .committee-set:first-child {
+    float: right;
+  }
+  .committee-set:last-child {
+    float: right;
+  }
+}
+
+/*
+  Large Desktops
+*/
+@media screen and (min-width: 1824px) {
+}

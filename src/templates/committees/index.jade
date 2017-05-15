@@ -1,0 +1,353 @@
+extends ../template.jade
+
+block vars
+  - var title = "Committees | TJMUNQRO 2016"
+  - var description = "Browse and look at each of our Committees from both UN and OAS. This year we include terrorist attacks, development and drugs."
+  - var page = 'committees'
+  
+
+block cHead
+  link(rel="stylesheet", href="style.css")
+  script(type="text/javascript", src="/assets/libs/bower/webcomponentsjs/webcomponents.js")
+  link(rel="import", href="/assets/custom_elements/committee-box.html")
+
+block content
+  
+  h1#pageTitle TJMUN QRO 2016 Committees
+  
+  main#committees-container.clfix
+      // OAS COMMITTESS STARTS
+      .committee-set
+        h2 OAS COMMITTEES
+        | 
+        ul
+          a.pretty-button(href="/assets/csummaries/oaspc.pdf", target="_blank") OAS Permanent Council Background Paper  
+          li.committee-item
+            committee-box(name='OAS Permanent Council', chairs='["Mariana Bulle","Sofi Nuñez"]', color='#1B5E20', fname="oaspc")
+              .topicA
+                | Cooperation within the Region to Strengthen Latin American's Economy
+              .topicB
+                | Post Olympic Impact on Brazil's Economy
+              .topicC
+                | The role of OAS regarding the contradicting political powers in Venezuela and Brazil
+              .summary
+                p 
+                  | In this committee you will discuss two of the main problems that have a deep impact in the development of the region: Cooperation within countries and The Olympic Games. As delegates, your duty in this committee is to find viable and well-thought solutions to help improve the current situations Latin America is going through.
+                h5 
+                  | Topic A: Cooperation within the region to strengthen Latin America's Economy:
+                p
+                  | Latin America's economy has always been one of the most important topics for the IMF (International Monetary Fund) considering that since 2009, it has taken place as the first, region-wide, economic downturn. As a case in point, Brazil is going through a recession that is affecting its economic activity, industrial benefits and employment. This goes along with the fact that prices in Brazil are stagnating. Despite weak domestic demand the Dollar’s strength has increased affecting the Latin American economy as well. There are many situations that are not following their predicted course. This includes countries such as Mexico, Argentina and Venezuela which were expected to have a better and faster growth up to this year. As we all know, economy influences in various social aspects. There must be a balance in order for countries to work as they are supposed to. Due to economical weakness, Latin America has suffered with political changes. As a consequence, there has been an increase  of social instability. It is a fact that governments are trying to distribute and organize the economy by priorities, this means that projects about investigations of research and development are going to be suspended or paused. All of these changes include the new leader in Argentina and Brazil. It is expected for  Chile, Colombia, Mexico and Peru to have an increase in their economies, on the other hand, this step is going to be shorter than ones taken years before this one.
+                h5 
+                  | Topic B: Post Olympic impact in Brazil's Economy:
+                p
+                  | The Olympic Games along with the FIFA World Cup are considered by many the most important sporting events in the world.  It's clear, that the International Olympic Committee (IOC), comes up beneficiary with the organization of the olympic games offering their services. Not talking only about the sports issue but, the construction of the facilities is important too. Being a part of this global sport event gives the hosting country publicity and an image to the world, but this image can be negative as well, just as in Brazil this past august. This is because the country has a severe economical crisis joined by poverty and crime. Global crisis is generating a drop of interest in organising big sport events in developed countries. Generally speaking, citizens do not take them as an investment for the subsequent growth of their country's economic rates. For example, cities as germany, sweden, switzerland and ukraine have lately withdrawn from organising the Olympic Games. Against the undue cost of the organisation of Olympic Games have been found in a little revision of press in english, spanish and portuguese. Besides, there is proof of the support provided by the local media in those crucial moments from the presentation of the candidate till the closing ceremony of the Olympic Games. Nevertheless, a deeper research should have been needed for finding clearer data.
+          a.pretty-button(href="/assets/csummaries/iachr.pdf", target="_blank") Inter-American Commission on Human Rights Background Paper
+          li.committee-item
+            committee-box(name='Inter-American Commission on Human Rights', chairs='["Mariana Franch","Andrea Mena"]', color='#2E7D32' , fname="iachr")
+              .topicA
+                | Reform of the Current Drug Policies
+              |           
+              .topicB
+                | Discrimination against Indigenous communities in Mexico and Central America.
+              .summary
+                p 
+                  | Drug policies are failing.  They are causing enormous harm to individuals and communities around Latin America regarding the poorly designed drug laws. The objective of these laws will be for criminals to face prosecution for the production and possession of drugs. This can fuel violence, instability and health crises. The war on drugs refers to the efforts given by the governments over the last 50 years to prohibit and penalize possession, transportation, sale, production and use of drugs. The efforts made by the government have not successfully reduce the drug's availability in the vast majority of the countries. 
+                h5 
+                  | Topic A: Reform of the Current Drug Policies:
+                p
+                  | Drug policies are failing.  They are causing enormous harm to individuals and communities around Latin America regarding the poorly designed drug laws. The objective of these laws will be for criminals to face prosecution for the production and possession of drugs. This can fuel violence, instability and health crises. The war on drugs refers to the efforts given by the governments over the last 50 years to prohibit and penalize possession, transportation, sale, production and use of drugs. The efforts made by the government have not successfully reduce the drug's availability in the vast majority of the countries.
+                h5 
+                  | Topic B: Discrimination against indigenous communities in Mexico and Central America:
+                p
+                  | A big concern in Latin America and the Caribbean is the discrimination against indigenous communities. There are approximately 40,000,000 people that belong to 600 indigenous groups. Most of these groups are distributed among Latin American countries. According to World Bank figures, 12.76% of the entire American population and approximately 40% of the rural population is indigenous. The security of their territories and resources has been severely affected in this recent decades due to the constant battle between the governments of the region and the indigenous population since both seem to think they “own” the land. There is also a lack of implementation of indigenous people’s rights. It is an ongoing struggle between indigenous peoples and the governments regarding the right to be consulted, free expression and self-determination.
+          a.pretty-button(href="/assets/csummaries/sota.pdf", target="_blank") Summit of the Americas Background Paper
+          li.committee-item
+            committee-box(name='Summit of the Americas', chairs='["Paulinna Marín","Paulina Chavez"]', color='#388E3C', fname="sota")
+              .topicA
+                | Deteriorating Economy and Financial Instability in Latin America Affected by Current Crisis and Recession
+              |           
+              .topicB
+                | Prosperity with Equity: South-South and other stronger Cooperation ties in the Americas
+              .summary
+                p 
+                  | In this committee we will discuss the instability in Latin America as a result of the current economical crisis.  Your goal as representatives from your countries is to find solutions to this matters. Cooperation from all the American countries is necessary in order for the region to prosper.
+                h5 
+                  | Topic A: Deteriorating Economy and Financial Instability in Latin America Affected by Current Crisis and Recession:
+                p
+                  | The economy has become unstable over the last few years due to the current crisis and recessions of Latin American countries. Most of the countries have been struggling and trying to improve their financial stability. However, they have also experienced remarkable changes such as economic growth and social progress. For this topic, we encourage delegates to focus on  the role your country plays in Latin America as an economic, social and cultural block.
+                h5 
+                  | Topic B: Prosperity with Equity: South-South and other stronger Cooperation ties in the Americas:
+                p
+                  | South-South Cooperation is a term used to describe the mutual relationship between countries in development also known as countries of the global south and the way they help each other economically, socially and  politically. It also refers to the mutual sharing and exchange of technology, knowledge and resources between them. We urge delegates to ideate possible strategies for an inclusive economical and social growth.
+          a.pretty-button(href="/assets/csummaries/oascc.pdf", target="_blank") OAS Crisis Committee Background Paper
+          li.committee-item
+            committee-box(name='OAS Crisis Committee', chairs='["Marión Juarez","Montserrat Gordillo"]', color='#43A047', fname="oascc", grades="h")
+              .topicA
+                | OAS Special Mission to Mexico
+              .summary
+                h5 
+                  | OAS objectives:
+                p
+                  | Preserving Democracy Through Negotiation, Discussion, and strategic intervention.
+                p
+                  | This debate will take place present day Mexico (2016). Delegates will be addressing the challenges Mexico is facing from the perspective of an OAS Ambassador. This means that their goal is to restore democracy in Mexico by advising the Mexican government on urgent matters. Chairs will guide the flow of  the debate to keep delegates within the topic and remind them to address certain aspects of the issue which have not been before. Still, delegates will lead the discussion. In this committee the delegates will not be drafting full resolutions. They will draft directives designed to focus on specific aspects of the challenges the Mexican government is facing. Following  an OAS protocol, the committee will run on a Perpetual Moderated Caucus (unmoderated). Meaning that delegates will choose the aspects of the crisis that they would like to debate about.  They will then draft directives to address this problems in the order they choose.
+          a.pretty-button(href="/assets/csummaries/iacsd.pdf", target="_blank") Inter-American Committee on Sustainable Development Background Paper   
+          li.committee-item
+            committee-box(name='Inter-American Committee on Sustainable Development', chairs='["Paulina Gonzalez","Isabel Eguiarte"]', color='#4CAF50', fname="iacsd")
+              .topicA
+                | Inclusive and Quality Education for All
+              |           
+              .topicB
+                | Ensuring Access to Affordable, Reliable, Sustainable and Modern Energy for America
+              .summary
+                p 
+                  | In this committee you will discuss two of the main problems that have a deep impact in the development of the region: Education and modern energy. As delegates, your duty in this committee is to find viable and well-thought solutions to help eradicate these problems that avoid the sustainable progress of Latin America.
+                h5 
+                  | Inclusive and Quality Education for All:
+                p
+                  | Education is the foundation of of every society. It determines the economic growth of a country along with its social development. In spite of this, Latin America is stuck with  poor educational systems, with unfavorable results and lack of quality. A big concern is that a very low percentage of Latin American children actually get to finish their studies. Another controversy is that these countries have little or no selectivity when It comes to the teaching profession, this affects the performance of students greatly. This means that it is very easy for someone to become a teacher even if the person doesn’t count with enough preparation for the job. 
+                h5 
+                  | Ensuring Access to Affordable, Reliable, Sustainable and Modern Energy for America:
+                p
+                  | There are countries in Latin America who still cannot offer energy access to everyone. According to recent studies, it has been proven that countries that implement “eco friendly” energies and manage to provide it to all of its citizens solves many problems.. By achieving this,reducing the poverty gap, improving health conditions, increasing productivity, promoting competitivity and attaining environmental sustainability would be possible.
+      // OAES COMMITTESS ENDS
+      
+      
+      
+      // IGNORE IGNORE -----------------------------------------------------------------------------------------------
+      
+      
+      
+      // UN COMMITTEES STATS
+      .committee-set
+        h2 UN COMMITTEES
+        |     
+        ul
+          a.pretty-button(href="/assets/csummaries/ga.pdf", target="_blank") General Assembly Background Paper
+          li.committee-item
+            committee-box(name='General Assembly', chairs='["Daria Pelayo","Guillermo Lomelin"]', color='#1A237E', fname="ga", grades="h")
+              .topicA
+                | Fighting Trade of Arms in Central and South America
+              |           
+              .topicB
+                | Transforming Refugee Camps into Sustainable Settlements
+              .summary
+                p 
+                  | In General Assembly this year, you will discuss two problems that are very concerning. The first topic is happening in Latin America and is bringing huge negative effects to the region. Both violence and violation to human rights are some sequels of the trade of arms in Central and South America. The second topic is just as important as the first one since it also has serious repercussions. We hope as delegates, you  can find viable solutions to these urgent problems. 
+                h5 
+                  | Topic A: Fighting trade of arms in Central and South America:
+                p
+                  | Gun violence represents the most dramatic threat to public safety in Latin America and the Caribbean. After decades of uncontrolled proliferation, millions of weapons are circulating throughout the region. It is estimated that between 73,000 and 90,000 people are killed each year in Latin America, and guns are the leading killing “method” used. Today, most legal weapons in Latin America come from the United States, Europe, or the small but growing regional arms industry. It is difficult to estimate the quantity of weapons that Latin American countries import. According to data provided by the Norwegian Initiative on Small Arms Transfers, in 2005 Latin America legally imported at least $175 million worth of small arms and light weapons, as well as ammunition and spare parts. 
+                h5 
+                  | Topic B: Transforming Refugee Camps into Sustainable Settlements:
+                p
+                  | It is estimated that around 60 million people worldwide are facing forced displacement. In response to to this, the creation of “temporary camps” takes place; and in reality, these camps are maintained for years and are avoided by most refugees, as they do not offer any prospects other than stagnation, violence and despair. The conflict in too many countries forces families to abandon their homes, the population has no choice other than to live in miserable camps. The transformation of these refugee camps into sustainable settlements is necessary so that the people who escape their countries for the pursuit of living in a safe environment is fulfilled. 
+                
+          a.pretty-button(href="/assets/csummaries/scc.pdf", target="_blank") Security Council Committee Background Paper
+          li.committee-item
+            committee-box(name='Security Council', chairs='["Ximena Denegre","Pamela Ortiz"]', color='#283593', fname='scc', grades="h" )
+              .topicA
+                | Threats to International Peace and increase of tension in Europe due to Terrorist Attacks
+              |           
+              .topicB
+                | The Threat of Transnational Organized Crime to International Security
+              .summary
+                p 
+                  | In this committee you will find issues related mainly to International Security and International Peace. During our 2016 model , you will be compelled to dive into and look at real current  issues around the globe, such as terrorism and transnational organized crime (TOC). It is your duty, as delegates, to address these  problematics, discuss your personal viewpoints  and perspectives and, as a whole, work together in order to find viable solutions that will lead to the hopeful decrease and even eradication of these international matters.
+                h5 
+                  | Topic A: Threats to International Peace and increase of tension in Europe due to Terrorist Attacks:
+                p
+                  | This  issue has left many people around the world both astonished and concerned. ISIS, as the largest, most powerful and well-known terrorist group, has been responsible throughout  the last two years for an overall estimate of four different attacks in Europe (Paris and Brussels included). Being a matter of crucial importance present nowadays , it is a matter of great importance  to address at the moment.  We will focus on the attacks and the consequences they are leading to, such as: the propagation of fear and being in crowded public places amongst civilians, tighter borders and more strict vigilance systems, the crucial efficiency of transferring goods across national boundaries and prevailing manufacturers on consistently shipping completed units for sale abroad. 
+                h5 
+                  | Topic B: The Threat of Transnational Organized Crime to International Security:
+                p
+                  | Is a topic that has been present for many decades now. Transnational organized crime  poses a significant and growing threat to national and international security, with dire implications for public safety, public health, democratic institutions, and economic stability across the globe. Since it is a problem that affects many scopes of our world, we would like the focus to be  on  the civilians of each nation that suffer daily  some kind of abuse due to  organized crime in its respective country. From the Yakuza to the Mexican Drug Cartels, as delegates, your job is to find a way to protect at all costs, the lives of the innocent civilians that bear no responsibility over these actions, yet are the ones who suffer the consequences.
+          a.pretty-button(href="/assets/csummaries/g20.pdf", target="_blank") G20 Background Paper
+          li.committee-item
+            committee-box(name='Group of 20', chairs='["Nicolás Lomelín","Ana Pau Delgado"]', color='#303F9F', fname="g20", grades="h")
+              .topicA
+                | Combating Insurgencies in the Middle East.
+              |           
+              .topicB
+                | Distribution of Wealth (Income Inequality).
+              .summary
+                p 
+                  | The Group of Twenty is a committee of the governments from 20 major economies. In this committee, your delegation is focused on analysing issues that directly affect the world economy with the promotion of international financial stability, discussing the roots of these issues and attainable solutions for them.
+                h5 
+                  | Topic A: Combating Insurgencies in the Middle East:
+                p
+                  | An insurgency is a movement within a country dedicated to overthrowing a government. After the Iraq war, insurgencies in the area became very destructive, increasing even more after the Syrian civil war began. Example of this groups include The Islamic State of Iraq and Syria (ISIS) and Al Qaeda, an insurgency active in the same area with similar views. The destruction, the transfer of people, and the consequences of their actions bring great economic impact to this nations and the world, and as the G20 it is our job to come up with a solution to reduce the economic impact.
+                h5 
+                  | Topic B: Distribution of Wealth (Income Inequality):
+                p
+                  | The share of national income going to labour globally is declining, meaning that productivity increase do not result in pay increases for workers, but instead go to capital owners. For example in the United States, the reality is that since the mid­1980s there has been an enormous transfer of wealth from the middle and lower classes to the wealthiest people in the country. Millions of people are working longer hours for lower wages.There is something profoundly wrong when we have a proliferation of millionaires and billionaires at the same time as millions of people working for very low wages. As the very famous catchphrase says, "The rich get richer and the poor get poorer". Undoubtedly, this deserves attention at the G20 level as to the underlying drivers and economic consequences. 
+                br
+                p  
+                  | Thank you for choosing our committee, we hope to see you soon to hear your ideas as how to solve problems that affect each and everyone of us. The G20 is the perfect place to work together as nations to improve the world economy.
+          a.pretty-button(href="/assets/csummaries/ecosoc.pdf", target="_blank") ECOSOC Background Paper
+          li.committee-item
+            committee-box(name='Economic and Social Council', chairs='["Nicole Llamas","Alejandro Verduzco"]', color='#3949AB', fname="ecosoc")
+              .topicA
+                | Re-establishment of Quality Education systems in post-conflict fragile countries
+              |           
+              .topicB
+                | Trans-Pacific Partnership agreement and its consequences on economic growth in line with Sustainable Development Goals
+              .summary
+                p 
+                  | ECOSOC, is the United Nations’ central platform committee guiding delegates and society  for reflection, and innovative thinking on sustainable development. It serves as the central mechanism for the activities of the United Nations system and its specialized agencies, and supervises the subsidiary and expert bodies in the economic, social and environmental fields. In this committee, you will discuss education in post-conflict situations and the Trans-Pacific Partnership (TPP) agreement and its consequences on economic growth in line with Sustainable Development. The main goals of this committee are the following: identifying problems, understanding causes and consequences, establishing the current situation around the world, having a high endowment of discussion for the delegates to be able to arrive towards possible solutions.
+                h5 
+                  | Topic A: Re-establishment of Quality Education systems in post-conflict fragile countries: 
+                p
+                  | The first issue to address is education in post-conflict situations. Taking into consideration that this conflict has a devastating impact on childrens education. Formal and non-formal education structures are corroded, communities displaced and fragmented and educational inputs threatened. Maintaining a sufficient educational corps, recruiting educators and ensuring that they are properly trained and remunerated becomes a challenge; physical structures may also be affected, and may not be safe environments for learning.Conflicts such as, natural disasters, poverty, hunger, corruption, traumas of war and armed related conflicts have a great impact on education.
+                h5 
+                  | Topic B: Trans Pacific Partnership Agreement and its consequences on economic growth in line with Sustainable Development Goals:
+                p
+                  | On October 4, 2015, Ministers of the  (TPP) countries Australia, United States of America, Canada, Chile, Japan, Malaysia, Mexico, New Zealand, Peru,  among others; announced conclusion on their negotiations.  The result is a high-standard, ambitious, comprehensive, and balanced agreement that will promote economic growth; support the creation and retention of jobs; enhance innovation, productivity and competitiveness; among other things. It also aims to reduce trade barriers which typically include import tariffs, but also environmental and labor regulations, known as “nontariff barriers to trade,” or NBTs. Besides, The TPP also threatens Internet freedoms and civil liberties, collective bargaining rights, public and environmental health, food safety, and  financial stability. It is important to mention that this agreement was negotiated in “secret”.
+          a.pretty-button(href="/assets/csummaries/cop2030.pdf", target="_blank") COP2030 Background Paper
+          li.committee-item
+            committee-box(name='COP 2030', chairs='["Fer Esquivel","Ana Badía"]', color='#3F51B5', fname="cop2030")
+              .topicA
+                | New regulations for climate change due to the state of emergency
+              .summary                
+                h5 
+                  | Year: 2030
+                h5 
+                  | Meeting place: Los Cabos, Mexico
+                h5 
+                  | Countries Attending: 30
+                h5 
+                  | COP President: Fernanda Esquivel Vila
+                h5 
+                  | Temperature: +4 C°
+                p
+                  | The year is 2030. Fifteen years have passed since 150 countries gathered in Paris to sign an agreement that consisted on building policies and the creation of  climate regulations before the end of the century. Unfortunately, these  regulations were not mandatory for these countries, so many  of them decided to ignore these policies or to partially  follow them. This caused temperatures to increase and resulted in many  consequences such as the rise of sea level, water deficit, and the spread of diseases among others. As delegates, you will represent the world’s leaders and take new measures regarding climate change since the past agreements  not accomplished. The world is in serious trouble, and it is up to you to change its current situation. The president of this year's COP meeting knows it is an extremely difficult  issue to tackle and resolve, however, it is extremely necessary. 
+          a.pretty-button(href="/assets/csummaries/uncsd.pdf", target="_blank") UN Commission on Sustainable Development Background Paper
+          li.committee-item
+            committee-box(name='UN Commission on Sustainable Development', chairs='["Yunuen Neria","Regina Rabell"]', color='#5C6BC0', fname="uncsd")
+              .topicA
+                | Create a sustainable economic growth, employment and  &ldquo;righteous&rdquo; work for all.
+              |           
+              .topicB
+                | Corruption in Environmental Governance
+              .summary
+                p 
+                  | The UN Commission on Sustainable Development was established by the UN General Assembly in December 1992, in order to ensure an effective follow-up of the United Nations Conference on Environment and Development (UNCED), also known as the Earth Summit. Ever since, it has worked to achieve a greater advance in the sustainable development agenda within the international community. During this edition of the TJMUN, delegates will be able to discuss and find viable and sustainable solutions to major global issues. Sustainability is an essential element for the further development and improvement of our world. Consequently, it is mandatory that we work together, because only this way will we be able to ensure a stable future for us and the generations to come.
+                h5 
+                  | Topic A: Create a Sustainable Economic Growth, Employment and  “Righteous” Work for All.
+                p
+                  | Currently, half of the world's population lives with less than $2 USD a day.  In numerous places of the world having a job does not ensure the immunity to poverty. The continuous lack of decent work opportunities and insufficient investments are elements that affect an entire society and its development. For reasons such as these, creating quality jobs will be a major goal in the upcoming years. For there to be sustainable economic growth it is required that societies create new conditions allowing individuals to have quality jobs that stimulate and help grow the economy, while protecting the environment. Sustainable work opportunities result in sustainable economic growth and growth rates that are maintainable  without generating new conflicts, specially for future generations.
+                h5 
+                  | Topic B: Corruption in Environmental Governance:
+                p
+                  | Our governments play a major role in the sustainable development of our countries, it is through them, our representatives, that decisions regarding major environmental issues are made. Unfortunately many countries, specially those in development, experience severe cases of corruption, and this also applies when referring to environmental governance.
+          a.pretty-button(href="/assets/csummaries/uncef.pdf", target="_blank") United Nations Children's Emergency Fund Background Paper 
+          li.committee-item
+            committee-box(name='United Nations Children’s Emergency Fund 1', chairs='["Montse Guillemont","Ana Paola Calderón"]', color='#7986CB', fname="uncef", grades="m")
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | Water deficit and sanitation problem for children in Africa as well as India
+              .summary
+                p 
+                  | UNICEF’s mission is to effectively comply children’s rights, ensure a dignified life and protect them from any danger. In this case, the regions that this committee will focus on are Africa and India. This committee’s goal is to find a solution for the issue of the recruitment of children into gangs and armed groups in the geographical region of central Africa and to the Water deficit and sanitation problem for children in Africa as well as India issue. Now it is in your hands to change this situation, and to assure the future of children in this areas. 
+                h5 
+                  | Topic A: Recruitment of children into armed groups and gangs in the region of central Africa:
+                p
+                  | Children are joining armed groups like civil militia, government armed forces and paramilitary groups. The central African region is struggling more with these issues.  They are joining these groups because either they are recruited to gain an economical benefit that they generate to the association, to serve as a military force - with low or null payment or because of the fact that children are much easier to control than adults.Another reason is that  children think that these  groups will give them security, food or any other kind of goods, that no one else will give them. Most of the kids that join these groups are orphans, so they see these groups as a new family.
+                h5 
+                  | Topic B: Water deficit and sanitation problem for children in Africa as well as India:
+                p
+                  | Nowadays, the water deficit a global problem, and in regions such as Africa or India, the problem is worse. This is a consequence of the basic and non-advanced sanitation system, the scattered clean water that is available for the children in these  places is being contaminated or used incorrectly. The main cause of these problems is the bad management, planification and control of the government's secretaries that are in charge of the sanitation systems. Children are the most affected.
+          a.pretty-button(href="/assets/csummaries/uncef.pdf", target="_blank") United Nations Children's Emergency Fund Background Paper 
+          li.committee-item
+            committee-box(name='United Nations Children’s Emergency Fund 2', chairs='["Andrea Chávez","Rodrigo Morones"]', color='#9FA8DA', fname="uncef", grades="m")
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | Water deficit and sanitation problem for children in Africa as well as India
+              .summary
+                p 
+                  | UNICEF’s mission is to effectively comply children’s rights, ensure a dignified life and protect them from any danger. In this case, the regions that this committee will focus on are Africa and India. This committee’s goal is to find a solution for the issue of the recruitment of children into gangs and armed groups in the geographical region of central Africa and to the Water deficit and sanitation problem for children in Africa as well as India issue. Now it is in your hands to change this situation, and to assure the future of children in this areas. 
+                h5 
+                  | Topic A: Recruitment of children into armed groups and gangs in the region of central Africa:
+                p
+                  | Children are joining armed groups like civil militia, government armed forces and paramilitary groups. The central African region is struggling more with these issues.  They are joining these groups because either they are recruited to gain an economical benefit that they generate to the association, to serve as a military force - with low or null payment or because of the fact that children are much easier to control than adults.Another reason is that  children think that these  groups will give them security, food or any other kind of goods, that no one else will give them. Most of the kids that join these groups are orphans, so they see these groups as a new family.
+                h5 
+                  | Topic B: Water deficit and sanitation problem for children in Africa as well as India:
+                p
+                  | Nowadays, the water deficit a global problem, and in regions such as Africa or India, the problem is worse. This is a consequence of the basic and non-advanced sanitation system, the scattered clean water that is available for the children in these  places is being contaminated or used incorrectly. The main cause of these problems is the bad management, planification and control of the government's secretaries that are in charge of the sanitation systems. Children are the most affected.
+          a.pretty-button(href="/assets/csummaries/uncef.pdf", target="_blank") United Nations Children's Emergency Fund Background Paper 
+          li.committee-item
+            committee-box(name='United Nations Children’s Emergency Fund 3', chairs='["Rodrigo Moreno"]', color='#C5CAE9', fname="uncef", grades="m")
+              .topicA
+                | Recruitment of Children into armed groups and gangs in Central Africa
+              |           
+              .topicB
+                | Water deficit and sanitation problem for children in Africa as well as India
+              .summary
+                p 
+                  | UNICEF’s mission is to effectively comply children’s rights, ensure a dignified life and protect them from any danger. In this case, the regions that this committee will focus on are Africa and India. This committee’s goal is to find a solution for the issue of the recruitment of children into gangs and armed groups in the geographical region of central Africa and to the Water deficit and sanitation problem for children in Africa as well as India issue. Now it is in your hands to change this situation, and to assure the future of children in this areas. 
+                h5 
+                  | Topic A: Recruitment of children into armed groups and gangs in the region of central Africa:
+                p
+                  | Children are joining armed groups like civil militia, government armed forces and paramilitary groups. The central African region is struggling more with these issues.  They are joining these groups because either they are recruited to gain an economical benefit that they generate to the association, to serve as a military force - with low or null payment or because of the fact that children are much easier to control than adults.Another reason is that  children think that these  groups will give them security, food or any other kind of goods, that no one else will give them. Most of the kids that join these groups are orphans, so they see these groups as a new family.
+                h5 
+                  | Topic B: Water deficit and sanitation problem for children in Africa as well as India:
+                p
+                  | Nowadays, the water deficit a global problem, and in regions such as Africa or India, the problem is worse. This is a consequence of the basic and non-advanced sanitation system, the scattered clean water that is available for the children in these  places is being contaminated or used incorrectly. The main cause of these problems is the bad management, planification and control of the government's secretaries that are in charge of the sanitation systems. Children are the most affected.
+      // UN COMMITTEES ENDS
+      // Special COMMITTESS STARTS
+      .committee-set
+        h2 Special Committees
+        | 
+        ul
+          a.pretty-button(href="/assets/csummaries/worldbank.pdf", target="_blank") World Bank Background Paper 
+          li.committee-item
+            committee-box(name='World Bank', chairs='["Ximena Urbiola","Gunther Hernandez"]', color='#d6b800' fname="worldbank", grades="h")
+              .topicA
+                | World Bank's Position on "Brexit"
+              |           
+              .topicB
+                | Gender Equality in the Global Markets
+              .summary
+                p 
+                  | In  this committee, it is expected from you, members of the World Bank to achieve a diplomatic discussion, regarding the benefits and well-being of the global economy. Your focus will be to discuss Britain’s exit from the European Union (Brexit) and find viable alternatives so that this event does not have the economic impact it is predicted to have on the world’s economy. You will also be discussing a very important issue that affects every single nation in the world: gender equality.
+                h5 
+                  | Topic A: World Bank´s position on “Brexit”
+                p
+                  | “Continued uncertainty following the U.K.’s vote to leave the European Union could hurt global growth”, said Jim Yong Kim President of the World Bank. On Thursday June 23rd, 2016, a referendum (a vote in which everyone -or nearly everyone- of voting age can take part) was held in order to decide weather Great Britain should stay in the European Union or not. Voters who supported leaving won by 52% to 48%. This decision is going to create huge secondary effects and sequels in the world economy according to World Bank reports.
+                h5 
+                  | Topic B: Gender Equality in the Global Markets
+                p
+                  | Gender equality is not just what builds a socially stable country ,but a key concept to a stronger economy. Considering that the  current percentages of unutilized productive  potential is  22% compared with men’s, according to the International Labour Organization there is a perceptible inequality with women's abilities. To highlight the importance of gender equality in the global marketplace for the stability of economy there's been a noticeable precedent which is the the contraction of  overall poverty in Latin America and The Caribbean due to a significant raise to women's payment.     
+          a.pretty-button(href="/assets/csummaries/presscorps.pdf", target="_blank") Press Corps Background Paper 
+          li.committee-item
+            committee-box(name='Press Corps', chairs='["Lotte Janse", "Isaac Cárdenas", "David Gómez (Final Editor)"]', color='#d6b800', grades="h", fname="presscorps")
+              .topicA
+                | Delegates will be representing a country and a specific newspaper while showing their unique writing style in articles and media.
+              .summary
+                p 
+                  | Would you like to participate in TJMUN but you are not keen on participating in debates? Press Corp will be the right place for you. This year's press corp is a unique and dynamic committee. As a delegate, you will represent a newspaper agency and take note of everything that is going on, both inside the committees and outside in hallways and other activities. You will be doing this by observing debates, interviewing delegates, holding press conferences and even having interviews with the directors and staff of this year’s MUN! You will publish your findings not just through articles but also through social media such as; Twitter, Instagram and Youtube. You will develop your writing, social and photography skills. Don’t hesitate and enter this new and engaging committee!
+                  br
+                  | NOTE: ONLY FOR 9TH GRADE OR HIGHER
+                  
+    div(id="full-error-view")
+      span 
+        | I would advise you to not use the iPhone's/iPad's/iPod's browser to view this page.
+        button(id="full-error-view-button") Click to Dismiss
+    //- script(src="/assets/js/iOSBrowserError.js")
+  script.
+    var VERSION = 1, SUBVERSION = 1;
+    var NOTIFICATIONS_UUID_COMMITTEES = "UPDATES-" + VERSION + "-" + SUBVERSION;
+    var DELIVERED = "DONE";
+    
+    function showGuide() {
+      
+      window.localStorage.setItem(NOTIFICATIONS_UUID_COMMITTEES, DELIVERED);
+      WEBSITE.displayToastMessage('Get the Background Papers by clicking on the download button on each committee summary tab!');
+      setTimeout(showGuide, 60000); // Show it again every 1 minute
+    }
+    
+    setTimeout(showGuide, 5000); // Show 5 secs after load page

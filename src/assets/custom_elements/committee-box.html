@@ -1,0 +1,363 @@
+<link rel="import" href="../libs/bower/polymer/polymer.html">
+<link rel="import" href="../libs/bower/iron-icon/iron-icon.html">
+<link rel="import" href="../libs/bower/iron-icons/iron-icons.html">
+
+<dom-module id="committee-box">
+    <template>
+        <style>
+            :host {
+              color: #555;
+              width: 100%;
+            }
+
+            #wrapper {
+              padding: 10px 0px 20px 0px;
+              position: relative;
+              overflow: hidden;
+              height: 400px;
+              width: 100%;
+            }
+
+            .slide {
+              position: absolute;
+              transition: transform 1s;
+              transition: -webkit-transform 1s;
+              height: 100%;
+              right: 45px;
+              left: 15px;
+              width: 100%;
+
+            }
+
+            #presentationLayer {
+              transform: translateX(-100%);
+              -webkit-transform: translateX(-100%);
+            }
+
+            #presentationLayer.in {
+              transform: translateX(0);
+              -webkit-transform: translateX(0);
+            }
+
+            #summaryLayer {
+              width: 97%;
+
+              transform: translateX(100%);
+              -webkit-transform: translateX(100%);
+              overflow-y: scroll;
+            }
+            #summaryLayer #title {
+              margin-bottom: 30px;
+            }
+            #summaryLayer ::content > .summary {
+              width: 85%;
+              margin: 0 auto;
+            }
+            #summaryLayer ::content > .summary h5 {
+              text-decoration: underline;
+            }
+            #summaryLayer.in {
+              transform: translateX(-10px);
+              -webkit-transform: translateX(-10px);
+            }
+
+            .topic-container ::content > .topicA,
+            .topic-container ::content > .topicB,
+            #chairs-display span {
+              font-weight: normal;
+              max-width: 70%;
+            }
+
+            #title {
+              text-align: center;
+            }
+
+            h2 {
+              display: inline;
+              margin: 0 auto;
+              text-align: center;
+              font-size: 1.7em;
+              border-bottom: 5px solid var(--committee-box-color, #ccc);
+              text-decoration: none;
+            }
+
+            li {
+              list-style: circle;
+            }
+
+            #information {
+              margin-top: 20px;
+            }
+
+            #information * {
+              margin-top: 10px;
+            }
+
+            h4 {
+              margin-left: 5%;
+              font-size: 1.4em;
+            }
+
+            #summaryLayer ::content > .summary {
+              visibility: 0;
+              text-align: justify;
+            }
+
+            #chairList li,
+            .topic-container ::content > .topicA,
+            .topic-container ::content > .topicB {
+
+              margin-left: 10%;
+            }
+
+            #toggleButton {
+              width: 56px;
+              height: 56px;
+              background-color:  var(--committee-box-color, #ccc);
+              border-radius: 50%;
+              position: absolute;
+              bottom: 20px;
+              right: 20px;
+              transition: box-shadow 0.3s;
+            }
+
+            #toggleButton:hover {
+              box-shadow: 5px 5px 10px #ccc;
+              cursor: pointer;
+            }
+
+            #downloadButtonWrapper {
+              width: 56px;
+              height: 56px;
+              background-color:  var(--committee-box-color, #ccc);
+              border-radius: 50%;
+              position: absolute;
+              bottom: 20px;
+              left: 20px;
+              transition: box-shadow 0.3s;
+            }
+
+            #downloadButtonWrapper:hover {
+              box-shadow: 5px 5px 10px #ccc;
+              cursor: pointer;
+            }
+
+            #gradesLayer {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 40px;
+              background-color: var(--grades-color);
+              display: flex;
+              justify-content: flex-start;;
+              align-items: center;
+              padding-left: 5%;
+              color: white;
+              opacity: 0.6;
+            }
+
+            #top {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 16px;
+              background-color: var(--committee-box-color, #ccc);
+
+            }
+
+            /* Utilities */
+
+            .fit {
+              position: absolute;
+              margin: auto;
+              right: 0;
+              left: 0;
+              bottom: 0;
+              top: 0;
+              color: white;
+            }
+        </style>
+
+        <div id="wrapper">
+
+          <div id="gradesLayer" hidden="{{_isInView(view, 0)}}">
+            For: {{ _targetGrades(grades) }}
+          </div>
+
+          <div id="presentationLayer" class="slide in">
+              <div id="title">
+                  <h2>{{ name }}</h2>
+                  <content select="h1"></content>
+              </div>
+              <div id="information">
+                <div id="chairs-display">
+                  <h4>Chairs:</h4>
+                  <ul id="chairList">
+                    <template is="dom-repeat" items="{{ chairs }}">
+                      <li><span>{{item}}</span></li>
+                    </template>
+                  </ul>
+                </div>
+                <div id="topics" hidden="{{_computeHideTopics()}}">
+                  <div class="topic-container">
+                    <h4>Topic A:</h4>
+                    <content select=".topicA"></content>
+                  </div>
+                  <div id="topicB" class="topic-container" hidden="{{ _computeHiddenTopicB() }}">
+                    <h4>Topic B:</h4>
+                    <content class="topic-content" select=".topicB"></content>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div id="summaryLayer" class="slide">
+            <div id="title">
+                <h2>{{ name }}<br>Summary</h2>
+            </div>
+            <content select=".summary">
+            </content>
+          </div>
+          <div id="toggleButton" on-click="toggleView">
+            <iron-icon id="summaryBtn"
+                       class="fit"
+                       icon="icons:arrow-forward"
+                       hidden="{{_isInView(view, 0)}}"></iron-icon>
+           <iron-icon id="returnBtn"
+                      class="fit"
+                      icon="icons:arrow-back"
+                      hidden="{{_isInView(view, 1)}}"></iron-icon>
+          </div>
+          <a href="{{path}}" target="_blank" id="downloadSummaryLink" hidden="{{_canShowDownload(view, 0)}}">
+            <div id="downloadButtonWrapper">
+
+              <iron-icon id="downloadBtn"
+                         class="fit"
+                         icon="icons:description"></iron-icon>
+            </div>
+          </a>
+          <div id="top">
+          </div>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+          is: "committee-box",
+          properties: {
+            name: String,
+            chairs: Array,
+            fname: {
+              type: String,
+              value: "NULL"
+            },
+            color: {
+              type: String,
+              value: "blue"
+            },
+            view: {
+              type: Number,
+              value: 1
+            },
+            canSlide: Boolean,
+            grades: {
+              type: String,
+              value: "mh"
+            }
+
+          },
+          _computeHiddenTopicB: function() {
+            // If Array of Elements does not contain an element with className of topicB, remove topicB cotainer
+            var childs = Polymer.dom(this).children.
+              map(function(item) {
+                return item.className;
+              });
+            for (var i = 0; i < childs.length; i++) {
+              if (childs[i] === "topicB")
+                return false;
+            }
+            return true;
+          },
+          _computeHideTopics: function() {
+            var childs = Polymer.dom(this).children.
+              map(function(item) {
+                return item.className;
+              });
+            for (var i = 0; i < childs.length; i++) {
+              if (childs[i] === "topicB" || childs[i] === "topicA")
+                return false;
+            }
+            return true;
+          },
+          _isInView: function(current, expected) {
+            return current == expected;
+          },
+          _canShowDownload: function(current, expected) {
+            //return true;
+            return !(this._isInView(current, expected) && this.fname != "NULL");
+          },
+          _targetGrades: function(gradeStr) {
+            var gradeName;
+            if (gradeStr == "m") {
+              gradeName = "Middle";
+            } else if(gradeStr == "h") {
+              gradeName = "High";
+            } else if (gradeStr == "mh") {
+              gradeName = "Middle And High";
+            }
+            return gradeName;
+          },
+          ready: function() {
+            this.customStyle["--committee-box-color"] = this.color;
+            this.customStyle["--grades-color"] = this._getColorForGrades(this.grades);
+            this.canSlide = true;
+            if(this.fname=="NULL") {
+              // Remove Download Link
+              //alert(this.name + " has a null file!");
+            }
+            this.path = "/assets/csummaries/" + this.fname + ".pdf";
+
+          },
+          toggleView: function() {
+            if(this.canSlide) {
+              this.canSlide = false;
+              this.view = (this.view == 0) ? 1 : 0;
+              this._shiftView();
+              this.$.toggleButton.classList.add("toLeft");
+              setTimeout(this._resetCanSlide.bind(this), 1000);
+            }
+          },
+          _getColorForGrades: function(gradeStr){
+            var c = "";
+            if( gradeStr == "m") {
+              c = "#965A38 ";
+            } else if(gradeStr == "h") {
+              // c = "#D9A441"
+              c = "#A8A8A8"
+            } else if (gradeStr == "mh") {
+               c = "#D9A441";
+              // c = "#A8A8A8"
+            }
+            return c;
+          },
+          _resetCanSlide: function() {
+            this.canSlide = true;
+          },
+          _shiftView: function() {
+            this.$.summaryLayer.classList.add("in");
+            this.$.presentationLayer.classList.remove("in");
+            if (this.view == 0) {
+              // Push from the left
+              this.$.summaryLayer.classList.add("in");
+              this.$.presentationLayer.classList.remove("in");
+            } else {
+              // Push from the right
+              this.$.summaryLayer.classList.remove("in");
+              this.$.presentationLayer.classList.add("in");
+            }
+          }
+        });
+    </script>
+
+</dom-module>

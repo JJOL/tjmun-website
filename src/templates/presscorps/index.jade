@@ -1,0 +1,32 @@
+extends ../template.jade
+
+block vars
+  - var title = "Prescorps | TJMUNQRO 2016"
+  - var description = "Prescorp is an innovation that tries to bring journailism to MUN events."
+  - var page = 'prescorps'
+  
+block cHead
+  link(rel="stylesheet", href="style.css")
+  
+  
+block content
+  //- h1#pageTitle Presscorps
+  //- h2 About Press Corps
+  //- p#description
+  //-   | Would you like to participate in TJMUN but you are not keen on participating in debates? Press Corp will be the right place for you. This year's press corp is a unique and dynamic committee. As a delegate, you will represent a newspaper agency and take note of everything that is going on, both inside the committees and outside in hallways and other activities. You will be doing this by observing debates, interviewing delegates, holding press conferences and even having interviews with the directors and staff of this year’s MUN! You will publish your findings not just through articles but also through social media such as; Twitter, Instagram and Youtube. You will develop your writing, social and photography skills. Don’t hesitate and enter this new and engaging committee!
+  //-   br
+  //-   br
+  //-   | NOTE: ONLY FOR 9TH GRADE OR HIGHER
+  #iframe-container(style="padding: 40px")
+    | Visit Our Press Corps Page by clicking on the following link:
+    a(href="https://tjpresscorp-munlight.weebly.com/", style="color: blue; margin-left: 30px; text-decoration: underline", target="_blank") Press Corps Website
+    //- iframe(src="https://tjpresscorp-munlight.weebly.com/", style="width: 100%; height: 100vh; min-height: 400px")
+
+  script(src="/assets/js/smoothscroll.js")
+  script.
+    setTimeout(function() {
+      document.querySelector('#iframe-container').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }, 3000)
+    

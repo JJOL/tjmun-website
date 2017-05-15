@@ -1,0 +1,58 @@
+extends ../template.jade
+
+block vars
+  - var title = "Contact Us | TJMUNQRO 2016"
+  - var description = "Here you can contact us if you have a special doubt or request"
+  - var page = 'contact'
+
+block cHead
+  link(rel="stylesheet", href="style.css")
+  link(rel="import", href="/assets/libs/bower/google-map/google-map.html")
+
+block content
+  h1#pageTitle Contact Us
+
+  #contact-wrapper
+    p
+      | If you have any questions or any of the sort, I would highly suggest getting in touch with us by sending an e-mail.
+
+    br
+        
+    p
+      | We hope that after contacting us you'll be confident enough to join our special event!
+      
+    br  
+      
+    //- p
+    //-   | Also, if you just have an open question or want to make a comment, you're free to do it below and we will get you back ASAP
+  
+    br
+  #info-wrapper
+    .info-section
+      section.clfix
+        .info-label
+          | E-Mail:
+        .info-content
+          a.mail-link(href="mailto:tjmun@itjqro.edu.mx") tjmun@itjqro.edu.mx
+          br
+          a.mail-link(href="mailto:afragoso@itjqro.edu.mx") afragoso@itjqro.edu.mx
+      section.clfix
+        .info-label
+          | Location:
+        .info-content
+          | Querétaro, Santiago de Querétaro. Rancho San Antonio 1200, Instituto Thomas Jefferson, Campus Querétaro
+      section.clfix
+        .info-label
+          | Map:
+        .info-content
+          #gmap
+     
+     
+  script(src="/assets/js/gmap.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&callback=initMap")
+  
+  //img(src="/assets/img/tjmun_welcoming-previous_year.jpg")
+    //.contact-info
+    //  .field Phone Number:
+    //  .value.phoneNumber (+52)4422265527
+      

@@ -1,0 +1,33 @@
+h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+#description {
+  margin: 0 auto;
+  text-align: center;
+  width: 82%;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+  #description {
+
+    width: 60%;
+
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  #description {
+
+    width: 40%;
+
+  }
+
+}

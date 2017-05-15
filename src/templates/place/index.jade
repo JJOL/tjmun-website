@@ -1,0 +1,42 @@
+extends ../template.jade
+
+block vars
+  - var title = "Querétaro | TJMUNQRO 2016"
+  - var description = "Know what is our mission as a team planning the TJMUNQRO 2016, what you can expect from us, and why you should choose to assist"
+  - var page = 'place'
+  
+block cHead
+  link(rel="stylesheet", href="style.css")
+  
+block content
+  h1#pageTitle About Querétaro
+  h3 Where TJMUN QRO is taking place.
+  .map
+    //google-map(latitude="20.5880556", longitude="-100.38805555555557", apiKey="AIzaSyAA2HzagxVnwI8SxfG_Z2FGHkN-kkBcdKM")
+    a(href="#gallery-place", style="position:absolute") Click For More Information
+    #gmap
+  hr
+  #gallery-place.gallery-container
+    .img-container.group
+      img.first.primary(src='/assets/img/queretaro/1.png', alt='')
+      img.secondary(src='/assets/img/queretaro/2.jpg', alt='')
+    hr
+    .quote Aaahh... Queretaro. Its streets, its food, its architecture, its colours and its people are what makes this city so special and different from other cities in Mexico and the world. A  magical city that seems to have frozen in time. A place where you can be at the top of a modern building, while observing in the background, a few blocks away, a 16th century cathedral. 
+    hr
+    .img-container
+      img.single(src='/assets/img/queretaro/3.jpg', alt='')
+    hr
+    .quote Queretaro is a small state in Central Mexico. It has a historic center with fountain-filled squares and stone streets. The city's wealth of Spanish colonial architecture includes churches such as the ochre San Francisco and the baroque Santa Rosa de Viterbo.
+    hr
+    .img-container.group
+      img.first.secondary(src='/assets/img/queretaro/4.jpg', alt='')
+      img.primary(src='/assets/img/queretaro/5.jpg', alt='')
+    hr
+    .quote If you don't believe me, come to TJMUN 2016 and see it for yourself. 
+    hr
+    .quote
+      a#visit-link(href="http://www.meetmexico.com/queretaro/", target="_blank") Meet Queretaro
+
+  script(src="/assets/js/gmap.js")
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANvqN-eXZxFU74WzGU6JujFTIR1CZDLnA&callback=initMap")
+    

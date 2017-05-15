@@ -1,0 +1,316 @@
+.attractive-page-asset-container  {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  background-image: url('/assets/img/background.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  /*transition: transform 1s ease-in-out 1s;*/
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-animation-name: showItsTime;
+          animation-name: showItsTime;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+
+}
+
+.attractive-page-asset-container h1 {
+
+
+  color: #fcfcfc;
+  margin-left: 130px;
+  font-size: 2em;
+}
+
+#fake-toggle-button {
+  position: absolute;
+  opacity: 0;
+}
+
+@-webkit-keyframes showItsTime {
+  from {
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes showItsTime {
+  from {
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.attractive-page-asset-container * {
+  padding: 0;
+  margin: 0;
+}
+
+#fake-toggle-button:checked + #letter-container {
+  -webkit-transform: translateY(500px);
+      -ms-transform: translateY(500px);
+          transform: translateY(500px);
+}
+
+#letter-container {
+  background: white;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px);
+  transition: -webkit-transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+  transition: transform 1.5s ease-in-out, -webkit-transform 1.5s ease-in-out;
+}
+
+#player-box {
+
+  position: absolute;
+  left: 25%;
+  
+}
+
+.time-label {
+  text-align: center;
+  font-weight: bold;
+}
+
+.tjmun-info {
+  margin-top: 20px;
+  min-height: 200px;
+  /*border: 1px solid #ccc;*/
+}
+
+.counter-box, .tjmun_name-box {
+  /*border: 1px solid #ccc;*/
+}
+.tjmun_name-box {
+  height: 100%;
+}
+
+#counter-main {
+  min-height: 300px;
+  position: relative;
+}
+#counter-main .time-label {
+  position: absolute;
+  top: 50%;
+  margin-top: -55px;
+  margin-left: -100px;
+  left: 50%;
+
+  font-size: 3em;
+}
+#counter-img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  will-change: transform;
+
+}
+
+#counter-img.animatable {
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: transform 1s;
+}
+
+#counter-img.rigid {
+  transition: none;
+  -webkit-transition: none;
+}
+
+#counter-rest {
+  min-height: 100px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.center-time {
+  margin: 0 auto;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+}
+
+#counter-rest .time-label {
+  padding: 0px 15px 0px 15px;
+  border-left: 1px solid #ccc;
+}
+
+#counter-rest .time-label:first-child {
+  border-left: 0;
+}
+
+.date {
+  font-size: 1.6em;
+}
+
+#slogan {
+  font-size: 2em;
+  text-align: center;
+  box-shadow: 0px 2px 5px #ccc;
+  margin-bottom: 20px;
+}
+
+#slogan-img {
+  margin-top: 5px;
+  min-height: 300px;
+}
+
+.letter-box .paper-out h1 {
+  font-size: 2.7em;
+}
+
+.letter-box {
+  position: relative;
+  margin-top: 100px;
+  text-align: center;
+  color: #555;
+  /*background-color: #4682B4;*/
+}
+
+.letter-box .paper-out {
+  padding-top: 10px;
+}
+
+.letter-title {
+  margin-bottom: 20px;
+}
+
+.letter-box h2 {
+
+/*
+  padding-top: 20px;
+  padding-bottom: 30px;*/
+}
+
+.letter-element {
+  text-align: justify;
+}
+
+.letter-box p {
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.letter-content {
+  margin: 0 auto;
+  width: 87%;
+}
+
+.letter-box .signature {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  /*background-color: black;*/
+  height: 180px;
+  margin-left: 5%;
+}
+
+
+
+#signature {
+  position: absolute;
+  left: 0px;
+  width: auto;
+  height: 100%;
+}
+
+.letter-box .letter-pic {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.twitter-feed {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .attractive-page-asset-container h1 {
+    margin-left: 230px;
+    font-size: 2.7em;
+  }
+}
+
+/*
+  Desktops
+*/
+@media screen and (min-width: 1224px) {
+  html {
+    /*background-color: blue;*/
+  }
+  .tjmun_name-box {
+    -webkit-transform: translateX(-15%);
+        -ms-transform: translateX(-15%);
+            transform: translateX(-15%);
+  }
+  .counter-box {
+    width: 59%;
+    float: left;
+
+  }
+  .tjmun_name-box {
+    width: 39%;
+    float: right;
+  }
+  .letter-content {
+    width: 60%;
+  }
+  .letter-content.second p {
+    width: 80%;
+  }
+  .twitter-feed {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin-right: 7.8%;
+  }
+  .left {
+    float: left;
+  }
+}
+
+/*
+  Large Desktops
+*/
+@media screen and (min-width: 1624px) {
+  html {
+    /*background-color: green;*/
+  }
+  .tjmun_name-box {
+    -webkit-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+
+  .twitter-feed {
+    margin-right: 12.5%;
+  }
+}
