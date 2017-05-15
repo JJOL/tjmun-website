@@ -59,20 +59,6 @@ html
     block cHead
     body
     // Website
-    //
-      <div class="app-drawer">
-      <nav>
-      <ul>
-      <li><a class="horizonal-nav-a" href="/">Home</a></li>
-      <li><a class="horizonal-nav-a" href="/about.html">About</a></li>
-      <li><a class="horizonal-nav-a" href="/committees.html">Committees</a></li>
-      <li><a class="horizonal-nav-a" href="/timeline.html">Timeline</a></li>
-      <li><a class="horizonal-nav-a" href="/place.html">Querétaro</a></li>
-      <li><a class="horizonal-nav-a" href="/sponsors.html">Sponsors</a></li>
-      <li><a class="horizonal-nav-a" href="/contact.html">Contact</a></li>
-      </ul>
-      </nav>
-      </div>
     noscript
       | I would advise you to enable javascript and not view this page from the iPad/iPhone/iPod 's browser in order to get a full working website.
     .website-container
@@ -93,12 +79,6 @@ html
         a#register-btn(href="/registration/")
             | Register
           
-        // <img src="/assets/img/tjmun_logoc.png" alt="" />
-        // </div>
-        //
-          <div class="register-box">
-          <a href="#">Register</a>
-          </div>
         // Main Menu
       nav.large-box.nav-bar
         ul
@@ -123,34 +103,35 @@ html
       // Main Page Content
       
       .main-container
-        #d(style="padding-top: 15px; padding-bottom: 15px; margin: 0 auto; text-align: center")
-          h1 Thank You For Joining Us This Weekend!!!
-          h4 TJMUN 2016 is officially closed but you may check Press Corps page for content from the event!!
-          a(href="https://tjpresscorp-munlight.weebly.com/", style="color: blue; margin-left: 30px; text-decoration: underline", target="_blank") Press Corps Website
-          h4 We wish you had an amazing experience and hope to see you next time!
-        //- noscript
-        //-   | You Must Enable Javascript to view this page if you don't want to miss information!
-        //- block content
+        //- This commented block is for showing the "event-has-ended message" after TJMUN has concluded 
+        //- #d(style="padding-top: 15px; padding-bottom: 15px; margin: 0 auto; text-align: center")
+        //-   h1 Thank You For Joining Us This Weekend!!!
+        //-   h4 TJMUN 2016 is officially closed but you may check Press Corps page for content from the event!!
+        //-   a(href="https://tjpresscorp-munlight.weebly.com/", style="color: blue; margin-left: 30px; text-decoration: underline", target="_blank") Press Corps Website
+        //-   h4 We wish you had an amazing experience and hope to see you next time!
+        noscript
+          | You Must Enable Javascript to view this page if you don't want to miss information!
+        block content
       
       
       
         
-      //- .block.centralize-text
-      //-   #help-container.main-container
-      //-     h4
-      //-       | Any 
-      //-       span Questions?
-      //-     ul.help-options
-      //-       li#top-right
-      //-         a.centralize-text(href='/committees/') What are the topics for this event?
-      //-       li#top-left
-      //-         a(href='/place/') I want to know more about Querétaro.
-      //-       li#bottom-right
-      //-         a(href='/registration/') I'm fine. I'd like to register.
-      //-       li#bottom-left
-      //-         a(href='/delegateinfo/') What do I need to assist?
-      //-     h5 Still with Questions?
-      //-     a(href='/contact/') Contact us Please.
+      .block.centralize-text
+        #help-container.main-container
+          h4
+            | Any 
+            span Questions?
+          ul.help-options
+            li#top-right
+              a.centralize-text(href='/committees/') What are the topics for this event?
+            li#top-left
+              a(href='/place/') I want to know more about Querétaro.
+            li#bottom-right
+              a(href='/registration/') I'm fine. I'd like to register.
+            li#bottom-left
+              a(href='/delegateinfo/') What do I need to assist?
+          h5 Still with Questions?
+          a(href='/contact/') Contact us Please.
       footer.clfix
         .main-container
           .logo.footer-logo
